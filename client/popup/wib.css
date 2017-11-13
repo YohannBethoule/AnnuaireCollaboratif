@@ -1,0 +1,9 @@
+html, body {
+    width: 300px;
+    height: 100px;
+    margin: 3% auto;
+    padding: 4px;
+    text-align: center;
+    font-size: 100%;
+    background-color: #E5F2F2;
+}

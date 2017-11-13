@@ -1,0 +1,23 @@
+{
+
+  "manifest_version": 2,
+  "name": "Wib",
+  "version": "1.0",
+
+  "description": "Adds a browser action icon to the toolbar. Click the button to open a popup and show more informations displayed by Wib.",
+
+  "icons": {
+    "48": "icons/icon_ext48p48.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/icon_ext32.png",
+    "default_title": "Wib",
+    "default_popup": "popup/wib.html"
+  }
+
+}
