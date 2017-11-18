@@ -1,25 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="fr">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Wib</h1>
+    <link rel="stylesheet" href="styles/style.css">  
+  </head>
+  <body>
+    <header>
 
-<nav>
-    <ul id="menu">
-        <il><a class="eltnav" href="Wib_Acceuil.html">Home</a></il>
-        <il><a class="eltnav" href="Wib_Recherche.html">Recherche</a></il>
-        <il><a class="eltnav" href="Wib_Apropo.html">A propos</a></il>
-    </ul>
-</nav>
+      <a href="html/index.html">
+          <img src="images/logo.png" alt="Logo Wib" title="Logo" >
+      </a> 
+      
+      <nav>
+        <ul>
+          <il><a href="index.html" title="Boo!">Home</a></il>
+          <il><a href="html/recherche.html" title="Boo!">Recherche</a></il>
+          <il><a href="html/apropos.html" title="Boo!">A propos</a></il>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      
+    <body>
 
-<header></header>
-<p>
-    Contenu a dev.
-</p>
-</body>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/imageExtension.png" style="width:100%">
+          <div class="text">Screenshot</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/LogoIUT-2011.jpg" style="width:100%">
+          <div class="text">IUT Aubière</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/CaptureLeMonde.PNG" style="width:100%">
+          <div class="text">Screenshot</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+
+
+      <script type="text/javascript" src="scripts/slideshow.js"></script>
+      <div> 
+        <h1 id="hautdepage">Wib</h1>
+        <h4>Donnez votre avis!</h4>
+        <ul> 
+          <li>............</li>
+          <li>............</li>
+          <li>............</li>
+        </ul>
+        <p>
+          <a href="http://www.lecentdeux.com/wp-content/uploads/2017/06/Trollface.png">
+            Cliquer ici</a>
+          pour télécharger.
+        </p>
+      </div>
+      
+    </main>
+
+
+    <footer>
+      <a id="ancre" href="#hautpage"> Haut de page</a>
+      <p id="footer"> Concepteurs: Yannis,Arthur,Jonnathan,Yohanne et Alex </p>	
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+  </body>
 </html>
