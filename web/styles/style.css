@@ -83,15 +83,20 @@ header > nav > ul > li > a:hover{
   text-decoration: none;
 }
 
-
 .first_letter{
   font-size: 28px;
 }
 
+#avis{
+  text-align: center;
+  font-weight: bolder;
+}
+
 #haut{
+  margin-left: 5%;
+  margin-right: 5%;
   text-decoration: none;
   color: black;
-  transition: all 0.2s ease;
 }
 
 #haut:hover{
@@ -99,41 +104,10 @@ header > nav > ul > li > a:hover{
 }
 
 
-/* A PROPOS STYLE */
-
-#whoarewe{
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#team{
-  text-align: justify;
-}
-
-#liste{
-  text-align: center;
-  list-style-type: none;
-  
-}
-
-/* RECHERCHE STYLE */
-
-input[type=text] {
-  width: 130px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 92%;
-}
-
-/*MODELE STYLE*/
-/* 
+/*
 * Rating styles
 */
+
 .rating {
   width: 226px;
   margin: 0 auto 1em;
@@ -162,6 +136,7 @@ input[type=text]:focus {
 .rating2 a {
   float:none
 }
+
 
 /*
  *

@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib - Le Modèle</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/modele.css">
     <link rel="icon" type="image/png" href="images/Logo/icon_ext.png" />
-  </head>
 
+  </head>
+  <body>
   <header>
     <div id="logo">
       <a href="../index.html">
@@ -23,47 +24,67 @@
     </nav>
   </header>
 
-  <body>
+
     <main>
-      <article> 
-        <h1>Nom du site</h1>
-        <p>Catégorie</p>
-        <a href="http://www.lemonde.fr/">  
-          <img id="logo" src="images/Logo/LogoLeMonde.png" alt="Logo Wib" title="Logo du Modele">
-        </a>
-        <img src="images/ScreenshotLeMonde.png" alt="Logo Wib" title="Logo - Aller à l'accueil" >
-        <div>
-          <p>Fiabilité</p>
-          <div class="rating rating2"><!--
-            --><a href="#5" title="Give 5 stars">★</a><!--
-            --><a href="#4" title="Give 4 stars">★</a><!--
-            --><a href="#3" title="Give 3 stars">★</a><!--
-            --><a href="#2" title="Give 2 stars">★</a><!--
-            --><a href="#1" title="Give 1 star">★</a>
+      <article>
+        <div class="box">
+          
+          <div class="boxinfo">
+            <h1>Nom du site</h1>
+            <p>Catégorie</p>
           </div>
-          <p>Cohérence</p>
-          <div class="rating rating2"><!--
-            --><a href="#5" title="Give 5 stars">★</a><!--
-            --><a href="#4" title="Give 4 stars">★</a><!--
-            --><a href="#3" title="Give 3 stars">★</a><!--
-            --><a href="#2" title="Give 2 stars">★</a><!--
-            --><a href="#1" title="Give 1 star">★</a>
+          
+          <div class="boxlogo">
+            <a href="http://www.lemonde.fr/">  
+              <img id="logo" src="images/Logo/LogoLeMonde.png" alt="Logo Wib" title="Logo du Modele">
+            </a>
           </div>
         </div>
         
+        <div class="box2">
+          <div class="boxscreenshot">
+            
+            <img id="myImg" src="images/ScreenshotLeMonde.png" alt="Screenshot Le Monde">
 
-        <a href="http://www.lemonde.fr/"> 
-          <p>Cliquer ici pour accéder au site!</p>
-        </a>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <span class="close">×</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+            <script type="text/javascript" src="scripts/modal.js"></script>
+          </div>
+          
+          <div class="avis">
+            <p>Fiabilité</p>
+            <div class="rating rating2"><!--
+              --><a href="#5" title="Give 5 stars">★</a><!--
+              --><a href="#4" title="Give 4 stars">★</a><!--
+              --><a href="#3" title="Give 3 stars">★</a><!--
+              --><a href="#2" title="Give 2 stars">★</a><!--
+              --><a href="#1" title="Give 1 star">★</a>
+            </div>
+            <p>Cohérence</p>
+            <div class="rating rating2"><!--
+              --><a href="#5" title="Give 5 stars">★</a><!--
+              --><a href="#4" title="Give 4 stars">★</a><!--
+              --><a href="#3" title="Give 3 stars">★</a><!--
+              --><a href="#2" title="Give 2 stars">★</a><!--
+              --><a href="#1" title="Give 1 star">★</a>
+            </div>
+          </div>
+        </div>
+
       </article>
      
     </main>
 
-  </body>
 
+  
+  <br>
 
   <footer>
     <a id="haut" href="#logo"> Haut de page</a>
   </footer>
-
+  </body>
 </html>
