@@ -13,19 +13,19 @@ header{
 }
 
 nav{
-  padding: 10px 0px;
+  padding: 10px 0;
   width: 310px;
   margin-left: auto;
   margin-right: auto;
 }
 
 header > nav > ul{
-  padding: 0px;
+  padding: 0;
 }
 
 header > nav > ul > li{
   display: inline-block;
-  padding: 0px 5px;
+  padding: 0 5px;
 
 }
 header > nav > ul > li > a{
@@ -53,6 +53,17 @@ header > nav > ul > li > a:hover{
 
 #haut:hover{
   text-decoration: underline;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  transition: 0.3s;
+}
+
+img:hover{
+  opacity: 0.7;
 }
 
 /* A PROPOS STYLE */
