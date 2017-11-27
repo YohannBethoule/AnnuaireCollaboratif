@@ -4,6 +4,14 @@ Projet n°3
 Version de node.js : version 9.0.0
 BDD: MySQL
 
+Travail à faire semaine 4:
+- finir cahier des charges : Arthur et Yohann
+- commencer la mise en place de la base de données MySQL : Yannis et Yohann
+- design extension de navigateur : Jonathan
+- serveur node.js : Arthur
+- continuer le site web : Alex
+
+
 Travail à faire semaine 3:
 - ajouter librairies au projet : arthur
 - démarrage du serveur node.js : arthur
