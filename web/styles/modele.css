@@ -64,6 +64,11 @@ img:hover{
   opacity: 0.7;
 }
 
+main{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 /* MODELE STYLE */
 
 .box{
@@ -71,8 +76,6 @@ img:hover{
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: flex-start;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 
 .box2{
@@ -80,8 +83,6 @@ img:hover{
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: stretch;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 
 .boxinfo{
@@ -117,6 +118,69 @@ img:hover{
     flex-direction: column;
   }
 }
+
+/* Comment Style */
+
+#commentaires form{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
+}
+
+#commentaires .coordonnes {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0% 5% 0%;
+}
+
+#commentaires form div input {
+ width:calc(50% - 50px);
+ padding:5px 10px;
+ border:none;
+ border-bottom:1px solid #000;
+}
+
+#commentaires textarea{
+ border:none;
+ border-bottom:1px solid #000;
+ height:150px;
+ margin: 15% 2% 15% 2%;
+
+}
+
+#commentaires input[type=submit] {
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  height: 20%;
+  background-color: black; 
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid black;
+}
+#commentaires input[type=submit]:hover{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+#commentaires .comment{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+}
+
+#commentaires .message{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
 
 
 /*Modal Style*/

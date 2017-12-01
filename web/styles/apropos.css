@@ -6,6 +6,10 @@ header{
 
 }
 
+main{
+    margin: 5% 0% 5% 0%;
+}
+
 #logo{
   width: 250px;
   margin-left: auto;

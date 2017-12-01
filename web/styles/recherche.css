@@ -6,6 +6,10 @@ header{
 
 }
 
+main{
+  margin: 5% 15% 5% 15%;
+}
+
 #logo{
   width: 250px;
   margin-left: auto;
@@ -70,6 +74,10 @@ img:hover{
 
 input[type=text] {
   width: 130px;
+  border:none;
+  border-bottom:1px solid #000;
+
+  border-bottom: 
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
