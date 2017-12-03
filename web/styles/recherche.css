@@ -1,87 +1,86 @@
 body {
-  font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-header{
+header {
 
 }
 
-main{
-  margin: 5% 15% 5% 15%;
+main {
+    margin: 5% 15% 5% 15%;
 }
 
-#logo{
-  width: 250px;
-  margin-left: auto;
-  margin-right: auto;
+#logo {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-nav{
-  padding: 10px 0;
-  width: 310px;
-  margin-left: auto;
-  margin-right: auto;
+nav {
+    padding: 10px 0;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-header > nav > ul{
-  padding: 0;
+header > nav > ul {
+    padding: 0;
 }
 
-header > nav > ul > li{
-  display: inline-block;
-  padding: 0 5px;
+header > nav > ul > li {
+    display: inline-block;
+    padding: 0 5px;
 
 }
-header > nav > ul > li > a{
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  padding: 15px;
-  transition: all 0.3s ease;
+
+header > nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    transition: all 0.3s ease;
 }
 
-header > nav > ul > li > a:hover{
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-  transition: all 0.3s ease;
+header > nav > ul > li > a:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.3s ease;
 }
 
-#haut{
-  margin-left: 5%;
-  margin-right: 5%;
-  text-decoration: none;
-  color: black;
-  transition: all 0.2s ease;
+#haut {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    color: black;
+    transition: all 0.2s ease;
 }
 
-#haut:hover{
-  text-decoration: underline;
+#haut:hover {
+    text-decoration: underline;
 }
-
 
 img {
-  max-width: 100%;
-  height: auto;
-  transition: 0.3s;
+    max-width: 100%;
+    height: auto;
+    transition: 0.3s;
 }
 
-img:hover{
-  opacity: 0.7;
+img:hover {
+    opacity: 0.7;
 }
 
 /* RECHERCHE STYLE */
 
 input[type=text] {
-  width: 130px;
-  border:none;
-  border-bottom:1px solid #000;
+    width: 130px;
+    border: none;
+    border-bottom: 1px solid #000;
 
-  border-bottom: 
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+    border-bottom: -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
-  width: 92%;
+    width: 92%;
 }
