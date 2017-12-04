@@ -3,7 +3,6 @@ body {
 }
 
 header {
-
 }
 
 main {
@@ -72,15 +71,29 @@ img:hover {
 
 /* RECHERCHE STYLE */
 
-input[type=text] {
+input[type=text]{
+    font-size: larger;
     width: 130px;
     border: none;
     border-bottom: 1px solid #000;
-
-    border-bottom: -webkit-transition: width 0.4s ease-in-out;
+    -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
     width: 92%;
+}
+
+input[type=submit]{
+    border: 1px solid #000;
+    background-color: black;
+    color:white;
+    font-size: larger;
+}
+
+input[type=submit]:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.3s ease;
 }

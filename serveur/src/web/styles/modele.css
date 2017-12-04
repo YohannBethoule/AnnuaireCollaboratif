@@ -12,37 +12,34 @@ header {
     margin-right: auto;
 }
 
-nav {
-    padding: 10px 0;
-    width: 310px;
-    margin-left: auto;
-    margin-right: auto;
+.navbar {
+    margin: 0% 15% 5% 15%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-header > nav > ul {
-    padding: 0;
-}
-
-header > nav > ul > li {
-    display: inline-block;
-    padding: 0 5px;
-
-}
-
-header > nav > ul > li > a {
+.navbar a{
     text-decoration: none;
+}
+
+.lien {
+    padding: 20px;
+    border-radius: 3px;
     color: white;
     background-color: black;
-    padding: 15px;
+    border: 1px solid black;
     transition: all 0.3s ease;
 }
 
-header > nav > ul > li > a:hover {
+.lien:hover {
     color: black;
     background-color: white;
     border: 1px solid black;
     transition: all 0.3s ease;
 }
+
 
 #haut {
     margin-left: 5%;
@@ -75,18 +72,14 @@ main {
 .box {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: flex-start;
 }
 
 .box2 {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: stretch;
 }
 
-.boxinfo {
+.boxinfo {    
     flex: 3;
 }
 
