@@ -2,7 +2,7 @@ var http = require('http'),
 fs       = require('fs');
 
 var server = http.createServer(function(req, res) {
-  fs.readFile('../../html/home.html', function(err, data) {
+  fs.readFile('../../web/index.html', function(err, data) {
     if (err) {
       res.writeHead(500);
     }
@@ -11,6 +11,7 @@ var server = http.createServer(function(req, res) {
       res.end(data);
     }
   });
+  
 });
 
 server.listen(8080);
