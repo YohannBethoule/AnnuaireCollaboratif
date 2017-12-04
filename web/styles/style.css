@@ -2,33 +2,34 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-header{
+header {
 
 }
 
-#logo{
+#logo {
     width: 250px;
     margin-left: auto;
     margin-right: auto;
 }
 
-nav{
+nav {
     padding: 10px 0;
     width: 310px;
     margin-left: auto;
     margin-right: auto;
 }
 
-header > nav > ul{
+header > nav > ul {
     padding: 0;
 }
 
-header > nav > ul > li{
+header > nav > ul > li {
     display: inline-block;
     padding: 0 5px;
 
 }
-header > nav > ul > li > a{
+
+header > nav > ul > li > a {
     text-decoration: none;
     color: white;
     background-color: black;
@@ -36,43 +37,42 @@ header > nav > ul > li > a{
     transition: all 0.3s ease;
 }
 
-header > nav > ul > li > a:hover{
+header > nav > ul > li > a:hover {
     color: black;
     background-color: white;
     border: 1px solid black;
     transition: all 0.3s ease;
 }
 
-
 /* INDEX STYLE */
 
-#corps > h1{
+#corps > h1 {
     text-align: center;
     font-size: 32px;
 }
 
-#paragraphes{
+#paragraphes {
     text-align: center;
 }
 
-.stronger{
+.stronger {
     font-weight: bolder;
 }
 
-#bouton{
+#bouton {
     width: 163px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#download:hover{
+#download:hover {
     color: black;
     background-color: white;
     border: 1px solid black;
     transition: all 0.5s ease;
 }
 
-#download{
+#download {
     text-align: center;
     background-color: black;
     font-size: 20px;
@@ -82,26 +82,25 @@ header > nav > ul > li > a:hover{
     text-decoration: none;
 }
 
-.first_letter{
+.first_letter {
     font-size: 28px;
 }
 
-#avis{
+#avis {
     text-align: center;
     font-weight: bolder;
 }
 
-#haut{
+#haut {
     margin-left: 5%;
     margin-right: 5%;
     text-decoration: none;
     color: black;
 }
 
-#haut:hover{
+#haut:hover {
     text-decoration: underline;
 }
-
 
 img {
     max-width: 100%;
@@ -109,7 +108,7 @@ img {
     transition: 0.3s;
 }
 
-img:hover{
+img:hover {
     opacity: 0.7;
 }
 
@@ -121,10 +120,11 @@ img:hover{
     width: 226px;
     margin: 0 auto 1em;
     font-size: 45px;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 .rating a {
-    float:right;
+    float: right;
     color: #aaa;
     text-decoration: none;
     -webkit-transition: color .4s;
@@ -132,20 +132,22 @@ img:hover{
     -o-transition: color .4s;
     transition: color .4s;
 }
+
 .rating a:hover,
 .rating a:hover ~ a,
 .rating a:focus,
-.rating a:focus ~ a     {
+.rating a:focus ~ a {
     color: orange;
     cursor: pointer;
 }
+
 .rating2 {
     direction: rtl;
 }
-.rating2 a {
-    float:none
-}
 
+.rating2 a {
+    float: none
+}
 
 /*
  *
