@@ -143,6 +143,8 @@ main {
 }
 
 #commentaires textarea {
+    font-family: 'Trebuchet MS', sans-serif;
+    resize:none;
     border: none;
     border-bottom: 1px solid #000;
     height: 150px;
