@@ -1,10 +1,9 @@
 body {
     font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
-header {
-
-}
 
 #logo {
     width: 250px;
@@ -13,7 +12,6 @@ header {
 }
 
 .navbar {
-    margin: 0% 15% 5% 15%;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,33 +60,40 @@ img:hover {
     opacity: 0.7;
 }
 
-main {
-    margin-left: 25%;
-    margin-right: 25%;
-}
 
 /* MODELE STYLE */
 
 .box {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .box2 {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .boxinfo {    
-    flex: 3;
+    flex: 2;
 }
 
 .boxlogo {
     flex: 1;
+    text-align: center;
+}
+
+.boxlogo img{
+    width: 50%;    
 }
 
 .boxscreenshot {
-    flex: 3;
+    flex: 2;
+}
+
+.boxscreenshot img{
+    width: 95%;
 }
 
 .avis {
@@ -105,7 +110,7 @@ main {
 @media screen and (max-width: 1200px) {
     .boxscreenshot {
         flex: 3;
-        text-align: center;
+        width: 100%;
     }
 
     .box2 {
@@ -157,6 +162,16 @@ main {
     font-weight: bold;
     transition: all 0.3s ease;
     border: 1px solid black;
+}
+
+@media only screen and (max-width: 700px) {
+    #commentaires .coordonnes {
+        flex-direction: column;
+    }
+    
+    #commentaires form div input {
+       width: 90%; 
+    }
 }
 
 #commentaires input[type=submit]:hover {
@@ -227,28 +242,14 @@ main {
 
 /* Add Animation */
 .modal-content, #caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
 
 @keyframes zoom {
-    from {
-        transform: scale(0.1)
-    }
-    to {
-        transform: scale(1)
-    }
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
 }
 
 /* The Close Button */
@@ -269,7 +270,6 @@ main {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
@@ -281,10 +281,16 @@ main {
 */
 
 .rating {
-    width: 226px;
+    width: 100%;
     margin: 0 auto 1em;
     font-size: 45px;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 700px) {
+    .rating {
+        font-size: 30px;
+    }
 }
 
 .rating a {
