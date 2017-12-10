@@ -1,0 +1,157 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+header{
+
+}
+
+#logo{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav{
+    padding: 10px 0;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header > nav > ul{
+    padding: 0;
+}
+
+header > nav > ul > li{
+    display: inline-block;
+    padding: 0 5px;
+
+}
+header > nav > ul > li > a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+header > nav > ul > li > a:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+
+/* INDEX STYLE */
+
+#corps > h1{
+    text-align: center;
+    font-size: 32px;
+}
+
+#paragraphes{
+    text-align: center;
+}
+
+.stronger{
+    font-weight: bolder;
+}
+
+#bouton{
+    width: 163px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#download:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+}
+
+#download{
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.first_letter{
+    font-size: 28px;
+}
+
+#avis{
+    text-align: center;
+    font-weight: bolder;
+}
+
+#haut{
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+
+#haut:hover{
+    text-decoration: underline;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+
+img:hover{
+    opacity: 0.7;
+}
+
+/*
+* Rating styles
+*/
+
+.rating {
+    width: 226px;
+    margin: 0 auto 1em;
+    font-size: 45px;
+    overflow:hidden;
+}
+.rating a {
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a     {
+    color: orange;
+    cursor: pointer;
+}
+.rating2 {
+    direction: rtl;
+}
+.rating2 a {
+    float:none
+}
+
+
+/*
+ *
+ *
+ *------slideshow------
+ *
+ *
+ */
+
