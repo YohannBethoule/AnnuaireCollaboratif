@@ -297,9 +297,6 @@ img:hover {
     float: right;
     color: #aaa;
     text-decoration: none;
-    -webkit-transition: color .4s;
-    -moz-transition: color .4s;
-    -o-transition: color .4s;
     transition: color .4s;
 }
 
