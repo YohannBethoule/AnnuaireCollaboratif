@@ -4,29 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'yannis',
-  password : 'mysqlisgreat',
-  database : 'my_db'
-});
-
-/*
-* DATABASES MYSQL
-*/
-
-connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
-
-connection.end();
-
-/*
-* EVERYTHING ELSE
-*/
 
 var index = require('./routes/index');
 var users = require('./routes/users');
