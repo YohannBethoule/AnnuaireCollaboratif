@@ -50,6 +50,10 @@ body {
 
 /* FICHE STYLE */
 
+legend{
+    
+}
+
 .informationSite div{
     display: flex;
     margin: 1%;
@@ -79,6 +83,10 @@ body {
     font-size: medium; 
 }
 
+.avis{
+    margin: 1%;
+}
+
 .questionnaire .avis .titreetetoile{
     display: flex;
     align-items: center;
@@ -93,10 +101,12 @@ body {
 .questionnaire .avis .titreetetoile div{
     flex: 1;
     margin-left: 3%;
+    text-align: left;
 }
 
 
 .avis2 {
+    margin: 1%;
     display: flex;
 }
 
@@ -111,6 +121,7 @@ body {
 }
 
 input[type=submit]{
+    margin: 1%;
     border-radius: 3px;
     width: 40%;
     height: 100%;
@@ -133,18 +144,12 @@ input[type=submit]:hover {
 */
 
 .rating {
-    width: 100%;
     font-size: 45px;
     overflow: hidden;
 }
 
-@media only screen and (max-width: 700px) {
-    .rating {
-        font-size: 35px;
-    }
-}
-
 .rating a {
+    float: right;
     color: #aaa;
     text-decoration: none;
     transition: color .4s;
@@ -158,6 +163,9 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+.rating2 {
+    direction: rtl;
+}
 
 .rating2 a {
     float: none
