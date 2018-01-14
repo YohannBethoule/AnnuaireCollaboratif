@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><project name="Gantt Réel Collectif" company="" webLink="http://" view-date="2017-10-30" view-index="0" gantt-divider-location="771" resource-divider-location="300" version="2.8.5" locale="fr">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="170" order="0"/>
-        <field id="tpd4" name="Date de début" width="83" order="1"/>
-        <field id="tpd5" name="Date de fin" width="79" order="2"/>
-        <field id="tpc1" name="Durée (en h)" width="58" order="3"/>
-        <field id="tpc3" name="Intensité" width="64" order="4"/>
-        <field id="tpc4" name="Justification" width="138" order="5"/>
-        <field id="tpc5" name="Ressources" width="160" order="6"/>
-        <option id="taskLabelUp" value="taskDates"/>
-        <option id="taskLabelDown" value="name"/>
-        <option id="taskLabelLeft" value="length"/>
-        <option id="taskLabelRight" value=""/>
+        <field id="tpd3" name="Nom" width="181" order="0"/>
+        <field id="tpd4" name="Date de début" width="94" order="1"/>
+        <field id="tpd5" name="Date de fin" width="90" order="2"/>
+        <field id="tpc1" name="Durée (en h)" width="68" order="3"/>
+        <field id="tpc4" name="Justification" width="149" order="4"/>
+        <field id="tpc5" name="Ressources" width="170" order="5"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -203,31 +198,31 @@
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Mise en place projet"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="35" name="Diagramme de classes" meeting="false" start="2017-11-07" duration="6" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Mise en place projet"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="36" name="Commencer cahier des charges" meeting="false" start="2017-11-07" duration="6" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion Projet"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
         </task>
         <task id="37" name="Design &amp; maquettes" meeting="false" start="2017-11-07" duration="6" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="3 (Yannis) + 4 (Alex)"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Design"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis, Alex"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot, A. Cardoso"/>
         </task>
         <task id="44" name="Mise en place base serveur Node.js" color="#8cb6ce" meeting="false" start="2017-11-07" duration="6" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="4"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Mise en place projet"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="40" name="Rassemblement travail effectué &amp; discussions" meeting="false" start="2017-11-13" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
@@ -268,31 +263,31 @@
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Mise en place projet"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="51" name="Transférer diagrammes sur STARUML" color="#8cb6ce" meeting="false" start="2017-11-14" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="0.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Clareté projet"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="53" name="Commencement site web" meeting="false" start="2017-11-14" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2,5 (yannis) + 3 (Alex)"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Mise en place site web"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis, Alex"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot, A. Cardoso"/>
         </task>
         <task id="55" name="Commencement GANTT collectifs" meeting="false" start="2017-11-14" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann, Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule, J. Point"/>
         </task>
         <task id="56" name="Commencement codage de la bulle d'extension" meeting="false" start="2017-11-14" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="3.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Application"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann, Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule, A. Delain"/>
         </task>
         <task id="58" name="Rassemblement travail effectué" meeting="false" start="2017-11-20" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
@@ -330,49 +325,49 @@
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Application"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="65" name="Ajout librairies Node.js" color="#8cb6ce" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Application"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="67" name="Documentation droits (législation)" color="#8cb6ce" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Projet"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="68" name="Ajout nouvelles pages HTML" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="3"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Site web"/>
-            <customproperty taskproperty-id="tpc5" value="Alex"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
         </task>
         <task id="69" name="Recherche &amp; choix des librairies à utiliser pour les graphiques" color="#8cb6ce" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Application"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
         </task>
         <task id="72" name="Commencement MCD &amp; MLD" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Base de données"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
         </task>
         <task id="75" name="Cahier des charges" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
         </task>
         <task id="77" name="Poursuite diagrammes" meeting="false" start="2017-11-21" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Projet"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="78" name="Rassemblement travail effectué, discussions" meeting="false" start="2017-11-27" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
@@ -407,31 +402,31 @@
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Bases de données"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
         </task>
         <task id="83" name="Fin cahier des charges" color="#8cb6ce" meeting="false" start="2017-11-28" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur, Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain, Y. Bethoule"/>
         </task>
         <task id="89" name="Design extension" color="#8cb6ce" meeting="false" start="2017-11-28" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Design"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="92" name="Poursuite serveur Node.js" color="#8cb6ce" meeting="false" start="2017-11-28" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="3"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Serveur"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="93" name="Poursuite site web" color="#8cb6ce" meeting="false" start="2017-11-28" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Site web"/>
-            <customproperty taskproperty-id="tpc5" value="Alex"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
         </task>
         <task id="94" name="Rassemblement travail effectué, discussions diverses" meeting="false" start="2017-12-04" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2.5"/>
@@ -454,31 +449,31 @@
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Site web"/>
-            <customproperty taskproperty-id="tpc5" value="Alex"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
         </task>
         <task id="105" name="Poursuite serveur Node.js" meeting="false" start="2017-12-05" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="3"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Serveur"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="106" name="Apprentissage Node.js" meeting="false" start="2017-12-05" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Projet"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
         </task>
         <task id="107" name="Poursuite MCD &amp; BD" meeting="false" start="2017-12-05" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Bases de données"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
         </task>
         <task id="112" name="Poursuite diagrammes" meeting="false" start="2017-12-05" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="113" name="Rassemblement du travail effectué" color="#8cb6ce" meeting="false" start="2017-12-11" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
@@ -507,31 +502,31 @@
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
-            <customproperty taskproperty-id="tpc5" value="Yannis"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
         </task>
         <task id="124" name="Préparation oral entrainement" color="#8cb6ce" meeting="false" start="2017-12-12" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Projet (oral)"/>
-            <customproperty taskproperty-id="tpc5" value="Yohann"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
         </task>
         <task id="126" name="Préparation diaporama oral d'entrainement" color="#8cb6ce" meeting="false" start="2017-12-12" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Projet (oral)"/>
-            <customproperty taskproperty-id="tpc5" value="Jonathan"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
         </task>
         <task id="128" name="Poursuite serveur Node.js" color="#8cb6ce" meeting="false" start="2017-12-12" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="2"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Serveur"/>
-            <customproperty taskproperty-id="tpc5" value="Arthur"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
         </task>
         <task id="130" name="Poursuite site web" color="#8cb6ce" meeting="false" start="2017-12-12" duration="7" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Site web"/>
-            <customproperty taskproperty-id="tpc5" value="Alex"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
         </task>
         <task id="132" name="Rassemblement travail effectué" meeting="false" start="2017-12-18" duration="1" complete="0" expand="true">
             <customproperty taskproperty-id="tpc1" value="1"/>
