@@ -1,0 +1,62 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Wib - Vérifiez vos lectures
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(rel='icon', type='image/png', href='/images/Logo/icon_ext.png')
+  body
+    header
+      #logo
+        a(href='/')
+          img(src='/images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+      nav
+        ul
+          li
+            a(href='/', title='Accueil') Home
+          li
+            a(href='jade/recherche', title='Recherche') Recherche
+          li
+            a(href='jade/apropos', title='A propos') A propos
+    main
+      br
+      br
+      #corps
+        h1 L'extension qui vérifie vos lectures.
+        br
+        #paragraphes
+          p
+            | Vérifiez la
+            span.stronger  qualité
+            |  de ce que vous lisez.
+          p
+            | Consultez la
+            span.stronger  fiabilité
+            |  du site que vous consultez.
+          p
+            | Informez les autres utilisateurs de la
+            span.stronger  cohérence
+            |  des sites que vous visitez.
+        #bouton
+          form(name="telecharger",method="post",action="/telecharger")
+          a#download(href='telecharger', title="Telechargement de l'extension")
+            span.first_letter T
+            | éléchargez
+        br
+        #avis
+          p Donnez votre avis !
+          .rating.rating2
+            //
+            a(href='#5', title='Give 5 stars') ★
+            //
+            a(href='#4', title='Give 4 stars') ★
+            //
+            a(href='#3', title='Give 3 stars') ★
+            //
+            a(href='#2', title='Give 2 stars') ★
+            //
+            a(href='#1', title='Give 1 star') ★
+    br
+    footer
+      a#haut(href='#logo') Haut de page
