@@ -1,5 +1,6 @@
 doctype html
 html(lang='fr')
+<<<<<<< HEAD
   head
     meta(charset='utf-8')
     |     
@@ -46,3 +47,30 @@ html(lang='fr')
     |     
     footer
       a#haut(href='#logo')  Haut de page
+=======
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Wib - Rechercher un site
+        link(rel='stylesheet', href='/stylesheets/recherche.css')
+        link(rel='icon', type='image/png', href='../../images/icon_ext.png')
+    body
+        header
+            #logo
+                a(href='../')
+                    img(src='../../images/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+            nav
+                ul
+                    li
+                        a(href='../', title='Accueil') Home
+                    li
+                        a(href='recherche', title='Recherche') Recherche
+                    li
+                        a(href='apropos', title='A propos') A propos
+        main
+        form(name="adduser",method="post",action="/rechercheAction")
+            input(type='text', name='search', placeholder='Search..')
+            button(type='submit', value='Go!') Go!
+        footer
+            a#haut(href='#logo')  Haut de page
+>>>>>>> c4c19fa2161584d88ec22b7454661534eb119804
