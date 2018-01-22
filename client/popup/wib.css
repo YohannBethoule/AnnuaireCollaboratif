@@ -12,6 +12,7 @@ body{
     margin: 3% auto;
     font-size: 80%;
     text-wrap: normal;
+    text-align: center;
 }
 
 h1{
@@ -25,16 +26,37 @@ h1 a{
     color:black;
     padding: 2px;
     text-decoration-line: none;
-    color: white;
     transition: all 0.3s ease;
 }
 
 h1 a:hover{
+    border-radius: 3px;
     transition: all 0.3s ease;
     background-color: white;
-    color: black;
+    color: white;
+    background-color: black;
 }
 
 #currentURL{
     text-align:left;
+}
+
+button{
+    height: 50%;
+    width: 80%;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 120%;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    border: solid 1px black;
 }
