@@ -2,61 +2,118 @@ doctype html
 html(lang='fr')
   head
     meta(charset='utf-8')
+    |     
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Wib - Vérifiez vos lectures
-    link(href='/stylesheets/style.css', rel='stylesheet')
-    link(rel='icon', type='image/png', href='/images/Logo/icon_ext.png')
+    |     
+    title Wib - V&eacute;rifiez vos lectures
+    |     
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    |     
+    link(rel='icon', type='image/png', href='images/Logo/icon_ext.png')
   body
     header
       #logo
-        a(href='/')
-          img(src='/images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+        a(href='../index.html')
+          img(src='images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller Ã  l'accueil")
+      |     
       nav
-        ul
-          li
-            a(href='/', title='Accueil') Home
-          li
-            a(href='jade/recherche', title='Recherche') Recherche
-          li
-            a(href='jade/apropos', title='A propos') A propos
+        .navbar
+          a(href='index.jade', title='Accueil')
+            p.lien Home
+          |             
+          a(href='html/recherche.jade', title='Recherche')
+            p.lien Recherche
+          |             
+          a(href='html/fiche.jade', title='Fiche')
+            p.lien Fiche
+          |             
+          a(href='html/apropos.jade', title='A propos')
+            p.lien A propos
     main
-      br
-      br
-      #corps
-        h1 L'extension qui vérifie vos lectures.
-        br
-        #paragraphes
-          p
-            | Vérifiez la
-            span.stronger  qualité
-            |  de ce que vous lisez.
-          p
-            | Consultez la
-            span.stronger  fiabilité
-            |  du site que vous consultez.
-          p
-            | Informez les autres utilisateurs de la
-            span.stronger  cohérence
-            |  des sites que vous visitez.
-        #bouton
-          form(name="telecharger",method="post",action="/telecharger")
-          a#download(href='telecharger', title="Telechargement de l'extension")
-            span.first_letter T
-            | éléchargez
-        br
-        #avis
-          p Donnez votre avis !
-          .rating.rating2
-            //
-            a(href='#5', title='Give 5 stars') ★
-            //
-            a(href='#4', title='Give 4 stars') ★
-            //
-            a(href='#3', title='Give 3 stars') ★
-            //
-            a(href='#2', title='Give 2 stars') ★
-            //
-            a(href='#1', title='Give 1 star') ★
+      .acceuil
+        #slideshow
+          // Slideshow container
+          .slideshow-container
+            // Full-width images with number and caption text
+            .mySlides.fade
+              .numbertext 1 / 3
+              |  &#x9;   
+              img(src='images/captureLeMonde.PNG', style='width:100%')
+              |  &#x9;   
+              .text Capture d&apos;&eacute;cran
+            |  &#x9; 
+            .mySlides.fade
+              .numbertext 2 / 3
+              |   &#x9;  
+              img(src='images/LogoIUT-2011.jpg', style='width:100%')
+              |   &#x9;  
+              .text Logo IUT
+            |   &#x9;
+            .mySlides.fade
+              .numbertext 3 / 3
+              |   &#x9;  
+              img(src='images/ScreenshotLeMonde.png', style='width:100%')
+              |   &#x9;  
+              .text Capture d&apos;&eacute;cran
+            // Next and previous buttons
+            a.prev(onclick='plusSlides(-1)') &#x276E;
+            |  &#x9; 
+            a.next(onclick='plusSlides(1)') &#x276F;
+          | &#x9;
+          br
+          // The dots/circles
+          div(style='text-align:center')
+            span.dot(onclick='currentSlide(1)')
+            | &#x9;  
+            span.dot(onclick='currentSlide(2)')
+            |  &#x9; 
+            span.dot(onclick='currentSlide(3)')
+        | &#x9;
+        script(type='text/javascript', src='scripts/slideshow.js')
+        |     
+        #corps
+          h1 L&apos;extension qui v&eacute;rifie vos lectures.
+          |         
+          |         
+          #paragraphes
+            p
+              | V&eacute;rifiez la 
+              span.stronger qualit&eacute;
+              |  de ce que vous lisez.
+            |             
+            p
+              | Consultez la 
+              span.stronger fiabilit&eacute;
+              |  du site que vous consultez.
+            |             
+            p
+              | Informez les autres utilisateurs de la 
+              span.stronger coh&eacute;rence
+              |  des sites que vous
+              |                 visitez.
+          |         
+          #bouton
+            a#download(href='http://www.lecentdeux.com/wp-content/uploads/2017/06/Trollface.png', title="Telechargement de l'extension")
+              span.first_letter T
+              | &eacute;l&eacute;chargez
+      #avis
+        p Donnez votre avis !
+        |        
+        .rating.rating2
+          //
+          a(href='#5', title='Give 5 stars') &starf;
+          //
+                   
+          a(href='#4', title='Give 4 stars') &starf;
+          //
+                   
+          a(href='#3', title='Give 3 stars') &starf;
+          //
+                   
+          a(href='#2', title='Give 2 stars') &starf;
+          //
+                   
+          a(href='#1', title='Give 1 star') &starf;
     br
     footer
       a#haut(href='#logo') Haut de page
