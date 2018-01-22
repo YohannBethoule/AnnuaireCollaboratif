@@ -1,105 +1,156 @@
-﻿doctype html
+doctype html
 html(lang='fr')
   head
     meta(charset='utf-8')
+    |     
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Wib - Fiche
+    |     
+    title Wib -Fiche
+    |     
     link(rel='stylesheet', href='../styles/fiche.css')
+    |     
     link(rel='icon', type='image/png', href='../images/icon_ext.png')
   body
     header
       #logo
         a(href='../index.html')
-          img(src='../images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller Ã  l'accueil")
+          img(src='../images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller Ã  l'accueil")
+      |         
       nav
         .navbar
           a(href='../index.html', title='Accueil')
             p.lien Home
+          |                 
           a(href='recherche.html', title='Recherche')
             p.lien Recherche
+          |                 
           a(href='fiche.html', title='Fiche')
             p.lien Fiche
+          |                 
           a(href='apropos.html', title='A propos')
             p.lien A propos
+    |     
     main
       form(action='', method='')
         fieldset.informationSite
           legend Information du site:
+          |                 
+          |                 
           div
             p Lien:
-            input(name='url', type='url', placeholder='Ex: LeMonde.fr')
+            |                     
+            input(name='url', placeholder='Ex: LeMonde.fr', type='url')
+          |                 
           br
+          |                 
           div
-            p Catégorie:
+            p Cat&eacute;gorie:
+            |  
+            |                     
             select(name='Catégories')
-              option(value='Actualité') Actualité
+              option(value='Actualité') Actualit&eacute;
+              |                         
               option(value='Sport') Sport
+              |                         
               option(value='Technologie') Technologie
+              |                         
               option(value='Autre') Autre
+        |             
         fieldset.questionnaire
-          legend Questionnaire détaillé
+          legend Questionnaire d&eacute;taill&eacute;
+          |                 
           .avis
             .titreetetoile
-              p Cohérence de l'écriture:
+              p Coh&eacute;rence de l&apos;&eacute;criture:
+              |                         
               .rating.rating2
                 //
-                a(href='#5', title='Give 5 stars') ★
+                a(href='#5', title='Give 5 stars') &starf;
                 //
-                a(href='#4', title='Give 4 stars') ★
+                                            
+                a(href='#4', title='Give 4 stars') &starf;
                 //
-                a(href='#3', title='Give 3 stars') ★
+                                            
+                a(href='#3', title='Give 3 stars') &starf;
                 //
-                a(href='#2', title='Give 2 stars') ★
+                                            
+                a(href='#2', title='Give 2 stars') &starf;
                 //
-                a(href='#1', title='Give 1 star') ★
+                                            
+                a(href='#1', title='Give 1 star') &starf;
+            |                     
             .titreetetoile
-              p Qualité du design:
+              p Qualit&eacute; du design:
+              |                         
               .rating.rating2
                 //
-                a(href='#5', title='Give 5 stars') ★
+                a(href='#5', title='Give 5 stars') &starf;
                 //
-                a(href='#4', title='Give 4 stars') ★
+                                                
+                a(href='#4', title='Give 4 stars') &starf;
                 //
-                a(href='#3', title='Give 3 stars') ★
+                                                
+                a(href='#3', title='Give 3 stars') &starf;
                 //
-                a(href='#2', title='Give 2 stars') ★
+                                                
+                a(href='#2', title='Give 2 stars') &starf;
                 //
-                a(href='#1', title='Give 1 star') ★
+                                                
+                a(href='#1', title='Give 1 star') &starf;
+            |                     
             .titreetetoile
-              p Qualité de l'illustration:
+              p Qualit&eacute; de l&apos;illustration:
+              |                         
               .rating.rating2
                 //
-                a(href='#5', title='Give 5 stars') ★
+                a(href='#5', title='Give 5 stars') &starf;
                 //
-                a(href='#4', title='Give 4 stars') ★
+                                            
+                a(href='#4', title='Give 4 stars') &starf;
                 //
-                a(href='#3', title='Give 3 stars') ★
+                                            
+                a(href='#3', title='Give 3 stars') &starf;
                 //
-                a(href='#2', title='Give 2 stars') ★
+                                            
+                a(href='#2', title='Give 2 stars') &starf;
                 //
-                a(href='#1', title='Give 1 star') ★
+                                            
+                a(href='#1', title='Give 1 star') &starf;
+            |                     
             .titreetetoile
-              p Facilité d’utilisation/accessibilité:
+              p Facilit&eacute; d&rsquo;utilisation/accessibilit&eacute;:
+              |                         
               .rating.rating2
                 //
-                a(href='#5', title='Give 5 stars') ★
+                a(href='#5', title='Give 5 stars') &starf;
                 //
-                a(href='#4', title='Give 4 stars') ★
+                                            
+                a(href='#4', title='Give 4 stars') &starf;
                 //
-                a(href='#3', title='Give 3 stars') ★
+                                            
+                a(href='#3', title='Give 3 stars') &starf;
                 //
-                a(href='#2', title='Give 2 stars') ★
+                                            
+                a(href='#2', title='Give 2 stars') &starf;
                 //
-                a(href='#1', title='Give 1 star') ★
+                                           
+                a(href='#1', title='Give 1 star') &starf;
+          |                 
           .avis2
             p Orientation politique:
+            |                     
             div
-              input(type='radio', name='orientationPolitique', value='oui')
+              input(name='orientationPolitique', value='oui', type='radio')
+              |                         
               p Oui
+            |                     
             div
-              input(type='radio', name='orientationPolitique', value='non', checked='checked')
+              input(name='orientationPolitique', value='non', checked='checked', type='radio')
+              |                         
               p Non
+        |             
         .submit
-          input(type='submit', value='Envoyer')
+          input(value='Envoyer', type='submit')
+    |     
     footer
       a#haut(href='#logo') Haut de page

@@ -2,112 +2,159 @@ doctype html
 html(lang='fr')
   head
     meta(charset='utf-8')
+    |     
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Wib - Le Modèle
+    |     
+    title Wib - Le Mod&egrave;le
+    |     
     link(rel='stylesheet', href='../styles/modele.css')
+    |     
     link(rel='icon', type='image/png', href='../images/Logo/icon_ext.png')
   body
     header
       #logo
         a(href='../index.html')
           img(src='../images/Logo/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+      |         
       nav
         .navbar
           a(href='../index.html', title='Accueil')
             p.lien Home
+          |                 
           a(href='recherche.html', title='Recherche')
             p.lien Recherche
+          |                 
           a(href='fiche.html', title='Fiche')
             p.lien Fiche
+          |                 
           a(href='apropos.html', title='A propos')
             p.lien A propos
+    |     
     main
       article
         .box
           .boxinfo
             h1 Nom du site
-            p Catégorie
+            |                     
+            p Cat&eacute;gorie
+          |                 
           .boxlogo
             a(href='http://www.lemonde.fr/')
               img(src='../images/Logo/LogoLeMonde.png', alt='Logo Le Monde', title='Logo Le Monde')
+        |             
         .box2
           .boxscreenshot
             img#myImg(src='../images/ScreenshotLeMonde.png', alt='Screenshot Le Monde')
             // The Modal
             #myModal.modal
-              span.close ×
+              span.close &times;
+              |                         
               img#img01.modal-content
+              |                         
               #caption
+            |                     
             script(type='text/javascript', src='../scripts/modal.js')
+          |                 
           .avis
-            p Fiabilité
+            p Fiabilit&eacute;
+            |                 
             .rating.rating2
               //
-              a(href='#5', title='Give 5 stars') ★
+              a(href='#5', title='Give 5 stars') &starf;
               //
-              a(href='#4', title='Give 4 stars') ★
+                                  
+              a(href='#4', title='Give 4 stars') &starf;
               //
-              a(href='#3', title='Give 3 stars') ★
+                                  
+              a(href='#3', title='Give 3 stars') &starf;
               //
-              a(href='#2', title='Give 2 stars') ★
+                                  
+              a(href='#2', title='Give 2 stars') &starf;
               //
-              a(href='#1', title='Give 1 star') ★
-            p Cohérence
+                              
+              a(href='#1', title='Give 1 star') &starf;
+            |           
+            p Coh&eacute;rence
+            |                 
             .rating.rating2
               //
-              a(href='#5', title='Give 5 stars') ★
+              a(href='#5', title='Give 5 stars') &starf;
               //
-              a(href='#4', title='Give 4 stars') ★
+                                  
+              a(href='#4', title='Give 4 stars') &starf;
               //
-              a(href='#3', title='Give 3 stars') ★
+                                  
+              a(href='#3', title='Give 3 stars') &starf;
               //
-              a(href='#2', title='Give 2 stars') ★
+                                  
+              a(href='#2', title='Give 2 stars') &starf;
               //
-              a(href='#1', title='Give 1 star') ★
+                              
+              a(href='#1', title='Give 1 star') &starf;
       #commentaires
         h2(nb_com='')
           | 3 Commentaires
           hr
+        |     
         form(action='', method='POST')
           .coordonnes
             input.auteur(name='auteur', placeholder='Pseudo', type='text')
+            |             
             input.mail(name='mail', placeholder='user@domain.ex', type='text')
+          |         
           textarea.msg(name='texte', placeholder='Votre commentaire')
+          |         
           input(value='Envoyer', type='submit')
+        |     
         br
+        |     
         .comment
           .avatar
             img(src='http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x', alt='avatar', width='75', height='75')
+          |         
           .message
             .author
               span.pseudo LeDabeurFou
+              |                 
               span.date - 01/12/2017
+            |             
             p.content
-              | Reprenons. Les éléments sont organisés soit horizontalement (par défaut), soit verticalement. Cela
-              | définit ce qu'on appelle l'axe principal. Il y a aussi un axe secondaire (cross axis).
+              | Reprenons. Les &eacute;l&eacute;ments sont organis&eacute;s soit horizontalement (par d&eacute;faut), soit verticalement. Cela
+              | d&eacute;finit ce qu&apos;on appelle l&apos;axe principal. Il y a aussi un axe secondaire (cross axis).
+        |     
         hr
+        |     
         .comment
           .avatar
             img(src='http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x', alt='avatar', width='75', height='75')
+          |         
           .message
             .author
               span.pseudo LeDabeurFou
+              |                 
               span.date - 01/12/2017
+            |             
             p.content
-              | Pourquoi je vous raconte ça ? Parce que nous allons découvrir comment aligner nos éléments sur l'axe
-              | principal et sur l'axe secondaire.
+              | Pourquoi je vous raconte &ccedil;a ? Parce que nous allons d&eacute;couvrir comment aligner nos &eacute;l&eacute;ments sur l&apos;axe
+              | principal et sur l&apos;axe secondaire.
+        |     
         hr
+        |     
         .comment
           .avatar
             img(src='http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x', alt='avatar', width='75', height='75')
+          |         
           .message
             .author
               span.pseudo LeDabeurFou
+              |                 
               span.date - 01/12/2017
+            |             
             p.content
-              | Comme je vous disais, si nos éléments sont placés dans une direction horizontale (ligne), l'axe
-              | secondaire est... vertical. Et inversement, si nos éléments sont dans une direction verticale
-              | (colonne), l'axe secondaire est horizontal.
+              | Comme je vous disais, si nos &eacute;l&eacute;ments sont plac&eacute;s dans une direction horizontale (ligne), l&apos;axe
+              | secondaire est... vertical. Et inversement, si nos &eacute;l&eacute;ments sont dans une direction verticale
+              | (colonne), l&apos;axe secondaire est horizontal.
+        |     
         hr
     br
     footer
