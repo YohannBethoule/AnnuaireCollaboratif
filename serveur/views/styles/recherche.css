@@ -48,6 +48,11 @@ body {
 
 /* RECHERCHE STYLE */
 
+.barRecherche{
+    display: flex;
+}
+
+
 input[type=text]{
     font-size: larger;
     width: 130px;
@@ -58,11 +63,12 @@ input[type=text]{
 }
 
 input[type=text]:focus {
-    width: 90%;
+    width: 95%;
 }
 
 input[type=submit]{
     border: 1px solid #000;
+    border-radius: 3px;
     background-color: black;
     color:white;
     font-size: larger;
