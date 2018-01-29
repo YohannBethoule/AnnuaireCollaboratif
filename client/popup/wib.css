@@ -12,6 +12,7 @@ body{
     margin: 3% auto;
     font-size: 80%;
     text-wrap: normal;
+    text-align: center;
 }
 
 h1{
@@ -25,16 +26,88 @@ h1 a{
     color:black;
     padding: 2px;
     text-decoration-line: none;
-    color: white;
     transition: all 0.3s ease;
 }
 
 h1 a:hover{
+    border-radius: 3px;
     transition: all 0.3s ease;
     background-color: white;
-    color: black;
+    color: white;
+    background-color: black;
 }
 
 #currentURL{
     text-align:left;
+}
+
+button{
+    margin: 1%;
+    padding: 2px;
+    width: 60%;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: black;
+    border: solid 1px white;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+}
+
+
+.lesAvis{
+	display: flex;
+	justify-content: space-around;
+}
+
+#commentaire textarea {
+    width: 400px;
+    font-family: 'Trebuchet MS', sans-serif;
+    resize:none;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+/*
+* Rating styles
+*/
+
+.avis{
+    width: 40%;
+    font-weight: bolder;
+    display: inline-block;
+    alignment: left;
+}
+.rating {
+    width: 160px;
+    font-size: 35px;
+    overflow:hidden;
+}
+.rating a {
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a     {
+    color: orange;
+    cursor: pointer;
+}
+.rating2 {
+    direction: rtl;
+}
+.rating2 a {
+    float:none
 }
