@@ -3,6 +3,12 @@ body {
     margin: 0% 20% 0% 20%;
 }
 
+@media screen and (max-width: 760px) {
+    body{ 
+        margin:1%;
+    }    
+}
+
 #logo {
     width: 250px;
     margin-left: auto;

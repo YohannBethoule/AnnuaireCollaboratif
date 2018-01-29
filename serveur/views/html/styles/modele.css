@@ -5,6 +5,11 @@ body {
     margin-right: 25%;
 }
 
+@media screen and (max-width: 760px) {
+    body{ 
+        margin:1%;
+    }    
+}
 
 #logo {
     width: 250px;
