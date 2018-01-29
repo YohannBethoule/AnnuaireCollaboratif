@@ -15,34 +15,34 @@ var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-    app.use(express.static(__dirname + '../views'));
+  res.render('index', { title: 'Express' });
+  app.use(express.static(__dirname + '../views'));
 });
 
 /* Autre Page. */
 
 //page recherche
-router.get('/jade/recherche', function(req, res, next) {
+router.get('/recherche', function(req, res, next) {
     //app.use('./routes', recherche);
     //router.get(recherche)
-    // var recherche =  require('./rechercheController');
+   // var recherche =  require('./rechercheController');
     //app.use('/routes', require('./rechercheController'));
-    res.render('jade/recherche', { title: 'Recherche' });
+    res.render('recherche', { title: 'Recherche' });
 });
 
 //page à propos
-router.get('/jade/apropos', function(req, res, next) {
-    res.render('jade/apropos', { title: 'A Propos' });
+router.get('/apropos', function(req, res, next) {
+  res.render('apropos', { title: 'A Propos' });
 });
 
 //page modele representative des annotation a faire a une page d'information
-router.get('/jade/modele', function(req, res, next) {
-    res.render('jade/modele', { title: 'Modele' });
+router.get('/modele', function(req, res, next) {
+  res.render('/modele', { title: 'Modele' });
 });
 
 //page permettant la connexion
 router.get('/connexion', function(req, res, next) {
-    res.render('connexion', { title: 'Connexion' });
+  res.render('connexion', { title: 'Connexion' });
 });
 
 
@@ -99,8 +99,8 @@ function getFile(exists, response, localpath)
 //interaction avec page (ajout commentaire, note , ...) :
 
 //signaler:
-//commentaire:
-//page:
+    //commentaire:
+    //page:
 
 //fin //mettre une partie dans users pour la verification des droits ? :
 

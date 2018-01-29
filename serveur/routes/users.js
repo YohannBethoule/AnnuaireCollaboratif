@@ -15,7 +15,7 @@ var app = express();
 //utiliser socket ou express-connection ou PassportJS ?
 
 app.route('/login') //validation de connexion
-// show the form (GET http://localhost:8080/login)
+    // show the form (GET http://localhost:8080/login)
     .get(function(req, res) {
         res.send('this is the login form');
     })
