@@ -4,7 +4,7 @@ body {
     margin: 0% 20% 0% 20%;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 850px) {
     body{ 
         margin:1%;
     }    
