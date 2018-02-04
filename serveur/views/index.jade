@@ -7,29 +7,34 @@ html(lang="fr")
     |     
     title Wib - Vérifiez vos lectures
     |     
-    link(rel="stylesheet", href="styles/style.css")
+    link(rel="stylesheet", href="stylesheets/style.css")
     |     
     link(rel="icon", type="image/png", href="images/Logo/icon_ext.png")
   body
     header
       #logo
-        a(href="index.html")
+        a(href="index=")
           img(src="images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller Ã  l'accueil")
       |     
       nav
         .navbar
-          a(href="index.html", title="Accueil")
+          a(href="", title="Accueil")
             p.lien Home
           |             
-          a(href="html/recherche.html", title="Recherche")
+          a(href="/recherche", title="Recherche")
             p.lien Recherche
           |             
-          a(href="html/fiche.html", title="Fiche")
+          a(href="/fiche", title="Fiche")
             p.lien Fiche
           |             
-          a(href="html/apropos.html", title="A propos")
+          a(href="/apropos", title="A propos")
             p.lien A propos
     main
+        if (typeof user === "undefined")
+          br
+        else
+          a Bienvenue #{user[0].username} !
+          br
       .acceuil
         #slideshow
           // Slideshow container
@@ -89,11 +94,9 @@ html(lang="fr")
             p
               | Informez les autres utilisateurs de la 
               span.stronger cohérence
-              |  des sites que vous
-              |                 visitez.
-          |         
+              |  des sites que vous visitez.
           #bouton
-            a#download(href="http://www.lecentdeux.com/wp-content/uploads/2017/06/Trollface.png", title="Telechargement de l'extension")
+            a#download(href="/telecharger", title="Telechargement de l'extension")
               span.first_letter T
               | éléchargez
       #avis
@@ -115,5 +118,6 @@ html(lang="fr")
                    
           a(href="#1", title="Give 1 star") ★
     br
+    script(src='/js/jquery.min.js')
     footer
       a#haut(href="#logo") Haut de page

@@ -1,4 +1,4 @@
-doctype html
+<doctype html
 html(lang="fr")
   head
     meta(charset="utf-8")
@@ -7,41 +7,69 @@ html(lang="fr")
     |     
     title Wib - Le Modèle
     |     
-    link(rel="stylesheet", href="../styles/recherche.css")
+    link(rel="stylesheet", href="/stylesheets/recherche.css")
     |     
     link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
   body
     header
       #logo
-        a(href="../index.html")
+        a(href="")
           img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
       |         
       nav
         .navbar
-          a(href="../index.html", title="Accueil")
+          a(href="", title="Accueil")
             p.lien Home
           |                 
-          a(href="recherche.html", title="Recherche")
+          a(href="recherche", title="Recherche")
             p.lien Recherche
           |                 
-          a(href="fiche.html", title="Fiche")
+          a(href="fiche", title="Fiche")
             p.lien Fiche
           |                 
-          a(href="apropos.html", title="A propos")
+          a(href="apropos", title="A propos")
             p.lien A propos
     main
       div
         br
         |         
-        form.barRecherche
-          input(type="text", name="search", placeholder="Search..")
+        form.barRecherche(method='POST')
+          input(type="text", name="search",id="search", placeholder="Search..")
           |             
           input(type="submit", value="Go!")
+        br
+        div(id="Pages" name="Pages")
+          table(BORDER=1,style="border-collapse: collapse;", width="100%")
+            thread
+              tr
+                  th(width="40%")  domaine
+                  th(width="10%")  Nom
+                  th(width="30%")  description
+                  th(width="10%")  type
+                  th(width="5%")  Note_1
+                  th(width="5%")  Note_2
+            tbody
+              if (typeof listPage === "undefined")
+                  td
+              else
+                each page in listPage
+                  tr
+                    form(method='GET',action='/recherche/'+'#{page.name}')
+                        td #{page.domain_name}
+                        td(name="search")  #{page.name}
+                        td  #{page.description}
+                        td  #{page.type}
+                        td  #{page.note1}
+                        td  #{page.note2}
+                        td
+                          input(type="submit", value=">")
+                  br
       |         
       |     
       br
       |         
       |     
       a#haut(href="modele.html")  voir un modele
+      script(src='/vueScript/recherche.js')
     footer
       a#haut(href="#logo")  Haut de page

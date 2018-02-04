@@ -1,39 +1,45 @@
 /**
- * zone reservé au utilisateur : connexion si celui ci possede l'extension
+ * zone de connection : connection si celui ci possede l'extension
  *
  */
 var express = require('express');
 var router = express.Router();
 var app = express();
+//var dbconfig = require('./bdd').Data;
+var passport   = require('passport')
+var bodyParser = require('body-parser')
 
-/* Connexion , Inscription, Verification Droit, Filtre les IP si trop de connection..    */
-
-//connection par default :
-//id d'invite
-
-
-//utiliser socket ou express-connection ou PassportJS ?
-
-app.route('/login') //validation de connexion
-    // show the form (GET http://localhost:8080/login)
-    .get(function(req, res) {
-        res.send('this is the login form');
-    })
-
-    // process the form (POST http://localhost:8080/login) (tentaive de connection)
-    .post(function(req, res) {
-        console.log('processing');
-        res.send('processing the login form!');
-    });
+/*connection base de donnee */ //utiliser sequelize ? et passportjs
 
 
 
-app.route('/inscription') //validation de connexion
-// show the form (GET http://localhost:8080/login)
-    .get(function(req, res) {
-        res.send('this is the Inscription form');
-    });
+// faire connection :
+//auto = invite
+//sinon connexion
 
-module.exports = router;
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    'user'     : 'picsou',
+    'password' : 'picsou',
+    database : 'Wib'
+});
 
+connection.connect(function(err) {
+    if (err) throw err
+    console.log('Connected to My Sql!')
+})
+
+/*
+connection.query('SELECT * from User', function(err, rows, fields) {
+    if (!err)
+        console.log('The solution is: ', rows);
+    else
+        console.log('Error while performing Query.');
+});
+*/
+module.exports = {
+    router:router,
+    connection:connection,
+};
 

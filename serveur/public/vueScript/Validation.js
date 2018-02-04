@@ -1,0 +1,1 @@
+//script destiné a verifié les textes et formulaires
