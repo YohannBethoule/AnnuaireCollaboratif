@@ -1,280 +1,207 @@
-
 body {
-    font-family: 'Trebuchet MS', sans-serif;
-    margin-left: 25%;
-    margin-right: 25%;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
+header{
 
-#logo {
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.navbar {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+#logo{
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.navbar a{
-    text-decoration: none;
+nav{
+  padding: 10px 0;
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.lien {
-    padding: 20px;
-    border-radius: 3px;
-    color: white;
-    background-color: black;
-    border: 1px solid black;
-    transition: all 0.3s ease;
+header > nav > ul{
+  padding: 0;
 }
 
-.lien:hover {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-    transition: all 0.3s ease;
+header > nav > ul > li{
+  display: inline-block;
+  padding: 0 5px;
+
+}
+header > nav > ul > li > a{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 15px;
+  transition: all 0.3s ease;
 }
 
-
-#haut {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-decoration: none;
-    color: black;
+header > nav > ul > li > a:hover{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: all 0.3s ease;
 }
 
-#haut:hover {
-    text-decoration: underline;
+#haut{
+  margin-left: 5%;
+  margin-right: 5%;
+  text-decoration: none;
+  color: black;
+}
+
+#haut:hover{
+  text-decoration: underline;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    transition: 0.3s;
+  max-width: 100%;
+  height: auto;
+  transition: 0.3s;
 }
 
-img:hover {
-    opacity: 0.7;
+img:hover{
+  opacity: 0.7;
 }
-
 
 /* MODELE STYLE */
 
-.box {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.box2 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.box2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: stretch;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.boxinfo {    
-    flex: 2;
+.boxinfo{
+  flex: 3;
 }
 
-.boxlogo {
-    flex: 1;
+.boxlogo{
+  flex: 1;
+}
+
+.boxscreenshot{
+  flex:3;
+}
+
+.avis{
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  font-weight: bolder;
+  flex:1;
+}
+
+@media screen and (max-width: 1200px){
+  .boxscreenshot{
+    flex:3;
     text-align: center;
-}
+  }
 
-.boxlogo img{
-    width: 50%;    
-}
-
-.boxscreenshot {
-    flex: 2;
-}
-
-.boxscreenshot img{
-    width: 95%;
-}
-
-.avis {
-    display: flex;
+  .box2{
     flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    height: auto;
-    text-align: center;
-    font-weight: bolder;
-    flex: 1;
+  }
 }
 
-@media screen and (max-width: 1200px) {
-    .boxscreenshot {
-        flex: 3;
-        width: 100%;
-    }
-
-    .box2 {
-        flex-direction: column;
-    }
-}
-
-/* Comment Style */
-
-#commentaires form {
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#commentaires .coordonnes {
-    display: flex;
-    justify-content: space-around;
-    margin: 5% 0% 5% 0%;
-}
-
-#commentaires form div input {
-    width: calc(50% - 50px);
-    padding: 5px 10px;
-    border: none;
-    border-bottom: 1px solid #000;
-}
-
-#commentaires textarea {
-    font-family: 'Trebuchet MS', sans-serif;
-    resize:none;
-    border: none;
-    border-bottom: 1px solid #000;
-    height: 150px;
-    margin: 15% 2% 15% 2%;
-
-}
-
-#commentaires input[type=submit] {
-    width: 30%;
-    margin-left: 35%;
-    margin-right: 35%;
-    height: 20%;
-    background-color: black;
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 1px solid black;
-}
-
-@media only screen and (max-width: 700px) {
-    #commentaires .coordonnes {
-        flex-direction: column;
-    }
-    
-    #commentaires form div input {
-       width: 90%; 
-    }
-}
-
-#commentaires input[type=submit]:hover {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-    transition: all 0.3s ease;
-}
-
-#commentaires .comment {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3%;
-}
-
-#commentaires .message {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-}
 
 /*Modal Style*/
 
 #myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#myImg:hover {
-    opacity: 0.7;
-}
+#myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 100%;
-    max-width: 80%;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
 }
 
 /* Caption of Modal Image */
 #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
 }
 
 /* Add Animation */
 .modal-content, #caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
+@-webkit-keyframes zoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
 
 @keyframes zoom {
-    from {transform: scale(0.1)}
-    to {transform: scale(1)}
+  from {transform: scale(0.1)}
+  to {transform: scale(1)}
 }
 
 /* The Close Button */
 .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
 
 /*
@@ -282,37 +209,30 @@ img:hover {
 */
 
 .rating {
-    width: 100%;
-    margin: 0 auto 1em;
-    font-size: 45px;
-    overflow: hidden;
+  width: 226px;
+  margin: 0 auto 1em;
+  font-size: 45px;
+  overflow:hidden;
 }
-
-@media only screen and (max-width: 700px) {
-    .rating {
-        font-size: 30px;
-    }
-}
-
 .rating a {
-    float: right;
-    color: #aaa;
-    text-decoration: none;
-    transition: color .4s;
+  float:right;
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: color .4s;
+  -moz-transition: color .4s;
+  -o-transition: color .4s;
+  transition: color .4s;
 }
-
 .rating a:hover,
 .rating a:hover ~ a,
 .rating a:focus,
-.rating a:focus ~ a {
-    color: orange;
-    cursor: pointer;
+.rating a:focus ~ a     {
+  color: orange;
+  cursor: pointer;
 }
-
 .rating2 {
-    direction: rtl;
+  direction: rtl;
 }
-
 .rating2 a {
-    float: none
+  float:none
 }
