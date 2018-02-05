@@ -4,25 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib - Fiche</title>
-    <link rel="stylesheet" href="../styles/fiche.css">
-    <link rel="icon" type="image/png" href="../images/icon_ext.png"/>
+    <link rel="stylesheet" href="../../public/stylesheets/fiche.css">
+    <link rel="icon" type="image/png" href="../../public/images/icon_ext.png"/>
 </head>
 <body>
     <header>
         <div id="logo">
-            <a href="../../../routes/index.html">
-                <img src="../images/Logo/logo.png" alt="Logo Wib" title="Logo - Aller Ã  l'accueil">
+            <a href="../../routes/index.html">
+                <img src="../../public/images/Logo/logo.png" alt="Logo Wib" title="Logo - Aller Ã  l'accueil">
             </a>
         </div>
-        <nav>
-            <div class="navbar">
-                <a href="../../../routes/index.html" title="Accueil"><p class="lien">Home</p></a>
-                <a href="recherche.html" title="Recherche"><p class="lien">Recherche</p> </a>
-                <a href="fiche.html" title="Fiche"><p class="lien">Fiche</p></a>
-                <a href="apropos.html" title="A propos"><p class="lien">A propos</p></a>
-            </div>
-        </nav>
+    <nav>
+        <div class="topnav" id="myTopnav">
+          <a href="../../routes/index.html" class="active">Acceuil</a>
+          <a href="recherche.html">Recherche</a>
+          <a href="fiche.html">Fiche</a>
+          <a href="apropos.html">A propos</a>
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </nav>
     </header>
+<script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
 
 
 
@@ -63,6 +65,7 @@
                           --><a href="#1" title="Give 1 star">★</a>
                         </div>
                     </div>
+                    <hr>
                     <div class="titreetetoile">
                         <p>Qualité du design:</p>
                         <div class="rating rating2"><!--
@@ -73,6 +76,7 @@
                               --><a href="#1" title="Give 1 star">★</a>
                         </div>
                     </div>
+                    <hr>
                     <div class="titreetetoile">
                         <p>Qualité de l'illustration:</p>
                         <div class="rating rating2"><!--
@@ -83,6 +87,7 @@
                           --><a href="#1" title="Give 1 star">★</a>
                         </div>
                     </div>
+                    <hr>
                     <div class="titreetetoile">
                         <p>Facilité d’utilisation/accessibilité:</p>
                         <div class="rating rating2"><!--
@@ -93,6 +98,7 @@
                          --><a href="#1" title="Give 1 star">★</a>
                         </div>
                     </div>
+                    <hr>
                 </div>
 
                 <div class="avis2">
