@@ -38,9 +38,9 @@ function  modelePage() {
     this.recherche = function (string,res,callback) {
 
         var r = string;
-        connection.query('Select * from Website where name = ?',nom, function(err, rows, fields) {
+        connection.query('Select * from Website where name = ?',string, function(err, rows, fields) {
             if (!err) {
-                callback(rows[0]);
+                callback(rows);
             }
             else
                 console.log('Error while performing Query.');
@@ -49,7 +49,7 @@ function  modelePage() {
     /*modele :*/
 
     this.getSimple = function (page, res) {
-        connection.query('update Website where domain_name = ?', [domain_name], function (err, result) {
+        connection.query('UPDATE Website where domain_name = ?', [domain_name], function (err, result) {
             if (!err) {
                 res.render('recherche', {page : rows[0] ,title: 'Index' });
             }
@@ -70,12 +70,40 @@ function  modelePage() {
     }
 
     this.modify = function (name,description, res, callback) {
-        var sql = "update Website set description = ?",description;
-        var sql2 = " where domain_name = ?",name;
-        console.log("sql ",sql+sql2);
-        connection.query(sql+sql2, function (err, result) {
+
+        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
+        var data = [description,name];
+        console.log("sql ",sql , data);
+        connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.');
+                console.log('Page modifie.',result[0]);
+                callback(result[0]);
+            }
+            else
+                console.log('Error while performing Query.');
+        });
+    }
+    this.modifyFiabilite = function (name, fiabilite, res, callback) {
+        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
+        var data = [description,name];
+        console.log("sql ",sql , data);
+        connection.query(sql, data,function (err, result) {
+            if (!err) {
+                console.log('Page modifie.',result[0]);
+                callback(result[0]);
+            }
+            else
+                console.log('Error while performing Query.');
+        });
+    }
+
+    this.modifyCoherence = function (name, fiabilite, res, callback) {
+        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
+        var data = [description,name];
+        console.log("sql ",sql , data);
+        connection.query(sql, data,function (err, result) {
+            if (!err) {
+                console.log('Page modifie.',result[0]);
                 callback(result[0]);
             }
             else
@@ -103,6 +131,8 @@ function  modelePage() {
                 console.log('Error while performing Query.');
         });
     }
+
+    //ajout supression commentaire , modifier note 1&2:
 }
 
 module.exports = {

@@ -44,10 +44,9 @@ html(lang="fr")
               tr
                   th(width="40%")  domaine
                   th(width="10%")  Nom
-                  th(width="30%")  description
-                  th(width="10%")  type
-                  th(width="5%")  Note_1
-                  th(width="5%")  Note_2
+                  th(width="20%")  type
+                  th(width="15%")  Fiabilité
+                  th(width="15%")  Cohérence
             tbody
               if (typeof listPage === "undefined")
                   td
@@ -57,7 +56,6 @@ html(lang="fr")
                     form(method='GET',action='/recherche/'+'#{page.name}')
                         td #{page.domain_name}
                         td(name="search")  #{page.name}
-                        td  #{page.description}
                         td  #{page.type}
                         td  #{page.note1}
                         td  #{page.note2}

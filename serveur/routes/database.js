@@ -24,6 +24,7 @@ function CreateUsersDataBase() {
 function CreateDataBase() {
     var connection = mysql.createConnection(dbconfig.data.connection);
 
+    //donnees, sites, note..
     connection.query('CREATE DATABASE ' + dbconfig.data.database);
 
     //commentaire :
@@ -95,6 +96,8 @@ function CreateDataBase() {
          ADD CONSTRAINT `fk_user_mark` FOREIGN KEY \(`username`\) REFERENCES `User` \(`username`\), \
         )');
 
+
+    //[..]
     console.log('Success: Database Created!')
     connection.end();
 }

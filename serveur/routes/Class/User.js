@@ -1,18 +1,22 @@
-//class User
+/*
 
-var User = { //utilisation de Passport ?
-        id:Number,
-        pseudo:String,
-        mdp:String,
-        mail:String,
-        //Invite:Boolean,
-        //Admin:Boolean
+        Classe User :
 
-        getUser: function () {
+ */
+var connection = require('../users').connection;
+var User  = function(id,pseudo,mdp,email,nom,prenom){ //utilisation de Passport ?
+        this.id = id;
+        this.pseudo = pseudo;
+        this.mdp = mdp;
+        this.mail = email;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.isadmin = false;
+
+        this.modifier = function () {
             return ;
         }
-
-
 }
+var d =  User;
 
 module.exports.User = User;

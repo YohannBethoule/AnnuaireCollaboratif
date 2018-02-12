@@ -4,6 +4,37 @@ Projet n°3
 Version de node.js : version 9.0.0
 BDD: MySQL
 
+Travail à faire semaine 1 de Janvier
+Arthur : mise en place inscription connexion 
+Yannis : recherche sur statistique
+Alex : design + passage html to jade
+Jo : 
+Yohann : extension 
+
+Travail à faire semaine 2 de Janvier
+
+Arthur : mise en place d'une pre base de donnée + interaction utilisateur + liste des pages
+Yannis : 
+Alex : design
+Jo : analyse node js
+Yohann : extension 
+
+Travail à faire semaine 3 de Janvier
+
+Arthur : création d'ojet intermediaire à la base de donnée + restructuration base de donnée
+Yannis : analyse node js
+Alex : design
+Jo : analyse node js
+Yohann : extension 
+
+Travail à faire semaine 4 de Janvier
+
+Arthur : remise en forme des chemins 
+Yannis :  refait base de donné (+ mise en place javascript)
+Alex : design + ajout slide + script
+Jo : test ajout page (fiche) + script javascript + resoudre problème passage html to jade
+Yohann : extension + rapport
+
 Travail à faire semaine 4:
 - finir cahier des charges : Arthur et Yohann
 - commencer la mise en place de la base de données MySQL : Yannis et Yohann
