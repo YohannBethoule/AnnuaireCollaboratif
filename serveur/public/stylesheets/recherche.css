@@ -76,9 +76,6 @@ body {
 
 /* RECHERCHE STYLE */
 
-.barRecherche{
-    display: flex;
-}
 
 input[type=text]{
     font-size: larger;
@@ -106,4 +103,29 @@ input[type=submit]:hover {
     background-color: white;
     border: 1px solid black;
     transition: all 0.3s ease;
+}
+
+.ecranRecherche {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+
+.barRecherche{
+    margin:1%;
+    text-align: right;
+}
+
+aside{  
+    margin-top: 3px;
+    width:300px;
+    border: none;
+    border-radius: 3%;
+    background-color: #333;
+}
+
+/*Slide Style*/
+
+#slider {
+    margin:3%;
 }
