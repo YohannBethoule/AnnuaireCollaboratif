@@ -7,7 +7,7 @@ html(lang="fr")
     |     
     title Wib - Fiche
     |     
-    link(rel="stylesheet", href="../styles/fiche.css")
+    link(rel="stylesheet", href="stylesheets/style.css")
     |     
     link(rel="icon", type="image/png", href="../images/icon_ext.png")
   body
@@ -18,7 +18,7 @@ html(lang="fr")
       |         
       nav
         .navbar
-          a(href="", title="Accueil")
+          a(href="/", title="Accueil")
             p.lien Home
           |                 
           a(href="/recherche", title="Recherche")
@@ -42,6 +42,9 @@ html(lang="fr")
             input(name="url", type="url", placeholder="Ex: LeMonde.fr")
           |                 
           br
+          div
+            p Description
+            textarea(name="description")
           |                 
           div
             p Catégorie:
@@ -80,7 +83,7 @@ html(lang="fr")
                 a(href="#1", title="Give 1 star") ★
             |                     
             .titreetetoile
-              p Qualité du design:
+              p Fiabilité des arguments :
               |                         
               .rating.rating2
                 //
@@ -97,45 +100,6 @@ html(lang="fr")
                 //
                                                 
                 a(href="#1", title="Give 1 star") ★
-            |                     
-            .titreetetoile
-              p Qualité de l'illustration:
-              |                         
-              .rating.rating2
-                //
-                a(href="#5", title="Give 5 stars") ★
-                //
-                                            
-                a(href="#4", title="Give 4 stars") ★
-                //
-                                            
-                a(href="#3", title="Give 3 stars") ★
-                //
-                                            
-                a(href="#2", title="Give 2 stars") ★
-                //
-                                            
-                a(href="#1", title="Give 1 star") ★
-            |                     
-            .titreetetoile
-              p Facilité d’utilisation/accessibilité:
-              |                         
-              .rating.rating2
-                //
-                a(href="#5", title="Give 5 stars") ★
-                //
-                                            
-                a(href="#4", title="Give 4 stars") ★
-                //
-                                            
-                a(href="#3", title="Give 3 stars") ★
-                //
-                                            
-                a(href="#2", title="Give 2 stars") ★
-                //
-                                           
-                a(href="#1", title="Give 1 star") ★
-          |                 
           .avis2
             p Orientation politique:
             |                     

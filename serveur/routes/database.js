@@ -24,6 +24,7 @@ function CreateUsersDataBase() {
 function CreateDataBase() {
     var connection = mysql.createConnection(dbconfig.data.connection);
 
+    //donnees, sites, note..
     connection.query('CREATE DATABASE ' + dbconfig.data.database);
 
     //commentaire :
@@ -40,6 +41,8 @@ function CreateDataBase() {
             `username` VARCHAR(20) NOT NULL, \
         )');
 
+
+    //[..]
     console.log('Success: Database Created!')
     connection.end();
 }

@@ -18,7 +18,7 @@ html(lang="fr")
       |         
       nav
         .navbar
-          a(href="index", title="Accueil")
+          a(href="/", title="Accueil")
             p.lien Home
           |                 
           a(href="recherche", title="Recherche")
@@ -41,12 +41,22 @@ html(lang="fr")
                 h1 Nom du site : #{page.name}
                 p Catégorie : #{page.type}
                 | lien :
-                label(name="domain_name",id="domain_name", value='#{page.domain_name}') #{page.domain_name}
+                label(name="domain_name",id="domain_name") #{page.domain_name}
+                br
+                br
                 | description :
-                input(type='textarea', name="description", value='#{page.description}')
-                input(type='submit', value='Submit')
-                p note 1 : #{page.note1}
-                p note 2 : #{page.note2}
+                textarea(name="description") #{page.description}
+                input(type='submit', value="Modifier")
+                br
+                br
+                a note fiabilité : #{page.note1} |
+                input(name="note1",type='number',max='10', min='0')
+                input(type='submit', value="Noter Cohérence /10")
+                br
+                br
+                a note cohérence : #{page.note2} |
+                input(type='number',name="note2",max='10', min='0')
+                input(type='submit', value="Noter Fiabilité /10")
           .boxlogo
             a(href="http://www.lemonde.fr/")
               //img(src="../images/Logo/LogoLeMonde.png", alt="Logo Le Monde", title="Logo Le Monde")

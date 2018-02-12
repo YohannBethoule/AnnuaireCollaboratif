@@ -10,21 +10,35 @@ var modelePage = require('../modele/modelePage').modelePage;
 
 exports.modele = function(req, res, next){
     console.log("modele :");// + nom
-    res.render('modele', { title: 'Modele' ,});
-
-    //faire recherche de la page :
-    //recherche
-    //page = ...
-
-    //requete json :
-
+    res.render('ajout', { title: 'Modele' ,});//faire une page d'ajout de page
 };
+
+exports.ajoutModele = function(req, res, next){
+    console.log("Bienvenue Fiche :");
+    var page = req.body.url;
+    modelePage.create(page,res);
+};
+
 exports.modeleModifier = function(req, res, next) {
-    var page = req.params.name;
+    var page_nom = req.params.name;
+    var dn = req.body.domain_name;
     var desc = req.body.description;
-    console.log("modifier modele :",page,desc);
-    modelePage.modify(page, desc, res, function (value) {
-        res.render('modele', {page: value, title: 'Modele'});
+    var note1 = req.body.note1;
+    var note2 = req.body.note2;
+    console.log("modifier modele :",dn, desc, note1,note2);
+    //verfier modif av
+    modelePage.modify(page_nom, desc, res, function (value) {
+        res.redirect('/recherche/'+page_nom);
     });
+
+    /*
+    modelePage.modifyFiabilite(note1, desc, res, function (value) {
+
+    });
+
+    modelePage.modifyCoherence(note2, desc, res, function (value) {
+
+    });
+    */
 }
 

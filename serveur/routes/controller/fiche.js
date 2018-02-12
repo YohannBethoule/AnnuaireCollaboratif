@@ -15,12 +15,14 @@ exports.fiche = function(req, res, next){
     res.render('fiche', {title: 'Fiche' });
 };
 
-exports.ajoutPage = function(req, res, next){
+exports.ajoutFiche = function(req, res, next){
     console.log("Bienvenue Fiche :");
     var page = req.body.url;
-    modelePage.create(page,res);
+    var desc = req.body.description;
+    modelePage.create()
 
-    //console.log("recherche:" ,l);
+    //
+
 };
 
 
