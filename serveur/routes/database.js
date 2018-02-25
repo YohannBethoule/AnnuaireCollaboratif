@@ -5,31 +5,9 @@ var mysql = require('mysql');
 function CreateDataBase() {
     var connection = mysql.createConnection(dbconfig.connection);
 
-<<<<<<< HEAD
-    // connection.query('DROP DATABASE ' + dbconfig.database);
+    connection.query('DROP DATABASE ' + dbconfig.database);
     // --> Je drop la database pour les tests, car il y a une erreur si on essaie de créer alors que la base existe déjà
     connection.query('CREATE DATABASE ' + dbconfig.database);
-=======
-    //donnees, sites, note..
-    connection.query('CREATE DATABASE ' + dbconfig.data.database);
-
-    //commentaire :
-    connection.query('\
-        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.data.comment_table + '` ( \
-            `username` VARCHAR(200) NOT NULL, \
-            `domain_name` VARCHAR(200) NOT NULL, \
-            `text` text NOT NULL, \
-        )');
-
-    // mark [...]
-    connection.query('\
-        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.data.Mark_table + '` ( \
-            `username` VARCHAR(200) NOT NULL, \
-            `domain_name` VARCHAR(200) NOT NULL, \
-            `object` VARCHAR(50) NOT NULL, \
-            `note` int(11) NOT NUL, \
-        )');
->>>>>>> 1b846877c16c7fb39e60a1c042d98f69fc5f4136
 
     // utilisateurs
 
@@ -109,7 +87,6 @@ function CreateDataBase() {
 
     // argument (relatif à un commentaire ou une page)
     connection.query('\
-<<<<<<< HEAD
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.argumentTable + '` ( \
             `id_argument` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `orientation` VARCHAR(20) NOT NULL, \
@@ -137,18 +114,8 @@ function CreateDataBase() {
         PRIMARY KEY (`id_argument`),\
         FOREIGN KEY (`id_argument`) REFERENCES `Argument` (`id_argument`)\
     )');
-
-    console.log('Success: Database Created! WOOHOO')
-=======
-        ALTER TABLE `' + dbconfig.database + '`.`' + dbconfig.data.Mark_table + '`(\
-         ADD CONSTRAINT `fk_site_mark` FOREIGN KEY \(`domain_name`\) REFERENCES `Website` \(`domain_name`\), \
-         ADD CONSTRAINT `fk_user_mark` FOREIGN KEY \(`username`\) REFERENCES `User` \(`username`\), \
-        )');
-
-
-    //[..]
+    
     console.log('Success: Database Created!')
->>>>>>> 1b846877c16c7fb39e60a1c042d98f69fc5f4136
     connection.end();
 }
 
