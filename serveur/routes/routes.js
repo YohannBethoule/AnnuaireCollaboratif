@@ -59,13 +59,18 @@ router.route('/recherche')
 
 //modele :
 router.route('/recherche/:name')
-    .get(recherche.rechercheGeneral)
+    .get(recherche.modele)
     .post(modele.modeleModifier);
+
+//ajouter une page (utilisé aussi par l'extension)
+router.route('/ajouter')
+    .get(modele.modele)
+    .post(modele.ajoutModele);
 
 //fiche:
 router.route('/fiche')
     .get(fiche.fiche)
-    .post(fiche.ajoutPage);
+    .post(fiche.ajoutFiche);
 
 //router.post('/recherche/:nomSites/:nomPage',recherche.recherchePage);
 

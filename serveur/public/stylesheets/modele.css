@@ -100,12 +100,12 @@ img:hover {
 }
 
 .boxinfo {    
-    flex: 2;
+    flex: 3;
 }
 
 .boxlogo {
     flex: 1;
-    text-align: center;
+    text-align: right;
 }
 
 .boxlogo img{
@@ -117,7 +117,7 @@ img:hover {
 }
 
 .boxscreenshot img{
-    width: 95%;
+    width: 100%;
 }
 
 .avis {

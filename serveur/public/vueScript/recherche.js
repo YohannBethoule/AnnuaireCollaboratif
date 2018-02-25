@@ -1,3 +1,4 @@
+
 //script associé à recherche.jade
 
 //permet d'afficher la list de recherche (list actulité par default)
@@ -5,7 +6,6 @@
 $('#Pages').forEach(function (page,index) {
     $('#Pages').append('h1 ' +page.adresse);
 })
-
 
 
 $(function () {
