@@ -1,23 +1,17 @@
-
-//database pour les utilisateurs
-module.exports.User = {
-    'connection' :{
-        'host'     : 'localhost',
-        'user'     : 'picsou',
-        'password' : 'picsou',
-    },
-    'database' : 'Users',
-    'user_table' : 'users'
-};
-
 //database pour les données (sites, fiche, ...)
-module.exports.Data = {
+module.exports = {
     'connection' :{
         'host'     : 'localhost',
-        'user'     : 'picsou',
-        'password' : 'picsou',
+        'user'     : 'root',
+        'password' : '11022015',
     },
     'database' : 'Data',
-    'site_table' : 'sites',
-    'fiche_table' : 'fiches'
+    'websiteTable' : 'Website',
+    'notePageTable' : 'Note_Page',
+    'ficheTable' : 'Fiche',
+    'userTable' : 'Utilisateur',
+    'pageTable' : 'Page',
+    'commentTable' : 'Commentaire',
+    'argumentTable' : 'Argument',
+    'urlArgumentTable' : 'URL_Argument'
 };
