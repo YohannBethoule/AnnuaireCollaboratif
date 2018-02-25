@@ -11,27 +11,45 @@
 <body>
 
 <header>
+
     <div id="logo">
-        <a href="index.html">
-            <img src="../public/images/Logo/logo.png" alt="Logo Wib" title="Logo - Aller Ã  l'accueil">
+
+        <a href="index.php">
+
+            <img src="../public/images/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
+
         </a>
+
     </div>
+
     <nav>
+
         <div class="topnav" id="myTopnav">
-          <a href="index.html" class="active">Acceuil</a>
-          <a href="../views/html/recherche.html">Recherche</a>
-          <a href="../views/html/Fiche.html">Fiche</a>
-          <a href="../views/html/apropos.html">A propos</a>
-          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+            <a href="index.php" class="active">Acceuil</a>
+
+            <a href="../views/html/recherche.php">Recherche</a>
+
+            <a href="../views/html/fiche.php">Fiche</a>
+
+            <a href="../views/html/apropos.php">A propos</a>
+
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
         </div>
+
     </nav>
+
 </header>
-<script type="text/javascript" src="../public/scripts/menuDeroulant.js"></script>
+
+<script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
+
+
 
 
 <main>
 <div class="acceuil">
-      <div id="slideshow">
+    <div id="slideshow">
  	<!-- Slideshow container -->
 	<div class="slideshow-container">
 
@@ -68,7 +86,7 @@
  	 <span class="dot" onclick="currentSlide(3)"></span>
 	</div> 
      </div>
-	<script type="text/javascript" src="../public/scripts/slideshow.js""></script>
+	<script src="../public/scripts/slideshow.js"></script>
 
 
     <div id="corps">
