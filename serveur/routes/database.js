@@ -2,7 +2,7 @@
 var dbconfig = require('./bdd');
 var mysql = require('mysql');
 
-function CreateDataBase() {
+CreateDataBase = function() {
     var connection = mysql.createConnection(dbconfig.connection);
 
     connection.query('DROP DATABASE ' + dbconfig.database);
@@ -10,7 +10,7 @@ function CreateDataBase() {
     connection.query('CREATE DATABASE ' + dbconfig.database);
 
     // utilisateurs
-
+    console.log("aqz");
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.userTable + '` ( \
             `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -120,5 +120,5 @@ function CreateDataBase() {
 }
 
 module.exports = {
-    createUsersDataBase : new CreateDataBase()
+    createDataBase : CreateDataBase
 } ;

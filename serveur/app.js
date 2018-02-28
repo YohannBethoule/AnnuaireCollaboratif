@@ -13,13 +13,13 @@ var passport   = require('passport')
 var flash = require('connect-flash');
 
 //page perso :
+var database = require('./routes/database');
+database.createDataBase();
+
 var index = require('./routes/controller/index');
-var users = require('./routes/users');
+var recherche = require('./routes/controller/recherche');
 var routes = require('./routes/routes');
-var recherche = require('./routes/controller/recherche')
-
-
-//users.createDataBase();//pour creer database Users si elle n'existe pas
+var users = require('./routes/users');
 require('./routes/passport')(passport);
 
 
@@ -60,7 +60,6 @@ app.use('/', routes.router);
 /*
      Erreur :
  */
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

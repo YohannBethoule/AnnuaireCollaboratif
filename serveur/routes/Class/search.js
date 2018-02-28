@@ -16,6 +16,4 @@ var search  = function(){
         callback(res);
     }
 }
-
-
 module.exports.search = search;

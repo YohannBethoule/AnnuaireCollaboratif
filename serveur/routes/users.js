@@ -20,9 +20,9 @@ var bodyParser = require('body-parser')
 var mysql = require('mysql')
 var connection = mysql.createConnection({
     host     : 'localhost',
-    'user'     : 'picsou',
-    'password' : 'picsou',
-    database : 'Wib'
+    'user'     : 'root',
+    'password' : '0000',
+    database : 'Data'
 });
 
 connection.connect(function(err) {
@@ -30,16 +30,8 @@ connection.connect(function(err) {
     console.log('Connected to My Sql!')
 })
 
-/*
-connection.query('SELECT * from User', function(err, rows, fields) {
-    if (!err)
-        console.log('The solution is: ', rows);
-    else
-        console.log('Error while performing Query.');
-});
-*/
 module.exports = {
     router:router,
-    connection:connection,
+    connection:connection
 };
 

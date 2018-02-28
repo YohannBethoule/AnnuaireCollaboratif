@@ -1,9 +1,0 @@
-{
-  "page": [
-    { "id": 1, "title": "json-server","url":"url", "author": "riri" }
-  ],
-  "commentaire": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "riri" , "email":"email"}
-}

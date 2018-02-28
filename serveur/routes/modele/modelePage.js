@@ -24,6 +24,61 @@ function  modelePage() {
         });
         return tab;
     }
+    this.getCommentaire = function(res,callback) {
+        var tab=[];
+        connection.query('Select * from Website', function(err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+              console.log('Error while performing Query.');
+        });
+        return tab;
+    }
+    this.getSite = function(res,callback) {
+        var tab=[];
+        connection.query('Select * from Website', function(err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+              console.log('Error while performing Query.');
+        });
+        return tab;
+    }
+    this.getFiche = function(res,callback) {
+        var tab=[];
+        connection.query('Select * from Website', function(err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+              console.log('Error while performing Query.');
+        });
+        return tab;
+    }
+    this.getArgument = function(res,callback) {
+        var tab=[];
+        connection.query('Select * from Website', function(err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+              console.log('Error while performing Query.');
+        });
+        return tab;
+    }
+    this.getUrlArgument = function(res,callback) {
+        var tab=[];
+        connection.query('Select * from Website', function(err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+              console.log('Error while performing Query.');
+        });
+        return tab;
+    }
 
     this.getNom = function (nom,res,callback) {
         connection.query('Select * from Website where name = ?',nom, function(err, rows, fields) {

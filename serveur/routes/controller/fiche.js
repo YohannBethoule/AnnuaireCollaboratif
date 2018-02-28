@@ -19,10 +19,8 @@ exports.ajoutFiche = function(req, res, next){
     console.log("Bienvenue Fiche :");
     var page = req.body.url;
     var desc = req.body.description;
-    modelePage.create()
-
+    modelePage.create();
     //
-
 };
 
 

@@ -53,21 +53,19 @@ html(lang="fr")
               else
                 each page in listPage
                   tr
-                    form(method='GET',action='/recherche/'+'#{page.name}')
+                    form(method='GET',action='/'+'#{page.name}')
                         td #{page.domain_name}
                         td(name="search")  #{page.name}
                         td  #{page.type}
                         td  #{page.note1}
-                        td  #{page.note2}
                         td
                           input(type="submit", value=">")
                   br
-      |         
       |     
       br
       |         
       |     
-      a#haut(href="modele.html")  voir un modele
+      a#haut(href="modele")  voir un modele
       script(src='/vueScript/recherche.js')
     footer
       a#haut(href="#logo")  Haut de page

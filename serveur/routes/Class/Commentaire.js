@@ -5,22 +5,48 @@
  */
 var connection = require('../users').connection;
 
-var Commentaire  = function(id,url,nomAuteur,type,description){
+/**
+ *
+ * @param id
+ * @param nomAuteur
+ * @param domain_name
+ * @param texte
+ * @constructor
+ */
+var Commentaire  = function(id,nomAuteur,domain_name,texte){
     this.id = id;
-    this.url = url;
+    this.domain_name = domain_name;
     this.nomAuteur = nomAuteur;
-    this.type = type; //orientation
-    this.description = description;
     this.sujet= sujet;
-    this.fiabilité = fiabilité;
+    this.texte = texte;
 
-    this.update = function (url,nomAuteur,type,description) {
-        this.url = url;
+    //update/modifier
+    /**
+     *
+     * @param nomAuteur
+     * @param domain_name
+     * @param type
+     * @param description
+     */
+    this.update = function (nomAuteur,domain_name,type,description) {
+        this.domain_name = domain_name;
         this.nomAuteur = nomAuteur;
-        this.type = type; //orientation
-        this.description = description;
+        this.texte = texte;
         this.sujet= sujet;
-        this.fiabilité = fiabilité;
+    }
+
+    /*
+            Base De Donnee :
+    */
+    /**
+     * permet de remplir les arguments avec les valeur adequat
+     */
+    this.getThisCommentaire = function (domain_name,callback) {
+
+    }
+
+    this.getArguments = function (callback) {
+
     }
 }
 

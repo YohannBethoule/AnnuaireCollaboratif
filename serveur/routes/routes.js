@@ -25,7 +25,7 @@ var routes = this;
 router.use(function timeLog (req, res, next) {
     console.log('Time : ', Date.now())
     next()
-})
+});
 
     /* GET home page. */
 router.use('/', function(req, res, next) {
@@ -48,6 +48,7 @@ router.route('/')
     .get(index.index)
     .post(index.telecharger);
 
+//faire get ?
 router.post('/telecharger',index.telecharger);//telechargement de l'extension : utiliser module serve-static ?
 
 /* Autre Page. */// -->Utiliser controller
@@ -56,11 +57,6 @@ router.post('/telecharger',index.telecharger);//telechargement de l'extension : 
 router.route('/recherche')
     .get(recherche.recherche)
     .post(recherche.rechercheNormale);
-
-//modele :
-router.route('/recherche/:name')
-    .get(recherche.modele)
-    .post(modele.modeleModifier);
 
 //ajouter une page (utilisé aussi par l'extension)
 router.route('/ajouter')
@@ -113,6 +109,12 @@ router.route('/inscription')
 router.get('/apropos', function(req, res, next) {
     res.render('apropos', { title: 'A Propos' });
 });
+
+//modele :
+router.route('/:name')
+    .get(recherche.modele)
+    .post(modele.modeleModifier);
+
 
 //function de telechargement du fichier d'extension
 function getFile(exists, response, localpath)
