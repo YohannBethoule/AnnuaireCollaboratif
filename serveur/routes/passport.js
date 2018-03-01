@@ -27,7 +27,7 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-        connection.query("SELECT * FROM users WHERE id = ? ",[id], function(err, rows){
+        connection.query("SELECT * FROM Utilisateur WHERE id = ? ",[id], function(err, rows){
             done(err, rows);
         });
     });
@@ -47,7 +47,7 @@ module.exports = function(passport) {
                 // we are checking to see if the user trying to login already exists
                 var email = req.body.email;
                 console.log("new user : ", username , req.body.email);
-                connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows) {
+                connection.query("SELECT * FROM Utilisateur WHERE username = ?",[username], function(err, rows) {
                     if (err)
                         return done(err);
                     if (rows.length) {
@@ -62,7 +62,7 @@ module.exports = function(passport) {
                             email: email
                         };
 
-                        var insertQuery = "INSERT INTO users( username, password ,email) values (?,?,?)";
+                        var insertQuery = "INSERT INTO Utilisateur( username, password ,email) values (?,?,?)";
 
                         connection.query(insertQuery,[newUserMysql.username, newUserMysql.password, newUserMysql.email],function(err, rows) {
                             newUserMysql.id = rows.insertId;
@@ -97,7 +97,7 @@ module.exports = function(passport) {
                 passReqToCallback : true // allows us to pass back the entire request to the callback
             },
             function(req, username, password, done) { // callback with email and password from our form
-                connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows){
+                connection.query("SELECT * FROM Utilisateur WHERE username = ?",[username], function(err, rows){
                     if (err)
                         return done(err);
                     if (!rows.length) {

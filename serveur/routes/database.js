@@ -13,7 +13,7 @@ CreateDataBase = function() {
     console.log("aqz");
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.userTable + '` ( \
-            `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
+            `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `username` VARCHAR(100) NOT NULL, \
             `password` CHAR(60) NOT NULL, \
             `email` VARCHAR(100) NOT NULL, \
