@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib - A propos</title>
     <link rel="stylesheet" href="../../public/stylesheets/apropos.css">
-    <link rel="icon" type="image/png" href="../images/icon_ext.png"/>
+    <link rel="icon" type="image/png" href="../../public/images/icon_ext.png"/>
 </head>
 <body>
 
-<<<<<<< HEAD:serveur/views/html/apropos.php
-<?php include "header.html"; ?>
-=======
-<?php include "header.html";?>
->>>>>>> c0f2d6348c3a3ae8e0b9b8e19fd3700313dd319b:serveur/views/html/apropos.php
+
+<?php include "../../public/template/header.php"; ?>
 
 
 <main>

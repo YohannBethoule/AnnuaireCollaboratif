@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php include "header.html";?>
+<?php include "../../public/template/header.php";?>
 
 
     <main>

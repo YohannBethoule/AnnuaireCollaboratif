@@ -73,11 +73,61 @@ body {
 }
 
 
+#userSpace{
+    max-width: 300px;
+    display:flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 3px;
+}
+#userSpace form{
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+}
+#userSpace form input{
+    margin: 3px;
+}
+
+#userSpace a{
+    margin-top: 3px;
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.userSpaceMain{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+@media screen and (max-width: 650px) {
+    #header{
+    }
+}
+
+#userSpace form input[type=submit] {
+    text-align: center;
+    background-color: #333;
+    text-transform: uppercase;
+    color: white;
+}
+
+#userSpace form input[type=submit]:hover {
+    color: #333;
+    background-color: white;
+    border: 2px solid #333;
+    transition: all 0.5s ease;
+}
+
 
 /* RECHERCHE STYLE */
 
 
-input[type=text]{
+.barRecherche input[type=text]{
     font-size: larger;
     width: 130px;
     border: none;
@@ -86,19 +136,19 @@ input[type=text]{
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.barRecherche input[type=text]:focus {
     width: 100%; 
 }
 
-input[type=submit]{
+.barRecherche input[type=submit]{
     border: 1px solid #000;
     border-radius: 3px;
-    background-color: black;
+    background-color: #333;
     color:white;
     font-size: larger;
 }
 
-input[type=submit]:hover {
+.barRecherche input[type=submit]:hover {
     color: black;
     background-color: white;
     border: 1px solid black;

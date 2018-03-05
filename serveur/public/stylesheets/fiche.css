@@ -75,6 +75,109 @@ body {
 }
 
 
+#userSpace{
+    max-width: 300px;
+    display:flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 3px;
+}
+#userSpace form{
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+}
+#userSpace form input{
+    margin: 3px;
+}
+
+#userSpace a{
+    margin-top: 3px;
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.userSpaceMain{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+@media screen and (max-width: 650px) {
+    #header{
+    }
+}
+
+#userSpace form input[type=submit] {
+    text-align: center;
+    background-color: #333;
+    text-transform: uppercase;
+    color: white;
+}
+
+#userSpace form input[type=submit]:hover {
+    color: #333;
+    background-color: white;
+    border: 2px solid #333;
+    transition: all 0.5s ease;
+}
+
+
+
+#userSpace{
+    max-width: 300px;
+    display:flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 3px;
+}
+#userSpace form{
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+}
+#userSpace form input{
+    margin: 3px;
+}
+
+#userSpace a{
+    margin-top: 3px;
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.userSpaceMain{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+@media screen and (max-width: 650px) {
+    #header{
+    }
+}
+
+#userSpace form input[type=submit] {
+    text-align: center;
+    background-color: #333;
+    text-transform: uppercase;
+    color: white;
+}
+
+#userSpace form input[type=submit]:hover {
+    color: #333;
+    background-color: white;
+    border: 2px solid #333;
+    transition: all 0.5s ease;
+}
+
+
 
 /* FICHE STYLE */
 
@@ -143,13 +246,13 @@ body {
     text-align: center;
 }
 
-input[type=submit]{
+.submit input[type=submit]{
     margin: 1%;
     border-radius: 3px;
     width: 40%;
     height: 100%;
-    border: 1px solid #000;
-    background-color: black;
+    border: 1px solid #333;
+    background-color: #333;
     color:white;
     font-size: larger;
 }

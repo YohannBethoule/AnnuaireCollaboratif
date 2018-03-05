@@ -7,12 +7,12 @@
     <title>Wib - Recherche</title>
     <link rel="stylesheet" href="../../public/stylesheets/recherche.css">
     <link href="../../public/stylesheets/nouislider.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../public/images/Logo/icon_ext.png"/>
+    <link rel="icon" type="image/png" href="../../public/images/Logo/icon_ext.png"/>
 
 </head>
 <body>
     
-	<?php include "header.html";?>
+	<?php include "../../public/template/header.php";?>
 
 	<main>
 		<div class="ecranRecherche">
@@ -27,7 +27,7 @@
 		            <input type="submit" value="Go!">
 		        </form>
 		        <br>        
-		    	<a id="haut" href="modele.html"> voir un modele</a>
+		    	<a id="haut" href="modele.php"> voir un modele</a>
 		    </div>
 		        
 		   

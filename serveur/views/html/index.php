@@ -4,79 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib - Vérifiez vos lectures</title>
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
-    <link rel="icon" type="image/png" href="../public/images/Logo/icon_ext.png"/>
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    <link rel="icon" type="image/png" href="../../public/images/Logo/icon_ext.png"/>
 </head>
 
 <body>
 
-<header>
-
-<<<<<<< HEAD:serveur/routes/index.php
-    <div id="header">
-        <div id="logo">
-            <a href="index.php">
-                <img src="../public/images/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
-            </a>
-        </div>
-
-        <div class="userSpaceMain">
-            <?php
-                include "../views/html/inscription.html";
-                /*if (typeof(user) ==="undefined")
-                    include("../views/html/inscription.html");
-                else
-                    include("../views/html/connected.html");*/
-            ?>
-        </div>
-
-        <nav>
-            <div class="topnav" id="myTopnav">
-                <a href="index.php" class="active">Acceuil</a>
-                <a href="../views/html/recherche.php">Recherche</a>
-                <a href="../views/html/fiche.php">Fiche</a>
-                <a href="../views/html/apropos.php">A propos</a>
-                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-            </div>
-        </nav>
-    </div>
-</header>
-=======
-    <div id="logo">
-
-        <a href="index.php">
-
-            <img src="../public/images/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
-
-        </a>
-
-    </div>
-
-    <nav>
-
-        <div class="topnav" id="myTopnav">
-
-            <a href="index.php" class="active">Acceuil</a>
-
-            <a href="../views/html/recherche.php">Recherche</a>
-
-            <a href="../views/html/fiche.php">Fiche</a>
-
-            <a href="../views/html/apropos.php">A propos</a>
-
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-
-        </div>
-
-    </nav>
-
-</header>
-
->>>>>>> c0f2d6348c3a3ae8e0b9b8e19fd3700313dd319b:serveur/routes/index.php
-<script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
-
-
-
+<?php include "../../public/template/header.php"; ?>
 
 <main>
 <div class="acceuil">
@@ -87,19 +21,19 @@
  	 <!-- Full-width images with number and caption text -->
  	 <div class="mySlides fade">
  	   <div class="numbertext">1 / 3</div>
- 	   <img src="../public/images/captureLeMonde.PNG" style="width:100%">
+ 	   <img src="../../public/images/captureLeMonde.PNG" style="width:100%">
  	   <div class="text">Capture d'écran</div>
   	</div>
 
  	 <div class="mySlides fade">
   	  <div class="numbertext">2 / 3</div>
-  	  <img src="../public/images/LogoIUT-2011.jpg" style="width:100%">
+  	  <img src="../../public/images/LogoIUT-2011.jpg" style="width:100%">
   	  <div class="text">Logo IUT</div>
   	</div>
 
   	<div class="mySlides fade">
   	  <div class="numbertext">3 / 3</div>
-  	  <img src="../public/images/ScreenshotLeMonde.png" style="width:100%">
+  	  <img src="../../public/images/ScreenshotLeMonde.png" style="width:100%">
   	  <div class="text">Capture d'écran</div>
   	</div>
 
@@ -117,7 +51,7 @@
  	 <span class="dot" onclick="currentSlide(3)"></span>
 	</div> 
      </div>
-	<script src="../public/scripts/slideshow.js"></script>
+	<script src="../../public/scripts/slideshow.js"></script>
 
 
     <div id="corps">

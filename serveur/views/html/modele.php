@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,152 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wib - Le Modèle</title>
     <link rel="stylesheet" href="../../public/stylesheets/modele.css">
-    <link rel="icon" type="image/png" href="../images/Logo/icon_ext.png"/>
+    <link rel="icon" type="image/png" href="../../public/images/Logo/icon_ext.png"/>
 
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <a href="../../routes/index.html">
-                <img src="../../public/images/Logo/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
-            </a>
-        </div>
-    <nav>
-        <div class="topnav" id="myTopnav">
-          <a href="../../routes/index.html" class="active">Acceuil</a>
-          <a href="recherche.html">Recherche</a>
-          <a href="fiche.html">Fiche</a>
-          <a href="apropos.html">A propos</a>
-          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-    </nav>
-    </header>
-<script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
 
+<?php include "../../public/template/header.php"; ?>
 
-    <main>
-        <article>
-            <div class="box">
+<main>
+    <article>
+        <div class="box">
 
-                <div class="boxinfo">
-                    <h1>Nom du site</h1>
-                    <p>Catégorie</p>
-                </div>
-
-                <div class="boxlogo">
-                    <a href="http://www.lemonde.fr/">
-                        <img src="../../public/images/Logo/LogoLeMonde.png" alt="Logo Le Monde" title="Logo Le Monde">
-                    </a>
-                </div>
+            <div class="boxinfo">
+                <h1>Nom du site</h1>
+                <p>Catégorie</p>
             </div>
 
-            <div class="box2">
-                <div class="boxscreenshot">
+            <div class="boxlogo">
+                <a href="http://www.lemonde.fr/">
+                    <img src="../../public/images/Logo/LogoLeMonde.png" alt="Logo Le Monde" title="Logo Le Monde">
+                </a>
+            </div>
+        </div>
 
-                    <img id="myImg" src="../../public/images/ScreenshotLeMonde.png" alt="Screenshot Le Monde">
+        <div class="box2">
+            <div class="boxscreenshot">
 
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <span class="close">×</span>
-                        <img class="modal-content" id="img01">
-                        <div id="caption"></div>
-                    </div>
-                    <script type="text/javascript" src="../../public/scripts/modal.js"></script>
+                <img id="myImg" src="../../public/images/ScreenshotLeMonde.png" alt="Screenshot Le Monde">
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <span class="close">×</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+                <script type="text/javascript" src="../../public/scripts/modal.js"></script>
+            </div>
+
+            <div class="avis">
+                <p>Fiabilité</p>
+                <div class="rating rating2"><!--
+                  --><a href="#5" title="Give 5 stars">★</a><!--
+                  --><a href="#4" title="Give 4 stars">★</a><!--
+                  --><a href="#3" title="Give 3 stars">★</a><!--
+                  --><a href="#2" title="Give 2 stars">★</a><!--
+              --><a href="#1" title="Give 1 star">★</a>
+                </div>
+                <p>Cohérence</p>
+                <div class="rating rating2"><!--
+                  --><a href="#5" title="Give 5 stars">★</a><!--
+                  --><a href="#4" title="Give 4 stars">★</a><!--
+                  --><a href="#3" title="Give 3 stars">★</a><!--
+                  --><a href="#2" title="Give 2 stars">★</a><!--
+              --><a href="#1" title="Give 1 star">★</a>
                 </div>
 
-                <div class="avis">
-                    <p>Fiabilité</p>
-                <div class="rating rating2"><!--
-                  --><a href="#5" title="Give 5 stars">★</a><!--
-                  --><a href="#4" title="Give 4 stars">★</a><!--
-                  --><a href="#3" title="Give 3 stars">★</a><!--
-                  --><a href="#2" title="Give 2 stars">★</a><!--
-              --><a href="#1" title="Give 1 star">★</a>
-          </div>
-          <p>Cohérence</p>
-                <div class="rating rating2"><!--
-                  --><a href="#5" title="Give 5 stars">★</a><!--
-                  --><a href="#4" title="Give 4 stars">★</a><!--
-                  --><a href="#3" title="Give 3 stars">★</a><!--
-                  --><a href="#2" title="Give 2 stars">★</a><!--
-              --><a href="#1" title="Give 1 star">★</a>
-          </div>
+            </div>
+        </div>
 
-      </div>
-  </div>
+    </article>
+    <div id="commentaires">
+        <h2 class="" nb_com>
+            3 Commentaires
+            <hr>
+        </h2>
 
-</article>
-<div id="commentaires">
-    <h2 class="" nb_com>
-        3 Commentaires
+        <form action="" method="POST">
+            <textarea class="msg" name="texte" placeholder="Votre commentaire"></textarea>
+
+            <input value="Envoyer" type="submit">
+        </form>
+
+        <br>
+
+        <div class="comment">
+            <div class="avatar">
+                <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
+                     alt="avatar" width="75" height="75">
+            </div>
+            <div class="message">
+                <div class="author">
+                    <span class="pseudo">LeDabeurFou</span>
+                    <span class="date">- 01/12/2017</span>
+                </div>
+                <p class="content">
+                    Reprenons. Les éléments sont organisés soit horizontalement (par défaut), soit verticalement. Cela
+                    définit ce qu'on appelle l'axe principal. Il y a aussi un axe secondaire (cross axis).
+                </p>
+            </div>
+        </div>
         <hr>
-    </h2>
-
-    <form action="" method="POST">
-        <div class="coordonnes">
-            <input class="auteur" name="auteur" placeholder="Pseudo" type="text">
-            <input class="mail" name="mail" placeholder="user@domain.ex" type="text">
-        </div>
-        <textarea class="msg" name="texte" placeholder="Votre commentaire"></textarea>
-
-        <input value="Envoyer" type="submit">
-    </form>
-
-    <br>
-
-    <div class="comment">
-        <div class="avatar">
-            <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
-            alt="avatar" width="75" height="75">
-        </div>
-        <div class="message">
-            <div class="author">
-                <span class="pseudo">LeDabeurFou</span>
-                <span class="date">- 01/12/2017</span>
+        <div class="comment">
+            <div class="avatar">
+                <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
+                     alt="avatar" width="75" height="75">
             </div>
-            <p class="content">
-                Reprenons. Les éléments sont organisés soit horizontalement (par défaut), soit verticalement. Cela
-                définit ce qu'on appelle l'axe principal. Il y a aussi un axe secondaire (cross axis).
-            </p>
-        </div>
-    </div>
-    <hr>
-    <div class="comment">
-        <div class="avatar">
-            <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
-            alt="avatar" width="75" height="75">
-        </div>
-        <div class="message">
-            <div class="author">
-                <span class="pseudo">LeDabeurFou</span>
-                <span class="date">- 01/12/2017</span>
+            <div class="message">
+                <div class="author">
+                    <span class="pseudo">LeDabeurFou</span>
+                    <span class="date">- 01/12/2017</span>
+                </div>
+                <p class="content">
+                    Pourquoi je vous raconte ça ? Parce que nous allons découvrir comment aligner nos éléments sur l'axe
+                    principal et sur l'axe secondaire.
+                </p>
             </div>
-            <p class="content">
-                Pourquoi je vous raconte ça ? Parce que nous allons découvrir comment aligner nos éléments sur l'axe
-                principal et sur l'axe secondaire.
-            </p>
         </div>
-    </div>
-    <hr>
-    <div class="comment">
-        <div class="avatar">
-            <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
-            alt="avatar" width="75" height="75">
-        </div>
-        <div class="message">
-            <div class="author">
-                <span class="pseudo">LeDabeurFou</span>
-                <span class="date">- 01/12/2017</span>
+        <hr>
+        <div class="comment">
+            <div class="avatar">
+                <img src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&amp;d=mm&amp;r=x"
+                     alt="avatar" width="75" height="75">
             </div>
-            <p class="content">
-                Comme je vous disais, si nos éléments sont placés dans une direction horizontale (ligne), l'axe
-                secondaire est... vertical. Et inversement, si nos éléments sont dans une direction verticale
-                (colonne), l'axe secondaire est horizontal.
-            </p>
+            <div class="message">
+                <div class="author">
+                    <span class="pseudo">LeDabeurFou</span>
+                    <span class="date">- 01/12/2017</span>
+                </div>
+                <p class="content">
+                    Comme je vous disais, si nos éléments sont placés dans une direction horizontale (ligne), l'axe
+                    secondaire est... vertical. Et inversement, si nos éléments sont dans une direction verticale
+                    (colonne), l'axe secondaire est horizontal.
+                </p>
+            </div>
         </div>
+        <hr>
     </div>
-    <hr>
-</div>
 </main>
 
 
