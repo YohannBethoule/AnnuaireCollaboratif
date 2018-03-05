@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,35 +11,35 @@
 
 </head>
 <body>
+    
+	<?php include "header.html";?>
 
-<?php include "header.html"; ?>
+	<main>
+		<div class="ecranRecherche">
+			<aside>
+				<div id="slider"></div>
+			</aside>
 
-<main>
-    <div class="ecranRecherche">
-        <aside>
-            <div id="slider"></div>
-        </aside>
+		    <div class="sectionRecherche">
+		        <br>
+		        <form class="barRecherche">
+		            <input type="text" name="search" placeholder="Search..">
+		            <input type="submit" value="Go!">
+		        </form>
+		        <br>        
+		    	<a id="haut" href="modele.html"> voir un modele</a>
+		    </div>
+		        
+		   
+		</div>
+	</main>
 
-        <div class="sectionRecherche">
-            <br>
-            <form class="barRecherche">
-                <input type="text" name="search" placeholder="Search..">
-                <input type="submit" value="Go!">
-            </form>
-            <br>
-            <a id="haut" href="modele.php"> voir un modele</a>
-        </div>
+	<script src="../../public/scripts/nouislider.min.js"></script>
 
-
-    </div>
-</main>
-
-<script src="../../public/scripts/nouislider.min.js"></script>
-
-<script src="../../public/scripts/slider.js"></script>
-
-<footer>
-    <a id="haut" href="#logo"> Haut de page</a>
-</footer>
+	<script src="../../public/scripts/slider.js"></script>
+	
+	<footer>
+	    <a id="haut" href="#logo"> Haut de page</a>
+	</footer>
 </body>
 </html>

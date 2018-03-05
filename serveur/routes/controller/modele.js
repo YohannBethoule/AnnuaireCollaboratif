@@ -7,16 +7,34 @@
 var express = require('express');
 var router = express.Router();
 var modelePage = require('../modele/modelePage').modelePage;
+var page = require('../Class/Page');
 
+/**
+ * ajouter
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.modele = function(req, res, next){
-    console.log("modele :");// + nom
-    res.render('ajout', { title: 'Modele' ,});//faire une page d'ajout de page
+    console.log("rechercheGeneral : "+ req.params.name);
+    modelePage.getNom(req.params.name,res,function (value) {
+        res.render('modele', {page : value ,title: 'Modele' });
+    });
 };
 
+/**
+ * ajouter une page web (article)
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.ajoutModele = function(req, res, next){
     console.log("Bienvenue Fiche :");
-    var page = req.body.url;
-    modelePage.create(page,res);
+    var page_domain_name = req.body.url;
+
+    var o = page.Page();
+
+    modelePage.create(page_domain_name,res);
 };
 
 exports.modeleModifier = function(req, res, next) {

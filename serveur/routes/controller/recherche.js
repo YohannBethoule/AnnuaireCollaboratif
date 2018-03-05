@@ -10,14 +10,11 @@ var router = express.Router();
 
 var modelePage = require('../modele/modelePage').modelePage;
 
-
 exports.recherche = function(req, res, next){
     console.log("Bienvenue Recherche :");
     modelePage.get(res,function (value) {
         res.render('recherche', {listPage : value ,title: 'Index' });
     });
-
-    //console.log("recherche:" ,l);
 };
 
 //faire une recherche :
@@ -36,7 +33,6 @@ exports.modele = function(req, res, next){
         res.render('modele', {page : value ,title: 'Modele' });
     });
 };
-
 
 //option  :
 //faire diffentes recherches specifiques :

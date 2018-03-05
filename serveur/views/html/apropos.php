@@ -9,7 +9,11 @@
 </head>
 <body>
 
+<<<<<<< HEAD:serveur/views/html/apropos.php
 <?php include "header.html"; ?>
+=======
+<?php include "header.html";?>
+>>>>>>> c0f2d6348c3a3ae8e0b9b8e19fd3700313dd319b:serveur/views/html/apropos.php
 
 
 <main>
