@@ -10,15 +10,14 @@ CreateDataBase = function() {
     connection.query('CREATE DATABASE ' + dbconfig.database);
 
     // utilisateurs
-    console.log("aqz");
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.userTable + '` ( \
             `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `username` VARCHAR(100) NOT NULL, \
             `password` CHAR(60) NOT NULL, \
             `email` VARCHAR(100) NOT NULL, \
-            PRIMARY KEY (`id_user`), \
-            UNIQUE INDEX `id_UNIQUE` (`id_user` ASC), \
+            PRIMARY KEY (`id`), \
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC), \
             UNIQUE INDEX `username_UNIQUE` (`username` ASC) \
         )');
 
@@ -37,7 +36,7 @@ CreateDataBase = function() {
 
     //commentaire
     connection.query('\
-        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.commentTable + '` ( \
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.commentTable + '`(\
             `id_comment` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `pseudoAuteur` VARCHAR(100) NOT NULL, \
             `domain_name` VARCHAR(500) NOT NULL, \
@@ -107,7 +106,7 @@ CreateDataBase = function() {
 
     // url argument
     connection.query(' \
-        CREATE TABLE`' + dbconfig.database + '`.`' + dbconfig.urlArgumentTable + '` (\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.urlArgumentTable + '` (\
         `id_argument` INT UNSIGNED NOT NULL, \
         `url_justification` VARCHAR(400), \
         `enregistree` BOOLEAN, \

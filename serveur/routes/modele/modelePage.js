@@ -91,11 +91,18 @@ function  modelePage() {
         });
     }
     this.recherche = function (string,res,callback) {
-
-        var r = string;
-        connection.query('Select * from Website where name = ?',string, function(err, rows, fields) {
+        connection.query("Select * from Page where name REGEXP ?",string, function(err, rows, fields) {
             if (!err) {
-                callback(rows);
+                if(rows.length == 0) {
+                    connection.query("Select * from Page where description REGEXP ?", string, function (err, rows, fields) {
+                        if (!err) {
+                            callback(rows);
+                        }
+                        else
+                            console.log('Error while performing Query.');
+                    });
+                }else
+                    callback(rows);
             }
             else
                 console.log('Error while performing Query.');
@@ -138,19 +145,7 @@ function  modelePage() {
                 console.log('Error while performing Query.');
         });
     }
-    this.modifyFiabilite = function (name, fiabilite, res, callback) {
-        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
-        var data = [description,name];
-        console.log("sql ",sql , data);
-        connection.query(sql, data,function (err, result) {
-            if (!err) {
-                console.log('Page modifie.',result[0]);
-                callback(result[0]);
-            }
-            else
-                console.log('Error while performing Query.');
-        });
-    }
+
 
     this.modifyCoherence = function (name, fiabilite, res, callback) {
         var sql = 'UPDATE Website SET description = ? WHERE name = ?';

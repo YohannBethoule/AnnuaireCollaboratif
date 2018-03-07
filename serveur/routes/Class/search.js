@@ -6,14 +6,46 @@
 
 var connection = require('../users').connection;
 
-var search  = function(){
+var Search  = function(){
+        /*
+                Base De Donnee :
+        */
 
-    this.recherche = function (recherche,callback) {
-        var res = recherche;
-        // methode syntaxe
-        //appele bdd select
-        //return resultat
-        callback(res);
+    this.recherche = function (string,res,callback) {
+        connection.query("Select * from Page where name REGEXP ?",string, function(err, rows, fields) {
+            if (!err) {
+                if(rows.length == 0) {
+                    connection.query("Select * from Page where description REGEXP ?", string, function (err, rows, fields) {
+                        if (!err) {
+                            callback(rows);
+                        }
+                        else
+                            console.log('Error while performing Query.');
+                    });
+                }else
+                    callback(rows);
+            }
+            else
+                console.log('Error while performing Query.');
+        });
     }
-}
-module.exports.search = search;
+        this.rechercheSite = function (string,res,callback) {
+            connection.query("Select * from Website where name REGEXP ?",string, function(err, rows, fields) {
+                if (!err) {
+                    if(rows.length == 0) {
+                        connection.query("Select * from Website where description REGEXP ?", string, function (err, rows, fields) {
+                            if (!err) {
+                                callback(rows);
+                            }
+                            else
+                                console.log('Error while performing Query.');
+                        });
+                    }else
+                        callback(rows);
+                }
+                else
+                    console.log('Error while performing Query.');
+            });
+        }
+    }
+module.exports.Search = new Search();

@@ -27,6 +27,8 @@ var User  = function(id,pseudo,mdp,email,nom,prenom){ //utilisation de Passport 
     this.getThisUser = function (domain_name) {
 
     }
+
+
 }
 var d =  User;
 

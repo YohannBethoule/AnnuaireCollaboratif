@@ -40,7 +40,7 @@ router.use('/', function(req, res, next) {
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated())
         return next();
-    res.redirect('/');
+    res.redirect('/connexion');
 }
 
 //initialisation du controller :
@@ -60,7 +60,6 @@ router.route('/recherche')
 
 //ajouter une page (utilisé aussi par l'extension)
 router.route('/ajouter')
-    .get(modele.modele)
     .post(modele.ajoutModele);
 
 //fiche:
@@ -105,15 +104,35 @@ router.route('/inscription')
             res.redirect('/insciption');
         });
 
+router.route('/deconnexion')
+    .get(connexion.deconnexion)
+
+
 //page à propos
 router.get('/apropos', function(req, res, next) {
     res.render('apropos', { title: 'A Propos' });
 });
 
 //modele :
-router.route('/:name')
-    .get(recherche.modele)
-    .post(modele.modeleModifier);
+router.route('/page/:name')
+    .get(modele.modelePage)
+    .post(isAuthenticated,modele.modeleModifierDescriptionPage);
+
+router.route('/page/:name/commentaire')
+    .post(isAuthenticated,modele.modeleCommenter);
+
+router.route('/page/:name/coherence/:nb')
+    .get(isAuthenticated,modele.modeleCoherence);
+
+router.route('/page/:name/fiabilite/:nb')
+    .get(isAuthenticated,modele.modeleFiabilite);
+
+
+router.route('/site/:name')
+    .get(modele.modeleSite)
+    .post(isAuthenticated,modele.modeleModifierDescriptionSite);
+
+
 
 
 //function de telechargement du fichier d'extension
