@@ -16,18 +16,17 @@ html(lang="fr")
         a(href="")
           img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
       |         
-      nav
-        .navbar
-          a(href="", title="Accueil")
+      nav(class="topnav" id="myTopnav")
+          a(href="/", title="Accueil")
             p.lien Home
           |                 
-          a(href="recherche", title="Recherche")
+          a(href="/recherche", title="Recherche")
             p.lien Recherche
           |                 
-          a(href="fiche", title="Fiche")
+          a(href="/fiche", title="Fiche")
             p.lien Fiche
           |                 
-          a(href="apropos", title="A propos")
+          a(href="/apropos", title="A propos")
             p.lien A propos
     main
       div
@@ -53,13 +52,36 @@ html(lang="fr")
               else
                 each page in listPage
                   tr
-                    form(method='GET',action='/'+'#{page.name}')
-                        td #{page.domain_name}
+                    form(method='GET',action='/page/'+'#{page.name}')
+                        td
+                            a(href= '#{page.domain_name}') #{page.domain_name}
                         td(name="search")  #{page.name}
                         td  #{page.type}
-                        td  #{page.note1}
+                        td  #{page.fiabilite}
+                        td  #{page.coherence}
                         td
                           input(type="submit", value=">")
+                  br
+
+        div(id="listSite" name="Pages")
+          table(BORDER=1,style="border-collapse: collapse;", width="100%")
+            thread
+              tr
+                  th(width="40%")  domaine
+                  th(width="10%")  Nom
+                  th(width="15%")  note
+            tbody
+              if (typeof listSite === "undefined")
+                  td
+              else
+                each site in listSite
+                  tr
+                    form(method='GET',action='/'+'#{site.name}')
+                        td #{site.domain_name}
+                        td(name="search")  #{site.name}
+                        td  #{site.type}
+                        td  #{site.note}
+                        td
                   br
       |     
       br

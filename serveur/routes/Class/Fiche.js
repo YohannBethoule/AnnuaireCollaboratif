@@ -28,7 +28,8 @@ var Fiche  = function(){
     }
 
     this.ajouterFiche = function (name,user, callback) {
-            this.add(name,user,callback);
+            this.add(name,user,null,null,null,null,null);
+            callback();
     }
 
     /**
@@ -40,7 +41,7 @@ var Fiche  = function(){
         var v;
         this.getOneUser(name,username,function (value) {
             v = value;
-            if( v== null){
+            if( value == undefined){
                 var f = new Fiche();
                 f.ajouterFiche(name,username,function () {
                     var f2 = new Fiche();
@@ -68,7 +69,7 @@ var Fiche  = function(){
         var v;
         this.getOneUser(name,username,function (value) {
             v = value;
-            if( v== null){
+            if( value== undefined){
                 var f = new Fiche();
                 f.ajouterFiche(name,username,function () {
                     var f2 = new Fiche();
@@ -86,14 +87,37 @@ var Fiche  = function(){
     }
 
 
-    this.addFiche = function (domain_name){
+    this.addFiche = function (domain_name,name,user,description,subject,type,fiabilite,coherence){
         var page = require('../Class/Page').Page;
         page.getDomain_Name(domain_name,function (values) {
             if(values == undefined){
-                console.log("Ajout Fiche in:",values);
-                page.addPage(domain_name)
+                page.addPage(domain_name,name, function () {
+                    var f = new Fiche();
+                    f.getOneUser(name,user,function (values) {
+                        if(values == undefined){
+                            var f = new Fiche();
+                            f.add(name,user,description,subject,type,fiabilite,coherence);
+                        }else{
+                            var f = new Fiche();
+                            f.modify(name,description,subject,type,fiabilite,coherence);
+                        }
+                    })
+                })
+            }else {
+                var f = new Fiche();
+                f.getOneUser(name, user, function (values) {
+                    if (values == undefined) {
+                        var f = new Fiche();
+                        f.add(name, user, description, subject, type, fiabilite, coherence);
+                    } else {
+                        var f = new Fiche();
+                        f.modify(name, description, subject, type, fiabilite, coherence);
+                    }
+                })
             }
         })
+
+
     }
 
     /*
@@ -146,18 +170,18 @@ var Fiche  = function(){
                 callback(rows[0]);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query getOneUser.');
         });
     }
 
-    this.add = function (name,user,callback) {
-        connection.query('INSERT INTO Fiche( name, pseudoAuteur,description,subject,note_fiabilite,note_coherence) values (?,?,?,?,?,?)', [name,user,"","",null,null],function (err) {
+    this.add = function (name,user,description,subject,type,fiabilite,coherence) {
+        connection.query('INSERT INTO Fiche( name, pseudoAuteur,description,subject,note_fiabilite,note_coherence,type) values (?,?,?,?,?,?,?)', [name,user,description,subject,fiabilite,coherence,type],function (err) {
             if (!err) {
                 console.log('Page ajouté');
-                callback();
+                //callback();
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query add fiche.');
         });
     }
 
@@ -188,10 +212,10 @@ var Fiche  = function(){
                 console.log('Error while performing Query.');
         });
     }
-    this.modify = function (name,description, res, callback) {
+    this.modify = function (name,description,subject,type,fiabilite,coherence, callback) {
 
-        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
-        var data = [description,name];
+        var sql = 'UPDATE Website SET description = ?,subject = ?,fiabilite = ?,coherence = ? , type = ? WHERE name = ?';
+        var data = [description,subject,,fiabilite,coherence,name,type];
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {

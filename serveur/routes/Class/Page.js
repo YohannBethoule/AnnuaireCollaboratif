@@ -135,11 +135,13 @@ var Page  = function(){
      * permet d'ajouter une page, et de verifier si le site correspondant a été enregistrer (le fait enregistrer sinon)
      * @param domain_name
      */
-    this.addPage = function (domain_name) {
+    this.addPage = function (domain_name,nom,callback) {
 
-        var nom=domain_name.substring(domain_name.indexOf("/",1));
-        var nom_site;
-        var lien_site;
+        //var nom=domain_name.substring(domain_name.indexOf("/",1));
+        var nom_site ;
+        var nom_page = nom ;
+        var lien_page= domain_name ;
+        var lien_site ;
         if(domain_name.startsWith("http") || domain_name.startsWith("https")){
             domain_name = domain_name.slice(7,-1);
             if(domain_name.startsWith("https")){
@@ -147,25 +149,42 @@ var Page  = function(){
             }
             console.log("domain_name : ",domain_name);
         }
+
+        //nom_page=domain_name.slice(domain_name.lastIndexOf("/"));
+        //nom_page=nom_page.slice(1);
+
         if(domain_name.startsWith("www")){
-            lien_site=domain_name.slice(domain_name.indexOf("/",-1),4);
-            nom_site=domain_name.substring(0,4);
+            lien_site=domain_name.slice(0,domain_name.indexOf("/"));
+            nom_site=domain_name.slice(4,domain_name.indexOf("/"));
+            nom_site=domain_name.slice(4,domain_name.lastIndexOf("."));
         }else{
-            nom_site=domain_name.substring(0,domain_name.indexOf(".",2));
+            lien_site=domain_name.slice(0,domain_name.indexOf("/"));
+            nom_site=domain_name.slice(0,domain_name.indexOf("/"));
+            nom_site=domain_name.slice(0,domain_name.indexOf("."));
         }
 
-        console.log("nom : ",nom);
+        console.log("nom_page : ",nom_page);
         console.log("nom_site : ",nom_site);
         console.log("lien_site : ",lien_site);
+        console.log("lien_page : ",lien_page);
+
+        if(lien_site == lien_page){
+            //pas d'ajout de site directement
+            return;
+        }
         //console.log("",nom);
-        /*site.getNom(nom_site,function (value) {
-            if(value == null){
-                site.ajouterSite(domain_name,nom_site);
+
+        site.getNom(nom_site,function (value) {
+            if(value == undefined){
+                var site = require('../Class/Site').Site;
+                site.ajouterSite(lien_site,nom_site,function () {
+                    p.create(lien_site,lien_page,nom_page,callback);
+                });
             }
             var p = new Page();
-            p.create(domain_name,nom);
-            fiche.create()
-        })*/
+            p.create(lien_site,lien_page,nom_page,callback);
+            //fiche.create()
+        })
 
 
     }
@@ -288,13 +307,14 @@ var Page  = function(){
      * @param page
      * @param res
      */
-    this.create = function (domain_name_site,domain_name, name) {
-        connection.query('insert into Page Values(?,?,?,?,?,?)', [domain_name_site,domain_name,name,null,null,null], function (err, result) {
+    this.create = function (domain_name_site,domain_name, name,callback) {
+        connection.query('insert into Page(domain_name_site, domain_name, name ,type,subject,description,fiabilite,coherence)  Values (?,?,?,?,?,?,?,?)', [domain_name_site,domain_name,name,null,null,null,null,null], function (err) {
             if (!err) {
                 console.log('Page creer.');
+                callback();
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query create page.');
         });
     }
 

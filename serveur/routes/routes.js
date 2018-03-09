@@ -65,7 +65,7 @@ router.route('/ajouter')
 //fiche:
 router.route('/fiche')
     .get(fiche.fiche)
-    .post(fiche.ajoutFiche);
+    .post(isAuthenticated,fiche.ajoutFiche);
 
 //router.post('/recherche/:nomSites/:nomPage',recherche.recherchePage);
 

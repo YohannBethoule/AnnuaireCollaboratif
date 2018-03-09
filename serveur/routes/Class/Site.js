@@ -78,8 +78,8 @@ var Site  = function(){
      * @param domain_name
      * @param nom
      */
-    this.ajouterSite= function (domain_name, nom) {
-            this.create(domain_name, nom);
+    this.ajouterSite= function (domain_name, nom,callback) {
+            this.create(domain_name, nom,callback);
     }
 
 
@@ -117,7 +117,7 @@ var Site  = function(){
      * @param res
      * @param callback
      */
-    this.getNom = function (nom,res,callback) {
+    this.getNom = function (nom,callback) {
         connection.query('Select * from Website where name = ?',nom, function(err, rows, fields) {
             if (!err) {
                 var r = rows[0];
@@ -134,13 +134,14 @@ var Site  = function(){
      * @param nom
      * @param res
      */
-    this.create = function (domain_name, nom, res) {
-        connection.query('insert into Website values (?,?)', [domain_name, nom], function (err, result) {
+    this.create = function (domain_name, nom,callback) {
+        connection.query('insert into Website (domain_name,name,type,description,note) values (?,?,?,?,?)', [domain_name, nom,"","",null], function (err) {
             if (!err) {
                 console.log('Site creer.');
+                callback();
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query create site.');
         });
     }
 

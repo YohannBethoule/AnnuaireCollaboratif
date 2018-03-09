@@ -70,6 +70,9 @@ exports.modeleCommenter = function(req, res, next) {
 exports.modeleCoherence = function(req, res, next) {
     var name = req.params.name;
     var nb = req.params.nb;
+    console.log("USER",req.user[0].username );
+    console.log("name",name);
+    console.log("nb",nb);
     fiche.noterCoherence(nb,req.user[0].username ,name, function () {
         res.redirect('/page/'+name);
     });

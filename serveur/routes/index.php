@@ -12,36 +12,6 @@
 
 <header>
 
-<<<<<<< HEAD:serveur/routes/index.php
-    <div id="header">
-        <div id="logo">
-            <a href="index.php">
-                <img src="../public/images/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
-            </a>
-        </div>
-
-        <div class="userSpaceMain">
-            <?php
-                include "../views/html/inscription.html";
-                /*if (typeof(user) ==="undefined")
-                    include("../views/html/inscription.html");
-                else
-                    include("../views/html/connected.html");*/
-            ?>
-        </div>
-
-        <nav>
-            <div class="topnav" id="myTopnav">
-                <a href="index.php" class="active">Acceuil</a>
-                <a href="../views/html/recherche.php">Recherche</a>
-                <a href="../views/html/fiche.php">Fiche</a>
-                <a href="../views/html/apropos.php">A propos</a>
-                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-            </div>
-        </nav>
-    </div>
-</header>
-=======
     <div id="logo">
 
         <a href="index.php">
@@ -72,7 +42,6 @@
 
 </header>
 
->>>>>>> c0f2d6348c3a3ae8e0b9b8e19fd3700313dd319b:serveur/routes/index.php
 <script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
 
 
