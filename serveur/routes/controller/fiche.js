@@ -33,7 +33,6 @@ exports.ajoutFiche = function(req, res, next){
     var domain_name = req.body.url;
     if(domain_name.endsWith("/")){
         domain_name = domain_name.slice(0,domain_name.lastIndexOf("/",-1));
-
     }
 
     var name = domain_name.slice(domain_name.lastIndexOf("/"));

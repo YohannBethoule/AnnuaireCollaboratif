@@ -12,7 +12,7 @@ html(lang="fr")
     link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
   body
     header
-      #logo
+      div(id="logo")
         a(href="")
           img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
       |         
@@ -32,45 +32,45 @@ html(lang="fr")
     main
       article
         div(class='box')
-          div(class='boxinfo')
+          div
             form(method="POST")
               if (typeof page === "undefined")
                 td
               else
-                h1 Nom du site : #{page.name}
-                p Catégorie : #{page.type}
-                | lien :
-                label(name="domain_name",id="domain_name") #{page.domain_name}
+                h1 Nom de la page :
+                h1 #{page.name}
+                h1 Catégorie : #{page.type}
+                h1 Sujet : #{page.sujet}
+                h1 Lien :
+                a(name="domain_name",id="domain_name",href="#{page.domain_name}") #{page.domain_name}
                 br
                 br
-                | description :
-                textarea(name="description") #{page.description}
+                h1 Description :
+                textarea(name="description",class="description") #{page.description}
+                br
                 input(type='submit', value="Modifier")
-                br
-                br
-                a note fiabilité : #{page.fiabilite} /5
-                br
-                br
-                a note cohérence : #{page.coherence} /5
+
           div(class='commentaires').boxlogo
             a(href="http://www.lemonde.fr/")
               //img(src="../images/Logo/LogoLeMonde.png", alt="Logo Le Monde", title="Logo Le Monde")
         |             
-        div(class='box2')
-          div(class='boxscreenshot')
+        div
+          div()
             //img#myImg(src="../images/ScreenshotLeMonde.png", alt="Screenshot Le Monde")
             // The Modal
-            #myModal.modal
+            div(id='#myModal.modal')
               span.close ×
               |                         
               img#img01.modal-content
               |                         
               #caption
             |                     
-            script(type="text/javascript", src="../scripts/modal.js")
-          |                 
+            script(type="text/javascript", src="/scripts/modal.js")
+
           div(class='avis')
+
             p Fiabilité
+            a note moyenne : #{page.fiabilite} /5
             |                 
             .rating.rating2
               //
@@ -89,6 +89,7 @@ html(lang="fr")
               a(href="/page/#{page.name}/fiabilite/1", title="Give 1 star") ★
             |           
             p Cohérence
+            a note moyenne : #{page.coherence} /5
             |                 
             .rating.rating2
               //
@@ -106,8 +107,8 @@ html(lang="fr")
                               
               a(href="/page/#{page.name}/coherence/1", title="Give 1 star") ★
       form(action="/page/#{page.name}/commentaire", method="POST")
-        div(class='commentaires')
-          h2(nb_com="")
+        div(id='commentaires')
+          h2()
             if (typeof page.listCommentaire !== "undefined")
               | #{page.listCommentaire.length} Commentaires
             hr

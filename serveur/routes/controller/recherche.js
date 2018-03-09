@@ -24,6 +24,10 @@ exports.recherche = function(req, res, next){
 
 //faire une recherche :
 exports.rechercheNormale = function(req, res, next){
+    if(req.body.search == undefined || req.body.search == ""){
+        res.redirect('/recherche');
+        return;
+    }
     console.log("rechercheNormale : " +req.body.search);
     search.recherche(req.body.search,res,function (value) {
         search.rechercheSite(req.body.search,res,function (value_s) {

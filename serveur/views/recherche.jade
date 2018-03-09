@@ -32,8 +32,8 @@ html(lang="fr")
       div
         br
         |         
-        form.barRecherche(method='POST')
-          input(type="text", name="search",id="search", placeholder="Search..")
+        form(class="barRecherche",method='POST')
+          input(class="search",type="text", name="search",id="search", placeholder="Search..")
           |             
           input(type="submit", value="Go!")
         br
@@ -41,11 +41,13 @@ html(lang="fr")
           table(BORDER=1,style="border-collapse: collapse;", width="100%")
             thread
               tr
-                  th(width="40%")  domaine
+                  th(width="40%")  Domaine
                   th(width="10%")  Nom
-                  th(width="20%")  type
+                  th(width="15%")  Type
                   th(width="15%")  Fiabilité
                   th(width="15%")  Cohérence
+                  th(width="5%")
+
             tbody
               if (typeof listPage === "undefined")
                   td
@@ -62,14 +64,15 @@ html(lang="fr")
                         td
                           input(type="submit", value=">")
                   br
-
+        br
         div(id="listSite" name="Pages")
           table(BORDER=1,style="border-collapse: collapse;", width="100%")
             thread
               tr
-                  th(width="40%")  domaine
-                  th(width="10%")  Nom
-                  th(width="15%")  note
+                  th(width="40%")  Domaine
+                  th(width="30%")  Nom
+                  th(width="15%")  Type
+                  th(width="15%")  Note
             tbody
               if (typeof listSite === "undefined")
                   td
@@ -81,13 +84,12 @@ html(lang="fr")
                         td(name="search")  #{site.name}
                         td  #{site.type}
                         td  #{site.note}
-                        td
+
                   br
       |     
       br
-      |         
-      |     
-      a#haut(href="modele")  voir un modele
+      script(src="/scripts/nouislider.min.js")
+      script(src="/scripts/slider.js")
       script(src='/vueScript/recherche.js')
     footer
       a#haut(href="#logo")  Haut de page
