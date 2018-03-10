@@ -86,7 +86,7 @@ var Page  = function(){
 
     this.pageUpdate = function (nom,callback) {
         fiche.getFor(nom,function (value) {
-
+            console.log("value",value)
 
             //update le type :
             var n= 0;
@@ -94,6 +94,7 @@ var Page  = function(){
             var t  = [];
             var tn  = [];
             for (i = 0; i < value.length; i++) {
+                console.log("value",value[i].type)
                 if(value[i].type != null || value[i].type != undefined || value[i].type != ""|| value[i].type != "null") {
                     var b = undefined;
                     for (j = 0; j < t.length; j++) {
@@ -103,11 +104,11 @@ var Page  = function(){
                     }
                     if(b == undefined || b != undefined || b != "" ){
                         t[t.length] = value[i].type
-                        tn[t.length] = 1;
+                        tn[t.length -1] = 1;
                     }else{
                         tn[b] = tn[b] + 1;
                     }
-
+                    console.log("t,tn",t,tn)
                 }
             }
             var max = 0,v;
@@ -119,6 +120,7 @@ var Page  = function(){
             }
 
             this.type = t[v];
+            console.log("this.type = t[v];",this.type , t[v])
             var p = new Page();
             p.modifyType(nom,this.type);
 
@@ -138,13 +140,14 @@ var Page  = function(){
                     }
                     if(b == undefined){
                         t[t.length] = value[i].subject
-                        tn[t.length] = 1;
+                        tn[t.length-1] = 1;
                     }else{
-                        console.log("t[b]",t[b])
+
                         tn[b] = tn[b] + 1;
                     }
                 }
             }
+            console.log("t[b]")
             var max = 0,v;
             for (j = 0; j < tn.length; j++) {
                 if(tn[j] > max ) {
@@ -226,11 +229,15 @@ var Page  = function(){
 
         //nom_page=domain_name.slice(domain_name.lastIndexOf("/"));
         //nom_page=nom_page.slice(1);
-
+/*
+        if(domain_name.endsWith(".php") || domain_name.endsWith(".html")){
+            domain_name = domain_name.slice(domain_name.lastIndexOf("."),-1);
+        }
+*/
         if(domain_name.startsWith("www")){
             lien_site=domain_name.slice(0,domain_name.indexOf("/"));
             nom_site=domain_name.slice(4,domain_name.indexOf("/"));
-            nom_site=domain_name.slice(4,domain_name.lastIndexOf("."));
+            nom_site=nom_site.slice(0,nom_site.indexOf("."));
         }else{
             lien_site=domain_name.slice(0,domain_name.indexOf("/"));
             nom_site=domain_name.slice(0,domain_name.indexOf("/"));
