@@ -59,8 +59,8 @@ router.route('/recherche')
     .post(recherche.rechercheNormale);
 
 //ajouter une page (utilisé aussi par l'extension)
-router.route('/ajouter')
-    .post(modele.ajoutModele);
+//router.route('/ajouter')
+  //  .post(modele.ajoutModele);
 
 //fiche:
 router.route('/fiche')

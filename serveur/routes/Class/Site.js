@@ -45,24 +45,31 @@ var Site  = function(){
      * @param res
      * @param callback
      */
-    this.updateNote = function (name, res,callback) {
-        page.getAllForSite(domain_name,res,function () {
+    this.updateNote = function (domain_name,callback) {
+        var page = require('../Class/Page').Page;
+        page.getAllForSite(domain_name,function (value) {
             var n= 0;
             var i=0,cum=0,i;
             for (i = 0; i < value.length; i++) {
-                if(value[i].note_fiabilite != null) {
+                if(value[i].fiabilite != null) {
                     n++;
-                    cum += value[i].note_fiabilite;
+                    cum += value[i].fiabilite;
                 }
                 if(value[i].note_coherence != null) {
                     n++;
-                    cum += value[i].note_coherence;
+                    cum += value[i].coherence;
                 }
             }
-            this.note =  cum / n;
+
+            if(n != 0){
+                this.note =  cum / n;
+            }else{
+                this.note = null ;
+            }
+
 
             var s = new Site();
-            s.modifyNote(name,res,callback);
+            s.modifyNote(domain_name,this.note,callback);
         })
     }
 
@@ -159,7 +166,7 @@ var Site  = function(){
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                //console.log('Page modifie.',result[0]);
                 callback(result[0]);
             }
             else
@@ -167,14 +174,14 @@ var Site  = function(){
         });
     }
 
-    this.modifyNote = function (name,note, res, callback) {
+    this.modifyNote = function (domain_name,note, callback) {
 
-        var sql = 'UPDATE Website SET description = ? WHERE name = ?';
-        var data = [note,name];
+        var sql = 'UPDATE Website SET note = ? WHERE domain_name = ?';
+        var data = [note,domain_name];
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                //console.log('Page modifie.',result[0]);
                 callback(result[0]);
             }
             else

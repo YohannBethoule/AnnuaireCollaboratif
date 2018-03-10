@@ -117,7 +117,6 @@ var Fiche  = function(){
             }
         })
 
-
     }
 
     /*
@@ -177,7 +176,7 @@ var Fiche  = function(){
     this.add = function (name,user,description,subject,type,fiabilite,coherence) {
         connection.query('INSERT INTO Fiche( name, pseudoAuteur,description,subject,note_fiabilite,note_coherence,type) values (?,?,?,?,?,?,?)', [name,user,description,subject,fiabilite,coherence,type],function (err) {
             if (!err) {
-                console.log('Page ajouté');
+                console.log('Fiche ajouté');
                 //callback();
             }
             else
@@ -192,7 +191,7 @@ var Fiche  = function(){
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Fiabilite Page modifie.',result[0]);
+                console.log('Fiabilite Fiche modifie.',result[0]);
                 callback(result[0]);
             }
             else
@@ -205,7 +204,7 @@ var Fiche  = function(){
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Coherence Page modifie.',result[0]);
+                console.log('Coherence Fiche modifie.',result[0]);
                 callback(result[0]);
             }
             else
@@ -219,7 +218,7 @@ var Fiche  = function(){
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                console.log('Fiche modifie.',result[0]);
                 callback(result[0]);
             }
             else

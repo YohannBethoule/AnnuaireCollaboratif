@@ -1,4 +1,4 @@
-<doctype html
+doctype html
 html(lang="fr")
   head
     meta(charset="utf-8")
@@ -36,18 +36,16 @@ html(lang="fr")
           input(class="search",type="text", name="search",id="search", placeholder="Search..")
           |             
           input(type="submit", value="Go!")
-        br
-        div(id="Pages" name="Pages")
+        div(id="Pages" ,name="Pages")
+          h1 Articles répertoriés :
           table(BORDER=1,style="border-collapse: collapse;", width="100%")
             thread
               tr
-                  th(width="40%")  Domaine
-                  th(width="10%")  Nom
+                  th(width="10%")  Site
+                  th(width="50%")  Page
                   th(width="15%")  Type
-                  th(width="15%")  Fiabilité
-                  th(width="15%")  Cohérence
-                  th(width="5%")
-
+                  th(width="10%")  Fiabilité
+                  th(width="10%")  Cohérence
             tbody
               if (typeof listPage === "undefined")
                   td
@@ -55,24 +53,25 @@ html(lang="fr")
                 each page in listPage
                   tr
                     form(method='GET',action='/page/'+'#{page.name}')
+                        td(name="search")  #{page.domain_name_site}
                         td
-                            a(href= '#{page.domain_name}') #{page.domain_name}
-                        td(name="search")  #{page.name}
+                            a(href= '#{page.domain_name}',name="search") #{page.name}
+
                         td  #{page.type}
-                        td  #{page.fiabilite}
-                        td  #{page.coherence}
+                        td  #{page.fiabilite} / 5
+                        td  #{page.coherence} / 5
                         td
                           input(type="submit", value=">")
-                  br
+        br
         br
         div(id="listSite" name="Pages")
+          h1 Sites répertoriés :
           table(BORDER=1,style="border-collapse: collapse;", width="100%")
             thread
               tr
-                  th(width="40%")  Domaine
+                  th(width="50%")  Domaine
                   th(width="30%")  Nom
-                  th(width="15%")  Type
-                  th(width="15%")  Note
+                  th(width="20%")  Note
             tbody
               if (typeof listSite === "undefined")
                   td
@@ -82,12 +81,8 @@ html(lang="fr")
                     form(method='GET',action='/'+'#{site.name}')
                         td #{site.domain_name}
                         td(name="search")  #{site.name}
-                        td  #{site.type}
-                        td  #{site.note}
+                        td  #{site.note} / 5
 
-                  br
-      |     
-      br
       script(src="/scripts/nouislider.min.js")
       script(src="/scripts/slider.js")
       script(src='/vueScript/recherche.js')

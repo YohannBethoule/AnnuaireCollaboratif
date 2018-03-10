@@ -94,22 +94,17 @@ var Page  = function(){
             var t  = [];
             var tn  = [];
             for (i = 0; i < value.length; i++) {
-                console.log("value",value[i].type)
                 if(value[i].type != null || value[i].type != undefined || value[i].type != ""|| value[i].type != "null") {
                     var b = undefined;
                     for (j = 0; j < t.length; j++) {
                         if(t[j] == value[i].type ) {
                             b = j;
-                            console.log("boucle")
                         }
                     }
                     if(b == undefined || b != undefined || b != "" ){
-                        console.log("t.length",t.length,tn.length)
                         t[t.length] = value[i].type
-                        console.log("t",t)
                         tn[t.length] = 1;
                     }else{
-                        console.log("b",b)
                         tn[b] = tn[b] + 1;
                     }
 
@@ -117,7 +112,7 @@ var Page  = function(){
             }
             var max = 0,v;
             for (j = 0; j < tn.length; j++) {
-                if(tn[i] > max ) {
+                if(tn[j] > max ) {
                     max =  tn[j];
                     v = j;
                 }
@@ -137,21 +132,22 @@ var Page  = function(){
                 if(value[i].subject != null || value[i].subject != undefined || value[i].subject != ""|| value[i].subject != "null") {
                     var b = undefined;
                     for (j = 0; j < t.length; j++) {
-                        if(t[j] == value[i].type ) {
+                        if(t[j] == value[i].subject ) {
                             b = j;
                         }
                     }
-                    if(b == undefined || b != undefined || b != "" ){
+                    if(b == undefined){
                         t[t.length] = value[i].subject
                         tn[t.length] = 1;
                     }else{
+                        console.log("t[b]",t[b])
                         tn[b] = tn[b] + 1;
                     }
                 }
             }
             var max = 0,v;
             for (j = 0; j < tn.length; j++) {
-                if(tn[i] > max ) {
+                if(tn[j] > max ) {
                     max =  tn[j];
                     v = j;
                 }
@@ -219,9 +215,11 @@ var Page  = function(){
         var lien_page= domain_name ;
         var lien_site ;
         if(domain_name.startsWith("http") || domain_name.startsWith("https")){
-            domain_name = domain_name.slice(7,-1);
+
             if(domain_name.startsWith("https")){
                 domain_name = domain_name.slice(8,-1);
+            }else{
+                domain_name = domain_name.slice(7,-1);
             }
             console.log("domain_name : ",domain_name);
         }
@@ -254,12 +252,13 @@ var Page  = function(){
             if(value == undefined){
                 var site = require('../Class/Site').Site;
                 site.ajouterSite(lien_site,nom_site,function () {
+                    var p = new Page();
                     p.create(lien_site,lien_page,nom_page,callback);
                 });
+            }else{
+                var p = new Page();
+                p.create(lien_site,lien_page,nom_page,callback);
             }
-            var p = new Page();
-            p.create(lien_site,lien_page,nom_page,callback);
-            //fiche.create()
         })
 
 
@@ -435,9 +434,9 @@ var Page  = function(){
         //return tab;
     }
 
-    this.getAllForSite = function(site ,res,callback) {
+    this.getAllForSite = function(site ,callback) {
         //var tab=[];
-        connection.query('Select * from Page where domain_name = ?',site, function(err, rows, fields) {
+        connection.query('Select * from Page where domain_name_site = ?',site, function(err, rows, fields) {
             if (!err) {
                 callback(rows);
             }

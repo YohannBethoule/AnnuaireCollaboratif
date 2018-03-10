@@ -7,7 +7,7 @@ html(lang="fr")
     |     
     title Wib - Fiche
     |     
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/stylesheets/fiche.css")
     |     
     link(rel="icon", type="image/png", href="../images/icon_ext.png")
   body
@@ -30,8 +30,9 @@ html(lang="fr")
             p.lien A propos
     |     
     main
+    div(id='fiche')
       form(action="", method="POST")
-        fieldset.informationSite
+        fieldset(class='informationSite')
           legend Information du site:
           |                 
           |                 
@@ -43,7 +44,7 @@ html(lang="fr")
           br
           div
             p Description
-            textarea(name="description")
+            textarea(name="description",class ='description')
           |                 
           div
             p Catégorie:
@@ -55,11 +56,11 @@ html(lang="fr")
               else
                 each t in type
                   option(value="#{t}") #{t}
+          div
+            p Sujet:
+            input(type='text', name='subject')
         br
-        input(type='text', name='subject')
-        br
-        br
-        fieldset.questionnaire
+        fieldset(class='questionnaire')
           legend Questionnaire détaillé
           |                 
           div(class="avis")
@@ -150,21 +151,6 @@ html(lang="fr")
                       function myFunction21() {
                           var e = document.getElementById("fiabilite").value = 1;
                       }
-
-
-          div(class="submit")
-            p Orientation politique:
-
-            div
-              input(type="radio", name="orientationPolitique", value="oui")
-
-              p Oui
-
-            div
-              input(type="radio", name="orientationPolitique", value="non", checked="checked")
-
-              p Non
-
         div(class="submit")
           input(type="submit", value="Envoyer")
 

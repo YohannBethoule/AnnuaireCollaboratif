@@ -40,7 +40,7 @@ exports.ajoutModele = function(req, res, next){
 
     var o = page.Page();
 
-    modelePage.create(page_domain_name,res);
+    //modelePage.create(page_domain_name,res);
 };
 
 

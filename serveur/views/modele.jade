@@ -28,11 +28,12 @@ html(lang="fr")
           |                 
           a(href="/apropos", title="A propos")
             p.lien A propos
+
     |     
     main
       article
         div(class='box')
-          div
+          div(class="boxinfo")
             form(method="POST")
               if (typeof page === "undefined")
                 td
@@ -48,14 +49,15 @@ html(lang="fr")
                 h1 Description :
                 textarea(name="description",class="description") #{page.description}
                 br
-                input(type='submit', value="Modifier")
+                div(id='commentaires')
+                  input(type='submit', value="Modifier")
 
-          div(class='commentaires').boxlogo
+          div(class='boxlogo')
             a(href="http://www.lemonde.fr/")
               //img(src="../images/Logo/LogoLeMonde.png", alt="Logo Le Monde", title="Logo Le Monde")
         |             
         div
-          div()
+          div(class="boxscreenshot")
             //img#myImg(src="../images/ScreenshotLeMonde.png", alt="Screenshot Le Monde")
             // The Modal
             div(id='#myModal.modal')
@@ -72,7 +74,7 @@ html(lang="fr")
             p Fiabilité
             a note moyenne : #{page.fiabilite} /5
             |                 
-            .rating.rating2
+            div(class="rating rating2")
               //
               a(href="/page/#{page.name}/fiabilite/5", title="Give 5 stars") ★
               //
@@ -91,7 +93,7 @@ html(lang="fr")
             p Cohérence
             a note moyenne : #{page.coherence} /5
             |                 
-            .rating.rating2
+            div(class="rating rating2")
               //
               a(href="/page/#{page.name}/coherence/5", title="Give 5 stars") ★
               //
