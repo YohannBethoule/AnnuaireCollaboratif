@@ -20,20 +20,15 @@ var Commentaire  = function(){
     this.sujet;
     this.texte;
 
-    //update/modifier
-    /**
-     *
-     * @param nomAuteur
-     * @param domain_name
-     * @param type
-     * @param description
-     */
+
     this.update = function (nomAuteur,domain_name,type,description) {
         this.domain_name = domain_name;
         this.nomAuteur = nomAuteur;
         this.texte = texte;
         this.sujet= sujet;
+        //...
     }
+
 
     /*
             Base De Donnee :

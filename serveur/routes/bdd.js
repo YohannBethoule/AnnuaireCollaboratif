@@ -2,8 +2,8 @@
 module.exports = {
     'connection' :{
         'host'     : 'localhost',
-        'user'     : 'root',
-        'password' : '0000',
+        'user'     : 'picsou',
+        'password' : 'picsou',
     },
     'database' : 'Data',
     'websiteTable' : 'Website',

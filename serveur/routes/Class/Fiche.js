@@ -25,6 +25,7 @@ var Fiche  = function(){
         this.sujet= sujet;
         this.fiabilité = fiabilité;
         this.coherence = coherence;
+        //...
     }
 
     this.ajouterFiche = function (name,user, callback) {

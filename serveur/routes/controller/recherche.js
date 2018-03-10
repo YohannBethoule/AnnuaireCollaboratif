@@ -16,11 +16,15 @@ var search = require('../Class/search').Search;
 exports.recherche = function(req, res, next){
     console.log("Bienvenue Recherche :");
     page.getAll(res,function (value) {
+        for (i = 0; i < value.length; i++) {
+            var page = require('../Class/Page').Page;
+                page.pageUpdate(value[i].name,function () {
+            })
+        }
         site.getAll(res,function (value_s) {
             for (i = 0; i < value_s.length; i++) {
                 site.updateNote(value_s[i].domain_name,function () {
                 })
-
             }
             res.render('recherche', {listPage : value,listSite : value_s ,title: 'Recherche' });
         });
@@ -35,6 +39,11 @@ exports.rechercheNormale = function(req, res, next){
     }
     console.log("rechercheNormale : " +req.body.search);
     search.recherche(req.body.search,res,function (value) {
+        for (i = 0; i < value.length; i++) {
+            var page = require('../Class/Page').Page;
+            page.pageUpdate(value[i].name,function () {
+            })
+        }
         search.rechercheSite(req.body.search,res,function (value_s) {
             res.render('recherche', {listPage : value,listSite : value_s  ,title: 'Recherche' });
         });

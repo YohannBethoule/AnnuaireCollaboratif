@@ -54,13 +54,6 @@ var Page  = function(){
             var p = new Page();
             p.pageUpdate(nom,function () {
                 var p = new Page();
-                p.modifyFiabilite(this.name,this.fiabilite,function () {
-                    var p = new Page();
-                    p.modifyCoherence(this.name,this.coherence,function () {
-
-                    });
-                });
-
                 //var p = new Page();
                 commentaire.getAllFor(nom,res,function (values) {
                     this.listCommentaire = values;
@@ -84,79 +77,88 @@ var Page  = function(){
         this.coherence = coherence;
     }
 
+    this.update_type = function (value,nom) {
+        var n= 0;
+        var i=0,j=0,cum=0,i;
+        var t  = [];
+        var tn  = [];
+        for (i = 0; i < value.length; i++) {
+            //console.log("value",value[i].type)
+            if(value[i].type != null || value[i].type != undefined || value[i].type != ""|| value[i].type != "null") {
+                var b = undefined;
+                for (j = 0; j < t.length; j++) {
+                    if(t[j] == value[i].type ) {
+                        b = j;
+                    }
+                }
+                if(b == undefined || b != undefined || b != "" ){
+                    t[t.length] = value[i].type
+                    tn[t.length -1] = 1;
+                }else{
+                    tn[b] = tn[b] + 1;
+                }
+            }
+        }
+        var max = 0,v;
+        for (j = 0; j < tn.length; j++) {
+            if(tn[j] > max ) {
+                max =  tn[j];
+                v = j;
+            }
+        }
+        this.type = t[v];
+        //console.log("this.type = t[v];",this.type , t[v])
+        var p = new Page();
+        p.modifyType(nom,this.type);
+    }
+
+    this.update_sujet = function (value,nom) {
+        var n= 0;
+        var i=0,j=0,cum=0,i;
+        var t  = [];
+        var tn  = [];
+        for (i = 0; i < value.length; i++) {
+            if(value[i].subject != null || value[i].subject != undefined || value[i].subject != ""|| value[i].subject != "null") {
+                var b = undefined;
+                for (j = 0; j < t.length; j++) {
+                    if(t[j] == value[i].subject ) {
+                        b = j;
+                    }
+                }
+                if(b == undefined){
+                    t[t.length] = value[i].subject
+                    tn[t.length-1] = 1;
+                }else{
+
+                    tn[b] = tn[b] + 1;
+                }
+            }
+        }
+        //console.log("t[b]")
+        var max = 0,v;
+        for (j = 0; j < tn.length; j++) {
+            if(tn[j] > max ) {
+                max =  tn[j];
+                v = j;
+            }
+        }
+        this.sujet = t[v];
+        var p = new Page();
+        p.modifySujet(nom,this.sujet);
+    }
+
     this.pageUpdate = function (nom,callback) {
         fiche.getFor(nom,function (value) {
-            console.log("value",value)
+            //console.log("value",value)
 
             //update le type :
-            var n= 0;
-            var i=0,j=0,cum=0,i;
-            var t  = [];
-            var tn  = [];
-            for (i = 0; i < value.length; i++) {
-                console.log("value",value[i].type)
-                if(value[i].type != null || value[i].type != undefined || value[i].type != ""|| value[i].type != "null") {
-                    var b = undefined;
-                    for (j = 0; j < t.length; j++) {
-                        if(t[j] == value[i].type ) {
-                            b = j;
-                        }
-                    }
-                    if(b == undefined || b != undefined || b != "" ){
-                        t[t.length] = value[i].type
-                        tn[t.length -1] = 1;
-                    }else{
-                        tn[b] = tn[b] + 1;
-                    }
-                    console.log("t,tn",t,tn)
-                }
-            }
-            var max = 0,v;
-            for (j = 0; j < tn.length; j++) {
-                if(tn[j] > max ) {
-                    max =  tn[j];
-                    v = j;
-                }
-            }
-
-            this.type = t[v];
-            console.log("this.type = t[v];",this.type , t[v])
             var p = new Page();
-            p.modifyType(nom,this.type);
-
+            p.update_type(value,nom);
 
             //update le sujet :
-            var n= 0;
-            var i=0,j=0,cum=0,i;
-            var t  = [];
-            var tn  = [];
-            for (i = 0; i < value.length; i++) {
-                if(value[i].subject != null || value[i].subject != undefined || value[i].subject != ""|| value[i].subject != "null") {
-                    var b = undefined;
-                    for (j = 0; j < t.length; j++) {
-                        if(t[j] == value[i].subject ) {
-                            b = j;
-                        }
-                    }
-                    if(b == undefined){
-                        t[t.length] = value[i].subject
-                        tn[t.length-1] = 1;
-                    }else{
+            var p = new Page();
+            p.update_sujet(value,nom);
 
-                        tn[b] = tn[b] + 1;
-                    }
-                }
-            }
-            console.log("t[b]")
-            var max = 0,v;
-            for (j = 0; j < tn.length; j++) {
-                if(tn[j] > max ) {
-                    max =  tn[j];
-                    v = j;
-                }
-            }
-            this.sujet = t[v];
-            p.modifySujet(nom,this.sujet);
             //update la fiabilité :
 
             var n= 0;
@@ -173,8 +175,10 @@ var Page  = function(){
                 this.fiabilite= null;
             }
 
-            //update la coherence :
+            var p = new Page();
+            p.modifyFiabilite(this.name,this.fiabilite);
 
+            //update la coherence :
             cum = 0;
             n= 0;
             for (i = 0; i < value.length; i++) {
@@ -184,23 +188,38 @@ var Page  = function(){
                     cum += value[i].note_coherence;
                 }
             }
-
             if(n != 0){
                 this.coherence =  cum / n;
             }else{
                 this.coherence = null ;
             }
+
+            var p = new Page();
+            p.modifyCoherence(this.name,this.coherence);
             callback();
         });
     };
 
 
-
-
+    /**
+     * ajouter commentiare
+     * @param user
+     * @param name
+     * @param comm
+     * @param res
+     * @param callback
+     */
     this.ajouterCommentaire = function (user,name,comm, res, callback) {
         commentaire.ajouterCommentaire(user,name,comm, res, callback);
     }
 
+    /**
+     * modifier une description
+     * @param name
+     * @param description
+     * @param res
+     * @param callback
+     */
     this.modifierDescritpion = function (name,description, res, callback) {
         this.modifyDescription(name,description, res, callback);
         this.sauvDescription(name, description, res);
@@ -209,6 +228,8 @@ var Page  = function(){
     /**
      * permet d'ajouter une page, et de verifier si le site correspondant a été enregistrer (le fait enregistrer sinon)
      * @param domain_name
+     * @param nom
+     * @param callback
      */
     this.addPage = function (domain_name,nom,callback) {
 
@@ -224,7 +245,7 @@ var Page  = function(){
             }else{
                 domain_name = domain_name.slice(7,-1);
             }
-            console.log("domain_name : ",domain_name);
+            //console.log("domain_name : ",domain_name);
         }
 
         //nom_page=domain_name.slice(domain_name.lastIndexOf("/"));
@@ -244,10 +265,10 @@ var Page  = function(){
             nom_site=domain_name.slice(0,domain_name.indexOf("."));
         }
 
-        console.log("nom_page : ",nom_page);
-        console.log("nom_site : ",nom_site);
-        console.log("lien_site : ",lien_site);
-        console.log("lien_page : ",lien_page);
+        //console.log("nom_page : ",nom_page);
+        //console.log("nom_site : ",nom_site);
+        //console.log("lien_site : ",lien_site);
+        //console.log("lien_page : ",lien_page);
 
         if(lien_site == lien_page){
             //pas d'ajout de site directement
@@ -276,8 +297,6 @@ var Page  = function(){
             Base De Donnee :
     */
 
-
-
     /**
      * permet de remplir les arguments avec les valeur adequat
      */
@@ -298,7 +317,7 @@ var Page  = function(){
                 callback(r);
             }
             else 
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page getNom');
         });
     }
 
@@ -309,7 +328,7 @@ var Page  = function(){
                 callback(r);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
 
@@ -324,7 +343,7 @@ var Page  = function(){
                 console.log('Pages update.');
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
 
@@ -336,41 +355,41 @@ var Page  = function(){
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                //console.log('Page modifie.',result[0]);
                 callback(result[0]);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
 
-    this.modifyCoherence = function (name,note, callback) {
+    this.modifyCoherence = function (name,note) {
 
         var sql = 'UPDATE Page SET coherence = ? WHERE name = ?';
         var data = [note,name];
         //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
-                callback(result[0]);
+                //console.log('Page modifie.',result[0]);
+                //callback(result[0]);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
 
-    this.modifyFiabilite = function (name,note, callback) {
+    this.modifyFiabilite = function (name,note) {
 
         var sql = 'UPDATE Page SET fiabilite = ? WHERE name = ?';
         var data = [note,name];
         //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
-                callback(result[0]);
+                //console.log('Page modifie.',result[0]);
+                //callback(result[0]);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
 
@@ -381,11 +400,11 @@ var Page  = function(){
         //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                //console.log('Page modifie.',result[0]);
                 //callback(result[0]);
             }
             else
-                console.log('Error while performing Query.');
+                console.log('Error while performing Query. Page');
         });
     }
     this.modifySujet = function (name,sujet) {
@@ -395,7 +414,7 @@ var Page  = function(){
         //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
-                console.log('Page modifie.',result[0]);
+                //console.log('Page modifie.',result[0]);
                 //callback(result[0]);
             }
             else

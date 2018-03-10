@@ -1,5 +1,5 @@
 /**
- * zone de connection : connection si celui ci possede l'extension
+ * zone de connection BDD
  *
  */
 var express = require('express');
@@ -9,19 +9,14 @@ var app = express();
 var passport   = require('passport')
 var bodyParser = require('body-parser')
 
-/*connection base de donnee */ //utiliser sequelize ? et passportjs
+/*connection base de donnee */
 
-
-
-// faire connection :
-//auto = invite
-//sinon connexion
 
 var mysql = require('mysql')
 var connection = mysql.createConnection({
     host     : 'localhost',
-    'user'     : 'root',
-    'password' : '0000',
+    'user'     : 'picsou',
+    'password' : 'picsou',
     database : 'Data'
 });
 

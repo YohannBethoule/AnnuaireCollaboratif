@@ -163,7 +163,7 @@ var Site  = function(){
 
         var sql = 'UPDATE Website SET description = ? WHERE name = ?';
         var data = [description,name];
-        console.log("sql ",sql , data);
+        //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
                 //console.log('Page modifie.',result[0]);
@@ -178,7 +178,7 @@ var Site  = function(){
 
         var sql = 'UPDATE Website SET note = ? WHERE domain_name = ?';
         var data = [note,domain_name];
-        console.log("sql ",sql , data);
+        //console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
                 //console.log('Page modifie.',result[0]);
