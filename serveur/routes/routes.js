@@ -62,9 +62,6 @@ router.route('/recherche')
     .get(recherche.recherche)
     .post(recherche.rechercheNormale);
 
-//ajouter une page (utilisé aussi par l'extension)
-//router.route('/ajouter')
-  //  .post(modele.ajoutModele);
 
 //fiche:
 router.route('/fiche')
@@ -118,43 +115,6 @@ router.route('/inscription/confirmer')
             res.redirect('/insciption');
         });
 
-
-/*
-//router.use('inscription/confirmer',inscription.inscriptionConfirmer);
-router.use('/inscription/confirmer',function(req, res, next){
-    var mdp =  req.body.password;
-    console.log("mdp = email.chaine : ",mdp ,email.chaine)
-    if(mdp = email.chaine){
-        req.body.email = mail;
-        req.body.password= passwd;
-        req.body.username = name;
-        console.log("inscription confirmation : ",mail,name)
-        next();
-    }
-});
-
-router.route('/inscription/confirmer')
-    .post(passport.authenticate('local-signup', {
-            successRedirect : '/connexion', // redirect to the secure profile section
-            failureRedirect : '/inscription', // redirect back to the signup page if there is an error
-            failureFlash : true // allow flash messages
-        }),
-        function(req, res) {
-            console.log(req.user);
-            if(req.user){
-                console.log('signup successful');
-            } else {
-                console.log('Email already in use');
-            }
-            res.redirect('/insciption');
-        });
-*/
-
-/*
-router.route('/inscription/confirmer')
-    .post(inscription.inscriptionConfirmer);
-*/
-
 router.route('/deconnexion')
     .get(connexion.deconnexion)
 
@@ -178,7 +138,7 @@ router.route('/page/:name/coherence/:nb')
 router.route('/page/:name/fiabilite/:nb')
     .get(isAuthenticated,modele.modeleFiabilite);
 
-
+//site : (non utilisé)
 router.route('/site/:name')
     .get(modele.modeleSite)
     .post(isAuthenticated,modele.modeleModifierDescriptionSite);

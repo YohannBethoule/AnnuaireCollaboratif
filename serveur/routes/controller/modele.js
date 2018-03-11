@@ -27,23 +27,6 @@ exports.modelePage = function(req, res, next){
 };
 
 
-
-/**
- * ajouter une page web (article)
- * @param req
- * @param res
- * @param next
- */
-exports.ajoutModele = function(req, res, next){
-    console.log("Bienvenue Fiche :");
-    var page_domain_name = req.body.url;
-
-    var o = page.Page();
-
-    //modelePage.create(page_domain_name,res);
-};
-
-
 exports.modeleModifierDescriptionPage = function(req, res, next) {
     var page_nom = req.params.name;
     var dn = req.body.domain_name;
