@@ -2,13 +2,14 @@
 module.exports = {
     'connection' :{
         'host'     : 'localhost',
-        'user'     : 'picsou',
-        'password' : 'picsou',
+        'user'     : 'wib_bdd',
+        'password' : 'Annuaire2018',
     },
     'database' : 'Data',
     'websiteTable' : 'Website',
     'notePageTable' : 'Note_Page',
     'ficheTable' : 'Fiche',
+    'descriptionTable' : 'Description',
     'userTable' : 'Utilisateur',
     'pageTable' : 'Page',
     'commentTable' : 'Commentaire',
