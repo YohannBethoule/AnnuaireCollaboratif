@@ -19,6 +19,10 @@ var modele = require('./controller/modele');
 var inscription = require('./controller/inscription');
 var connexion = require('./controller/connexion');
 
+//classe :
+var email = require('./Class/email').Email;
+
+
 var routes = this;
     // Systeme de routage :
 
@@ -86,12 +90,22 @@ router.route('/connexion')
             }
             res.redirect('/connexion');
         });
+
+
 //page permettant la inscription
 router.route('/inscription')
     .get(inscription.inscription)
+    .post(inscription.inscriptionDemander);
+
+router.route('/inscription/confirmer')
+    .get(inscription.inscriptionCode)
+
+router.use('/inscription/confirmer', inscription.inscriptionConfirmer);
+
+router.route('/inscription/confirmer')
     .post(passport.authenticate('local-signup', {
             successRedirect : '/connexion', // redirect to the secure profile section
-            failureRedirect : '/insciption', // redirect back to the signup page if there is an error
+            failureRedirect : '/inscription', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }),
         function(req, res) {
@@ -103,6 +117,43 @@ router.route('/inscription')
             }
             res.redirect('/insciption');
         });
+
+
+/*
+//router.use('inscription/confirmer',inscription.inscriptionConfirmer);
+router.use('/inscription/confirmer',function(req, res, next){
+    var mdp =  req.body.password;
+    console.log("mdp = email.chaine : ",mdp ,email.chaine)
+    if(mdp = email.chaine){
+        req.body.email = mail;
+        req.body.password= passwd;
+        req.body.username = name;
+        console.log("inscription confirmation : ",mail,name)
+        next();
+    }
+});
+
+router.route('/inscription/confirmer')
+    .post(passport.authenticate('local-signup', {
+            successRedirect : '/connexion', // redirect to the secure profile section
+            failureRedirect : '/inscription', // redirect back to the signup page if there is an error
+            failureFlash : true // allow flash messages
+        }),
+        function(req, res) {
+            console.log(req.user);
+            if(req.user){
+                console.log('signup successful');
+            } else {
+                console.log('Email already in use');
+            }
+            res.redirect('/insciption');
+        });
+*/
+
+/*
+router.route('/inscription/confirmer')
+    .post(inscription.inscriptionConfirmer);
+*/
 
 router.route('/deconnexion')
     .get(connexion.deconnexion)

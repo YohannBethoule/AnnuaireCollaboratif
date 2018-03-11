@@ -92,9 +92,9 @@ CREATE TABLE `URL_Argument` (
     );
 
 
-insert into Page Values(0,'www.legorafi.fr',"http://www.legorafi.fr/2018/02/08/anne-hidalgo-depense-800-000-euros-pour-un-rapport-sur-la-pauvrete-a-paris/","Anne Hidalgo dépense 800 000 euros pour un rapport sur la pauvreté à Paris","humour","Anne Hidalgo","", NULL,NULL);
+insert into Page Values(0,'www.legorafi.fr',"/www.legorafi.fr/2018/02/08/anne-hidalgo-depense-800-000-euros-pour-un-rapport-sur-la-pauvrete-a-paris/","Anne Hidalgo dépense 800 000 euros pour un rapport sur la pauvreté à Paris","humour","Anne Hidalgo","", NULL,NULL);
 
-insert into Page Values(0,'www.legorafi.fr',"http://www.legorafi.fr/2018/02/13/emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france/","emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france","humour","Emmanuel Macron","", NULL,NULL);
+insert into Page Values(0,'www.legorafi.fr',"www.legorafi.fr/2018/02/13/emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france/","emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france","humour","Emmanuel Macron","", NULL,NULL);
 
 insert into Website Values(0,'www.lexpress.fr',"l'express"," "," ", NULL);
 
