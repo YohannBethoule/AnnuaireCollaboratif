@@ -32,10 +32,16 @@ html(lang="fr")
             div
                 br
 
-                form(class="barRecherche",method='POST')
-                    input(class="search",type="text", name="search",id="search", placeholder="Search..")
+                if (typeof search === "undefined")
+                    form(class="barRecherche",method='POST')
+                        input(class="search",type="text", name="search",id="search", placeholder="Search..")
+                        input(type="submit", value="Go!")
+                else
+                    form(class="barRecherche",method='POST')
+                        input(class="search",type="text", name="search",id="search", value='#{search}' )
+                        input(type="submit", value="Go!")
 
-                    input(type="submit", value="Go!")
+
                 div(id="Pages" ,name="Pages")
                     h1 Articles répertoriés :
                     table(BORDER=1,style="border-collapse: collapse;", width="100%")
