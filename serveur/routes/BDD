@@ -123,3 +123,10 @@ insert into Fiche Values(0,'Anne Hidalgo dépense 800 000 euros pour un rapport 
     'commentTable' : 'Commentaire',
     'argumentTable' : 'Argument',
     'urlArgumentTable' : 'URL_Argument'
+	
+	
+	
+	
+CREATE USER 'wib_bdd'@'localhost' IDENTIFIED BY 'Annuaire2018';
+GRANT ALL PRIVILEGES ON * . * TO 'wib_bdd'@'Annuaire2018';
+FLUSH PRIVILEGES;
