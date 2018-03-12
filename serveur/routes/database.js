@@ -1,5 +1,5 @@
 /* creer une database :*/
-var dbconfig = require('./bdd');
+var dbconfig = require('./bdd.js');
 var mysql = require('mysql');
 
 CreateDataBase = function() {
