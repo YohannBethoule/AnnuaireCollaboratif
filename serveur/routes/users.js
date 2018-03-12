@@ -11,12 +11,12 @@ var bodyParser = require('body-parser')
 
 /*connection base de donnee */
 
-
 var mysql = require('mysql')
 var connection = mysql.createConnection({
     host     : 'localhost',
     'user'     : 'wib_bdd',
     'password' : 'Annuaire2018',
+    database: 'Data'
 });
 
 connection.connect(function(err) {

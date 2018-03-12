@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
     margin: 0% 30% 0% 30%;
@@ -136,13 +137,14 @@ body {
     transition: width 0.4s ease-in-out;
 }
 
-<<<<<<< HEAD
+
 .barRecherche input[type=text]:focus {
-    width: 100%; 
-=======
+    width: 100%;
+}
+
 input[type=text]:focus {
     width: 100%;
->>>>>>> 5ec7d023421f8017cd0318af4a98dc96bcaed8b0
+    > 5ec7d023421f8017cd0318af4a98dc96bcaed8b0
 }
 
 .barRecherche input[type=submit]{

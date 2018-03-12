@@ -104,14 +104,14 @@ insert into Website Values(0,'www.legorafi.fr','legorafi'," "," ",NULL);
 
 
 insert into Commentaire Values(0,'riri','.legorafi',"ahah");
-insert into Commentaire Values(0,'fifi','legorafi',"ahahahah");
-insert into Commentaire Values(0,'loulou','legorafi',"ahaaah");
+insert into Commentaire Values(0,'riri','legorafi',"ahahahah");
+insert into Commentaire Values(0,'riri','legorafi',"ahaaah");
 
-insert into Commentaire Values(0,'loulou','emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france',"ahaaah");
+insert into Commentaire Values(0,'riri','emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france',"ahaaah");
 
 insert into Commentaire Values(0,'riri','emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france',"ahaaaaah");
 
-insert into Fiche Values(0,'Anne Hidalgo dépense 800 000 euros pour un rapport sur la pauvreté à Paris','riri',"","",5,5);
+insert into Fiche Values(0,'emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france','riri',"","Humour",5,5,"Macron");
 
 
 'database' : 'Data',
