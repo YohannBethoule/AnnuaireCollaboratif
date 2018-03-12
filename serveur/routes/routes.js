@@ -19,6 +19,10 @@ var modele = require('./controller/modele');
 var inscription = require('./controller/inscription');
 var connexion = require('./controller/connexion');
 
+//classe :
+var email = require('./Class/email').Email;
+
+
 var routes = this;
     // Systeme de routage :
 
@@ -40,7 +44,7 @@ router.use('/', function(req, res, next) {
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated())
         return next();
-    res.redirect('/');
+    res.redirect('/connexion');
 }
 
 //initialisation du controller :
@@ -58,15 +62,11 @@ router.route('/recherche')
     .get(recherche.recherche)
     .post(recherche.rechercheNormale);
 
-//ajouter une page (utilisé aussi par l'extension)
-router.route('/ajouter')
-    .get(modele.modele)
-    .post(modele.ajoutModele);
 
 //fiche:
 router.route('/fiche')
     .get(fiche.fiche)
-    .post(fiche.ajoutFiche);
+    .post(isAuthenticated,fiche.ajoutFiche);
 
 //router.post('/recherche/:nomSites/:nomPage',recherche.recherchePage);
 
@@ -87,12 +87,22 @@ router.route('/connexion')
             }
             res.redirect('/connexion');
         });
+
+
 //page permettant la inscription
 router.route('/inscription')
     .get(inscription.inscription)
+    .post(inscription.inscriptionDemander);
+
+router.route('/inscription/confirmer')
+    .get(inscription.inscriptionCode)
+
+router.use('/inscription/confirmer', inscription.inscriptionConfirmer);
+
+router.route('/inscription/confirmer')
     .post(passport.authenticate('local-signup', {
             successRedirect : '/connexion', // redirect to the secure profile section
-            failureRedirect : '/insciption', // redirect back to the signup page if there is an error
+            failureRedirect : '/inscription', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }),
         function(req, res) {
@@ -105,15 +115,35 @@ router.route('/inscription')
             res.redirect('/insciption');
         });
 
+router.route('/deconnexion')
+    .get(connexion.deconnexion)
+
+
 //page à propos
 router.get('/apropos', function(req, res, next) {
     res.render('apropos', { title: 'A Propos' });
 });
 
 //modele :
-router.route('/:name')
-    .get(recherche.modele)
-    .post(modele.modeleModifier);
+router.route('/page/:name')
+    .get(modele.modelePage)
+    .post(isAuthenticated,modele.modeleModifierDescriptionPage);
+
+router.route('/page/:name/commentaire')
+    .post(isAuthenticated,modele.modeleCommenter);
+
+router.route('/page/:name/coherence/:nb')
+    .get(isAuthenticated,modele.modeleCoherence);
+
+router.route('/page/:name/fiabilite/:nb')
+    .get(isAuthenticated,modele.modeleFiabilite);
+
+//site : (non utilisé)
+router.route('/site/:name')
+    .get(modele.modeleSite)
+    .post(isAuthenticated,modele.modeleModifierDescriptionSite);
+
+
 
 
 //function de telechargement du fichier d'extension

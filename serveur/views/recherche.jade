@@ -1,71 +1,96 @@
-<doctype html
+doctype html
 html(lang="fr")
-  head
-    meta(charset="utf-8")
-    |     
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    |     
-    title Wib - Le Modèle
-    |     
-    link(rel="stylesheet", href="/stylesheets/recherche.css")
-    |     
-    link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
-  body
-    header
-      #logo
-        a(href="")
-          img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
-      |         
-      nav
-        .navbar
-          a(href="", title="Accueil")
-            p.lien Home
-          |                 
-          a(href="recherche", title="Recherche")
-            p.lien Recherche
-          |                 
-          a(href="fiche", title="Fiche")
-            p.lien Fiche
-          |                 
-          a(href="apropos", title="A propos")
-            p.lien A propos
-    main
-      div
-        br
-        |         
-        form.barRecherche(method='POST')
-          input(type="text", name="search",id="search", placeholder="Search..")
-          |             
-          input(type="submit", value="Go!")
-        br
-        div(id="Pages" name="Pages")
-          table(BORDER=1,style="border-collapse: collapse;", width="100%")
-            thread
-              tr
-                  th(width="40%")  domaine
-                  th(width="10%")  Nom
-                  th(width="20%")  type
-                  th(width="15%")  Fiabilité
-                  th(width="15%")  Cohérence
-            tbody
-              if (typeof listPage === "undefined")
-                  td
-              else
-                each page in listPage
-                  tr
-                    form(method='GET',action='/'+'#{page.name}')
-                        td #{page.domain_name}
-                        td(name="search")  #{page.name}
-                        td  #{page.type}
-                        td  #{page.note1}
-                        td
-                          input(type="submit", value=">")
-                  br
-      |     
-      br
-      |         
-      |     
-      a#haut(href="modele")  voir un modele
-      script(src='/vueScript/recherche.js')
-    footer
-      a#haut(href="#logo")  Haut de page
+    head
+        meta(charset="utf-8")
+
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Wib - Le Modèle
+
+        link(rel="stylesheet", href="/stylesheets/recherche.css")
+
+        link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
+    body
+        header
+            #logo
+                a(href="")
+                    img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
+
+            nav(class="topnav" id="myTopnav")
+                a(href="/", title="Accueil")
+                    p.lien Home
+
+                a(href="/recherche", title="Recherche")
+                    p.lien Recherche
+
+                a(href="/fiche", title="Fiche")
+                    p.lien Fiche
+
+                a(href="/apropos", title="A propos")
+                    p.lien A propos
+        main
+            div
+                br
+
+                if (typeof search === "undefined")
+                    form(class="barRecherche",method='POST')
+                        input(class="search",type="text", name="search",id="search", placeholder="Search..")
+                        input(type="submit", value="Go!")
+                else
+                    form(class="barRecherche",method='POST')
+                        input(class="search",type="text", name="search",id="search", value='#{search}' )
+                        input(type="submit", value="Go!")
+
+
+                div(id="Pages" ,name="Pages")
+                    h1 Articles répertoriés :
+                    table(BORDER=1,style="border-collapse: collapse;", width="100%")
+                        thread
+                            tr
+                                th(width="10%")  Site
+                                th(width="50%")  Page
+                                th(width="15%")  Type
+                                th(width="10%")  Fiabilité
+                                th(width="10%")  Cohérence
+                        tbody
+                            if (typeof listPage === "undefined")
+                                td
+                            else
+                                each page in listPage
+                                    tr
+                                        form(method='GET',action='/page/'+'#{page.name}')
+                                            td(name="search")  #{page.domain_name_site}
+                                            td
+                                                a(href= '#{page.domain_name}',name="search") #{page.name}
+
+                                            td  #{page.type}
+                                            td  #{page.fiabilite} / 5
+                                            td  #{page.coherence} / 5
+                                            td
+                                                input(type="submit", value=">")
+                br
+                br
+                div(id="listSite" name="Pages")
+                    h1 Sites répertoriés :
+                    table(BORDER=1,style="border-collapse: collapse;", width="100%")
+                        thread
+                            tr
+                                th(width="50%")  Domaine
+                                th(width="30%")  Nom
+                                th(width="20%")  Note
+                        tbody
+                            if (typeof listSite === "undefined")
+                                td
+                            else
+                                each site in listSite
+                                    tr
+                                        form(method='GET',action='/'+'#{site.name}')
+                                            td #{site.domain_name}
+                                            td(name="search")  #{site.name}
+                                            td  #{site.note} / 5
+
+            script(src="/scripts/nouislider.min.js")
+            script(src="/scripts/slider.js")
+            script(src='/vueScript/recherche.js')
+        footer
+            a#haut(href="#logo")  Haut de page

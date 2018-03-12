@@ -15,9 +15,6 @@ exports.connexion = function(req, res, next){
 
 exports.connexionAction = function(req, res, next){
     console.log("Tentative connexion :");
-   /* var pseudo = req.body.pseudo; //ou email
-    var mdp = req.body.mdp;
-    console.log("connexion de" + pseudo+" ,mdp: "+ mdp );*/
 
     //passport js :
     passport.authenticate('local-login', {
@@ -29,3 +26,13 @@ exports.connexionAction = function(req, res, next){
         res.redirect('/');
     })
 };
+exports.deconnexion = function(req, res, next){
+    console.log("Tentative deconnexion :");
+    req.session.destroy(function (err) {
+
+        res.redirect('/'); //Inside a callback… bulletproof!
+
+    });
+};
+
+

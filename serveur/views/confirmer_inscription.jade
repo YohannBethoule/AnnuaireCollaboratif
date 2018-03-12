@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Wib - Le Modèle
+
+        link(rel="stylesheet", href="/stylesheets/insciption.css")
+
+        link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
+    body
+        header
+            #logo
+                a(href="/")
+                    img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
+        div(id='co')
+            form(method='POST')
+                a Mot de Passe de confirmation (reçu par email) :
+                br
+                input(type='password', name='password')
+
+                input(type='submit', value='Submit')

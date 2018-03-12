@@ -7,174 +7,129 @@ html(lang="fr")
     |     
     title Wib - Le Modèle
     |     
-    link(rel="stylesheet", href="stylesheets/modele.css")
+    link(rel="stylesheet", href="/stylesheets/modele.css")
     |     
     link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
   body
     header
-      #logo
+      div(id="logo")
         a(href="")
           img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
       |         
-      nav
-        .navbar
+      nav(class="topnav" id="myTopnav")
           a(href="/", title="Accueil")
             p.lien Home
           |                 
-          a(href="recherche", title="Recherche")
+          a(href="/recherche", title="Recherche")
             p.lien Recherche
           |                 
-          a(href="fiche", title="Fiche")
+          a(href="/fiche", title="Fiche")
             p.lien Fiche
           |                 
-          a(href="apropos", title="A propos")
+          a(href="/apropos", title="A propos")
             p.lien A propos
+
     |     
     main
       article
-        .box
-          .boxinfo
+        div(class='box')
+          div(class="boxinfo")
             form(method="POST")
               if (typeof page === "undefined")
                 td
               else
-                h1 Nom du site : #{page.name}
-                p Catégorie : #{page.type}
-                | lien :
-                label(name="domain_name",id="domain_name") #{page.domain_name}
+                h1 Nom de la page :
+                h1 #{page.name}
+                h1 Catégorie : #{page.type}
+                h1 Sujet : #{page.sujet}
+                h1 Lien :
+                a(name="domain_name",id="domain_name",href="#{page.domain_name}") #{page.domain_name}
                 br
                 br
-                | description :
-                textarea(name="description") #{page.description}
-                input(type='submit', value="Modifier")
+                h1 Description :
+                textarea(name="description",class="description") #{page.description}
                 br
-                br
-                a note fiabilité : #{page.note1} |
-                input(name="note1",type='number',max='10', min='0')
-                input(type='submit', value="Noter Cohérence /10")
-                br
-                br
-                a note cohérence : #{page.note2} |
-                input(type='number',name="note2",max='10', min='0')
-                input(type='submit', value="Noter Fiabilité /10")
-          .boxlogo
+                div(id='commentaires')
+                  input(type='submit', value="Modifier")
+
+          div(class='boxlogo')
             a(href="http://www.lemonde.fr/")
               //img(src="../images/Logo/LogoLeMonde.png", alt="Logo Le Monde", title="Logo Le Monde")
         |             
-        .box2
-          .boxscreenshot
+        div
+          div(class="boxscreenshot")
             //img#myImg(src="../images/ScreenshotLeMonde.png", alt="Screenshot Le Monde")
             // The Modal
-            #myModal.modal
+            div(id='#myModal.modal')
               span.close ×
               |                         
               img#img01.modal-content
               |                         
               #caption
             |                     
-            script(type="text/javascript", src="../scripts/modal.js")
-          |                 
-          .avis
+            script(type="text/javascript", src="/scripts/modal.js")
+
+          div(class='avis')
+
             p Fiabilité
+            a note moyenne : #{page.fiabilite} /5
             |                 
-            .rating.rating2
+            div(class="rating rating2")
               //
-              a(href="#5", title="Give 5 stars") ★
-              //
-                                  
-              a(href="#4", title="Give 4 stars") ★
+              a(href="/page/#{page.name}/fiabilite/5", title="Give 5 stars") ★
               //
                                   
-              a(href="#3", title="Give 3 stars") ★
+              a(href="/page/#{page.name}/fiabilite/4", title="Give 4 stars") ★
               //
                                   
-              a(href="#2", title="Give 2 stars") ★
+              a(href="/page/#{page.name}/fiabilite/3", title="Give 3 stars") ★
+              //
+                                  
+              a(href="/page/#{page.name}/fiabilite/2", title="Give 2 stars") ★
               //
                               
-              a(href="#1", title="Give 1 star") ★
+              a(href="/page/#{page.name}/fiabilite/1", title="Give 1 star") ★
             |           
             p Cohérence
+            a note moyenne : #{page.coherence} /5
             |                 
-            .rating.rating2
+            div(class="rating rating2")
               //
-              a(href="#5", title="Give 5 stars") ★
-              //
-                                  
-              a(href="#4", title="Give 4 stars") ★
+              a(href="/page/#{page.name}/coherence/5", title="Give 5 stars") ★
               //
                                   
-              a(href="#3", title="Give 3 stars") ★
+              a(href="/page/#{page.name}/coherence/4", title="Give 4 stars") ★
               //
                                   
-              a(href="#2", title="Give 2 stars") ★
+              a(href="/page/#{page.name}/coherence/3", title="Give 3 stars") ★
+              //
+                                  
+              a(href="/page/#{page.name}/coherence/2", title="Give 2 stars") ★
               //
                               
-              a(href="#1", title="Give 1 star") ★
-      #commentaires
-        h2(nb_com="")
-          | 3 Commentaires
-          hr
-        |     
-        form(action="", method="POST")
-          .coordonnes
-            input.auteur(name="auteur", placeholder="Pseudo", type="text")
-            |             
-            input.mail(name="mail", placeholder="user@domain.ex", type="text")
-          |         
-          textarea.msg(name="texte", placeholder="Votre commentaire")
-          |         
-          input(value="Envoyer", type="submit")
-        |     
-        br
-        |     
-        .comment
-          .avatar
-            img(src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x", alt="avatar", width="75", height="75")
-          |         
-          .message
-            .author
-              span.pseudo LeDabeurFou
-              |                 
-              span.date - 01/12/2017
-            |             
-            p.content
-              | Reprenons. Les éléments sont organisés soit horizontalement (par défaut), soit verticalement. Cela
-              | définit ce qu'on appelle l'axe principal. Il y a aussi un axe secondaire (cross axis).
-        |     
-        hr
-        |     
-        .comment
-          .avatar
-            img(src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x", alt="avatar", width="75", height="75")
-          |         
-          .message
-            .author
-              span.pseudo LeDabeurFou
-              |                 
-              span.date - 01/12/2017
-            |             
-            p.content
-              | Pourquoi je vous raconte ça ? Parce que nous allons découvrir comment aligner nos éléments sur l'axe
-              | principal et sur l'axe secondaire.
-        |     
-        hr
-        |     
-        .comment
-          .avatar
-            img(src="http://www.gravatar.com/avatar/74ad9ac94d2a34363d4f7e03a8b7cc45?s=75&d=mm&r=x", alt="avatar", width="75", height="75")
-          |         
-          .message
-            .author
-              span.pseudo LeDabeurFou
-              |                 
-              span.date - 01/12/2017
-            |             
-            p.content
-              | Comme je vous disais, si nos éléments sont placés dans une direction horizontale (ligne), l'axe
-              | secondaire est... vertical. Et inversement, si nos éléments sont dans une direction verticale
-              | (colonne), l'axe secondaire est horizontal.
-        |     
-        hr
+              a(href="/page/#{page.name}/coherence/1", title="Give 1 star") ★
+      form(action="/page/#{page.name}/commentaire", method="POST")
+        div(id='commentaires')
+          h2()
+            if (typeof page.listCommentaire !== "undefined")
+              | #{page.listCommentaire.length} Commentaires
+            hr
+          form(action="", method="POST")
+            textarea(class='msg',name="texte", placeholder="Votre commentaire")
+            input(value="Envoyer", type="submit")
+
+      if (typeof page.listCommentaire === "undefined")
+        td
+      else
+        each comm in page.listCommentaire
+            div(class='comment')
+              div(class='message')
+                div(class='author')
+                  a #{comm.pseudoAuteur} :
+                  br
+                a     #{comm.text}
+            hr
+          br
     br
     footer
       a#haut(href="#logo")  Haut de page

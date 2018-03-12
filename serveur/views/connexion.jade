@@ -1,12 +1,30 @@
 doctype html
 html
     head
-        link(rel="stylesheet", href="stylesheets/style.css")
+        meta(charset="utf-8")
+
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Wib - Le Modèle
+
+        link(rel="stylesheet", href="/stylesheets/connection.css")
+
+        link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
     body
-        form( method='POST')
-            | Pseudo:
-            input(type="text" class="form-control" name="username",required=true)
-            br
-            | mdp:
-            input(type='password' class="form-control" name="password",required=true)
-            input(type='submit' value='Submit')
+        header
+            #logo
+                a(href="/")
+                    img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
+        div(id='co')
+            form( method='POST')
+                a Pseudo:
+                br
+                input(type="text" class="form-control" name="username",required=true)
+                br
+                br
+                a Mot de Passe:
+                br
+                input(type='password' class="form-control" name="password",required=true)
+                br
+                br
+                input(type='submit' value='Submit')

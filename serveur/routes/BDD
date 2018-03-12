@@ -1,0 +1,132 @@
+CREATE TABLE `Utilisateur` ( 
+            `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+            `username` VARCHAR(100) NOT NULL, 
+            `password` CHAR(60) NOT NULL, 
+            `email` VARCHAR(100) NOT NULL, 
+            PRIMARY KEY (`id`), 
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC), 
+            UNIQUE INDEX `username_UNIQUE` (`username` ASC) 
+        );
+
+ CREATE TABLE `Website`(
+        `id_site` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+        `domain_name` VARCHAR(500) NOT NULL, 
+        `name` VARCHAR(200) NOT NULL, 
+        `type` VARCHAR(200), 
+        `description` VARCHAR(600), 
+        `note` INT,
+        PRIMARY KEY (`id_site`), 
+        UNIQUE INDEX `domain_UNIQUE` (`domain_name` ASC)
+        );
+
+
+ CREATE TABLE `Description`(
+        `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+        `name` VARCHAR(500) NOT NULL, 
+        `descrption` VARCHAR(600), 
+        PRIMARY KEY (`id_desc`)
+        );
+
+
+CREATE TABLE `Commentaire`(
+            `id_comment` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+            `pseudoAuteur` VARCHAR(100) NOT NULL, 
+            `name` VARCHAR(200) NOT NULL, 
+            `text` text NOT NULL, 
+            PRIMARY KEY (`id_comment`),  
+            UNIQUE INDEX `idcomment_UNIQUE` (`id_comment` ASC), 
+            FOREIGN KEY (`pseudoAuteur`) REFERENCES `Utilisateur` (`username`)
+        );
+
+CREATE TABLE `Page` (
+            `id_page` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+            `domain_name_site` VARCHAR(500) NOT NULL,
+	    `domain_name` VARCHAR(500) NOT NULL,
+            `name` VARCHAR(200) NOT NULL,
+            `type` VARCHAR(200),
+            `subject` VARCHAR(200),
+            `description` VARCHAR(600),
+            `fiabilite` INT,
+            `coherence` INT,
+            PRIMARY KEY (`id_page`),
+            FOREIGN KEY (`domain_name_site`) REFERENCES `Website` (`domain_name`)
+        );
+
+CREATE TABLE `Fiche` (
+            `id_fiche` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `name` VARCHAR(200) NOT NULL,
+            `pseudoAuteur` VARCHAR(200),
+            `description` VARCHAR(600),
+            `subject` VARCHAR(200),
+            `note_fiabilite` INT,
+            `note_coherence` INT,
+	    `type` VARCHAR(200), 
+            PRIMARY KEY (`id_fiche`),
+            UNIQUE INDEX `idfiche_UNIQUE` (`id_fiche` ASC),
+            FOREIGN KEY (`pseudoAuteur`) REFERENCES `Utilisateur` (`username`)
+        );
+
+CREATE TABLE `Argument` (
+            `id_argument` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `orientation` VARCHAR(20) NOT NULL,
+            `domain_name_site` VARCHAR(500) NOT NULL,
+            `id_commentaire` INT UNSIGNED,
+            `id_fiche` INT UNSIGNED,
+            `pseudoAuteur` VARCHAR(200) NOT NULL,
+            `partie_description` VARCHAR(600),
+            `note_fiabilite` INT NOT NULL,
+            `note_coherence` INT NOT NULL,
+            PRIMARY KEY (`id_argument`),
+            FOREIGN KEY (`domain_name_site`) REFERENCES `Website` (`domain_name`),
+            FOREIGN KEY (`id_commentaire`) REFERENCES `Commentaire` (`id_comment`),
+            FOREIGN KEY (`id_fiche`) REFERENCES `Fiche` (`id_fiche`),
+            FOREIGN KEY (`pseudoAuteur`) REFERENCES `Commentaire` (`pseudoAuteur`)
+    );
+
+CREATE TABLE `URL_Argument` (
+        `id_argument` INT UNSIGNED NOT NULL,
+        `url_justification` VARCHAR(400),
+        `enregistree` BOOLEAN,
+        PRIMARY KEY (`id_argument`),
+        FOREIGN KEY (`id_argument`) REFERENCES `Argument` (`id_argument`)
+    );
+
+
+insert into Page Values(0,'www.legorafi.fr',"/www.legorafi.fr/2018/02/08/anne-hidalgo-depense-800-000-euros-pour-un-rapport-sur-la-pauvrete-a-paris/","Anne Hidalgo dépense 800 000 euros pour un rapport sur la pauvreté à Paris","humour","Anne Hidalgo","", NULL,NULL);
+
+insert into Page Values(0,'www.legorafi.fr',"www.legorafi.fr/2018/02/13/emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france/","emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france","humour","Emmanuel Macron","", NULL,NULL);
+
+insert into Website Values(0,'www.lexpress.fr',"l'express"," "," ", NULL);
+
+insert into Website Values(0,'www.lemonde.fr','lemonde'," "," ",NULL);
+
+insert into Website Values(0,'www.legorafi.fr','legorafi'," "," ",NULL);
+
+
+insert into Commentaire Values(0,'riri','.legorafi',"ahah");
+insert into Commentaire Values(0,'fifi','legorafi',"ahahahah");
+insert into Commentaire Values(0,'loulou','legorafi',"ahaaah");
+
+insert into Commentaire Values(0,'loulou','emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france',"ahaaah");
+
+insert into Commentaire Values(0,'riri','emmanuel-macron-nomme-un-rabbin-a-la-tete-de-lislam-de-france',"ahaaaaah");
+
+insert into Fiche Values(0,'Anne Hidalgo dépense 800 000 euros pour un rapport sur la pauvreté à Paris','riri',"","",5,5);
+
+
+'database' : 'Data',
+    'websiteTable' : 'Website',
+    'notePageTable' : 'Note_Page',
+    'ficheTable' : 'Fiche',
+    'userTable' : 'Utilisateur',
+    'pageTable' : 'Page',
+    'commentTable' : 'Commentaire',
+    'argumentTable' : 'Argument',
+    'urlArgumentTable' : 'URL_Argument'
+	
+	
+	
+	
+CREATE USER 'wib_bdd'@'localhost' IDENTIFIED BY 'Annuaire2018';
+GRANT ALL PRIVILEGES ON * . * TO 'wib_bdd'@'Annuaire2018';
+FLUSH PRIVILEGES;

@@ -13,27 +13,22 @@ var connection = require('../users').connection;
  * @param texte
  * @constructor
  */
-var Commentaire  = function(id,nomAuteur,domain_name,texte){
-    this.id = id;
-    this.domain_name = domain_name;
-    this.nomAuteur = nomAuteur;
-    this.sujet= sujet;
-    this.texte = texte;
+var Commentaire  = function(){
+    this.id;
+    this.domain_name ;
+    this.nomAuteur ;
+    this.sujet;
+    this.texte;
 
-    //update/modifier
-    /**
-     *
-     * @param nomAuteur
-     * @param domain_name
-     * @param type
-     * @param description
-     */
+
     this.update = function (nomAuteur,domain_name,type,description) {
         this.domain_name = domain_name;
         this.nomAuteur = nomAuteur;
         this.texte = texte;
         this.sujet= sujet;
+        //...
     }
+
 
     /*
             Base De Donnee :
@@ -48,7 +43,34 @@ var Commentaire  = function(id,nomAuteur,domain_name,texte){
     this.getArguments = function (callback) {
 
     }
+
+    this.ajouterCommentaire = function (user,name,commentaire, res, callback) {
+        this.addCommentaire (user,name,commentaire, res, callback);
+    }
+
+
+    this.addCommentaire = function (user,name,commentaire, res, callback) {
+        connection.query('INSERT INTO Commentaire( pseudoAuteur, name ,text) values (?,?,?)', [user,name,commentaire],function (err) {
+            if (!err) {
+                console.log('Commentaire ajouté');
+                callback();
+            }
+            else
+                console.log('Error while performing Query.');
+        });
+    }
+
+    this.getAllFor = function(nom,res,callback) {
+        //var tab=[];
+        connection.query('Select * from Commentaire where name = ?', nom,function (err, rows, fields) {
+            if (!err) {
+                callback(rows);
+            }
+            else
+                console.log('Error while performing Query.');
+        });
+    }
 }
 
 
-module.exports.Commentaire = Commentaire;
+module.exports.Commentaire =  new Commentaire();

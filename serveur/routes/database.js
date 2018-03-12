@@ -10,19 +10,17 @@ CreateDataBase = function() {
     connection.query('CREATE DATABASE ' + dbconfig.database);
 
     // utilisateurs
-    console.log("aqz");
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.userTable + '` ( \
             `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `username` VARCHAR(100) NOT NULL, \
             `password` CHAR(60) NOT NULL, \
             `email` VARCHAR(100) NOT NULL, \
-            PRIMARY KEY (`id_user`), \
-            UNIQUE INDEX `id_UNIQUE` (`id_user` ASC), \
-            UNIQUE INDEX `username_UNIQUE` (`username` ASC) \
-        )');
+            PRIMARY KEY (`id`), \
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC), \
+            UNIQUE INDEX `username_UNIQUE` (`username` ASC)\
+    )');
 
-    // website
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.websiteTable + '`(\
         `id_site` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -33,9 +31,16 @@ CreateDataBase = function() {
         `note` INT,\
         PRIMARY KEY (`id_site`), \
         UNIQUE INDEX `domain_UNIQUE` (`domain_name` ASC)\
-        )');
+    )');
 
-    //commentaire
+    connection.query('\
+    CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.descriptionTable + '`( \
+        `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT,\
+        `name` VARCHAR(500) NOT NULL,\
+        `description` VARCHAR(600),\
+        PRIMARY KEY (`id_desc`)\
+    )');
+
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.commentTable + '` ( \
             `id_comment` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -46,10 +51,9 @@ CreateDataBase = function() {
             UNIQUE INDEX `pseudoAuteur_UNIQUE` (`pseudoAuteur` ASC), \
             UNIQUE INDEX `idcomment_UNIQUE` (`id_comment` ASC), \
             FOREIGN KEY (`pseudoAuteur`) REFERENCES `Utilisateur` (`username`), \
-            FOREIGN KEY (`domain_name`) REFERENCES `Website` (`domain_name`) \
-        )');
+            FOREIGN KEY (`domain_name`) REFERENCES `Website` (`domain_name`)\
+    )');
 
-    // page
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.pageTable + '` ( \
             `id_page` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -64,10 +68,9 @@ CreateDataBase = function() {
             UNIQUE INDEX `fiabilite_UNIQUE` (`fiabilite` ASC), \
             UNIQUE INDEX `coherence_UNIQUE` (`coherence` ASC), \
             UNIQUE INDEX `description_UNIQUE` (`description` ASC), \
-            FOREIGN KEY (`domain_name_site`) REFERENCES `Website` (`domain_name`) \
-        )');
+            FOREIGN KEY (`domain_name_site`) REFERENCES `Website` (`domain_name`)\
+    )');
 
-    // fiche
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.ficheTable + '` ( \
             `id_fiche` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -82,10 +85,9 @@ CreateDataBase = function() {
             FOREIGN KEY (`domain_name_site`) REFERENCES `Website` (`domain_name`), \
             FOREIGN KEY (`pseudoAuteur`) REFERENCES `Commentaire` (`pseudoAuteur`), \
             FOREIGN KEY (`note_fiabilite`) REFERENCES `Page` (`fiabilite`), \
-            FOREIGN KEY (`note_coherence`) REFERENCES `Page` (`coherence`) \
-        )');
+            FOREIGN KEY (`note_coherence`) REFERENCES `Page` (`coherence`)\
+    )');
 
-    // argument (relatif à un commentaire ou une page)
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.argumentTable + '` ( \
             `id_argument` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
@@ -105,8 +107,7 @@ CreateDataBase = function() {
             FOREIGN KEY (`partie_description`) REFERENCES `Page` (`description`)\
     )');
 
-    // url argument
-    connection.query(' \
+    connection.query('\
         CREATE TABLE`' + dbconfig.database + '`.`' + dbconfig.urlArgumentTable + '` (\
         `id_argument` INT UNSIGNED NOT NULL, \
         `url_justification` VARCHAR(400), \
