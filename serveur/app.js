@@ -14,7 +14,7 @@ var flash = require('connect-flash');
 
 //page perso :
 var database = require('./routes/database');
-//database.createDataBase();
+database.createDataBase();
 
 var index = require('./routes/controller/index');
 var recherche = require('./routes/controller/recherche');

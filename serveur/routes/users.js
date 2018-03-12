@@ -5,7 +5,7 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-//var dbconfig = require('./bdd').Data;
+var dbconfig = require('./bdd.js').Data;
 var passport   = require('passport')
 var bodyParser = require('body-parser')
 
@@ -15,9 +15,8 @@ var bodyParser = require('body-parser')
 var mysql = require('mysql')
 var connection = mysql.createConnection({
     host     : 'localhost',
-    'user'     : 'picsou',
-    'password' : 'picsou',
-    database : 'Data'
+    'user'     : 'wib_bdd',
+    'password' : 'Annuaire2018',
 });
 
 connection.connect(function(err) {

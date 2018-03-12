@@ -15,7 +15,7 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 var session = require('session');
 
-connection.query('USE ' + dbconfig.database);
+//connection.query('USE ' + dbconfig.database);
 // expose this function to our app using module.exports
 module.exports = function(passport) {
 

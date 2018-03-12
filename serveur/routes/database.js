@@ -34,14 +34,6 @@ CreateDataBase = function() {
     )');
 
     connection.query('\
-    CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.descriptionTable + '`( \
-        `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT,\
-        `name` VARCHAR(500) NOT NULL,\
-        `description` VARCHAR(600),\
-        PRIMARY KEY (`id_desc`)\
-    )');
-
-    connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.commentTable + '` ( \
             `id_comment` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `pseudoAuteur` VARCHAR(100) NOT NULL, \
@@ -86,6 +78,14 @@ CreateDataBase = function() {
             FOREIGN KEY (`pseudoAuteur`) REFERENCES `Commentaire` (`pseudoAuteur`), \
             FOREIGN KEY (`note_fiabilite`) REFERENCES `Page` (`fiabilite`), \
             FOREIGN KEY (`note_coherence`) REFERENCES `Page` (`coherence`)\
+    )');
+
+    connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.descriptionTable + '` ( \
+            `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
+            `name` VARCHAR(500) NOT NULL, \
+            `descrption` VARCHAR(600), \
+            PRIMARY KEY (`id_desc`)\
     )');
 
     connection.query('\
