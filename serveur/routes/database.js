@@ -47,6 +47,28 @@ CreateDataBase = function() {
     )');
 
     connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.listeNoireUsers + '` ( \
+            `id` INT UNSIGNED NOT NULL,\
+            `email` VARCHAR(100) NOT NULL,\
+            PRIMARY KEY (`id`),\
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC),\
+            UNIQUE INDEX `mail_UNIQUE` (`email` ASC),\
+            FOREIGN KEY (`id`) REFERENCES `Utilisateur` (`id`),\
+            FOREIGN KEY (`email`) REFERENCES `Utilisateurs` (`email`)\
+    )');
+
+    connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.listeNoireSites + '` ( \
+            `id` INT UNSIGNED NOT NULL,\
+            `domain_name` VARCHAR(500) NOT NULL,\
+            PRIMARY KEY (`id`),\
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC),\
+            UNIQUE INDEX `domain_UNIQUE` (`domain_name` ASC),\
+            FOREIGN KEY (`id`) REFERENCES `Website` (`id_site`),\
+            FOREIGN KEY (`domain_name`) REFERENCES `Website` (`domain_name`)\
+    )');
+
+    connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.pageTable + '` ( \
             `id_page` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `domain_name_site` VARCHAR(500) NOT NULL, \
