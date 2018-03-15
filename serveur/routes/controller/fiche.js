@@ -35,7 +35,12 @@ exports.ajoutFiche = function(req, res, next){
     var domain_name = req.body.url;
     request(domain_name,function (error,response,body) {
         switch(response) {
-            case 200:
+            case 404:
+                res.redirect('/fiche');
+                console.log("err ajout mauvais domaine.",req.user[0].username,domain_name);
+                return;
+                break;
+            default :
                 if(domain_name.endsWith("/")){
                     domain_name = domain_name.slice(0,domain_name.lastIndexOf("/",-1));
                 }
@@ -50,11 +55,7 @@ exports.ajoutFiche = function(req, res, next){
                 console.log("fiche :",name,user,description,subject,type,fiabilite,coherence);
                 fiche.addFiche(domain_name,name,user,description,subject,type,fiabilite,coherence);
                 res.redirect('/recherche');
-                break;
-            default :
-                res.redirect('/fiche');
-                console.log("err ajout mauvais domaine.",req.user[0].username);
-                return
+
         }
     })
 };

@@ -105,12 +105,14 @@ var Fiche  = function(){
                     })
                 })
             }else {
+
                 var f = new Fiche();
                 f.getOneUser(name, user, function (values) {
                     if (values == undefined) {
                         var f = new Fiche();
                         f.add(name, user, description, subject, type, fiabilite, coherence);
                     } else {
+                        console.log('Modification fiche');
                         var f = new Fiche();
                         f.modify(name, description, subject, type, fiabilite, coherence);
                     }

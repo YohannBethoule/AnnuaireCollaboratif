@@ -144,6 +144,19 @@ router.route('/site/:name')
     .post(isAuthenticated,modele.modeleModifierDescriptionSite);
 
 
+/* Extension :*/
+
+router.route('/extension/page/:name')
+    .get(modele.pageJson);
+    //.post(isAuthenticated,modele.modeleModifierDescriptionPage);
+
+//router.route('/extension/page/:name/commentaire')
+    //.post(isAuthenticated,modele.modeleCommenter);
+
+router.route('/extension/site/:name')
+    .get(modele.siteJson)
+    //.post(isAuthenticated,modele.modeleModifierDescriptionPage);
+
 
 
 //function de telechargement du fichier d'extension
