@@ -48,13 +48,13 @@ CreateDataBase = function() {
 
     connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.listeNoireUsers + '` ( \
-            `id` INT UNSIGNED NOT NULL,\
+            `pseudo` VARCHAR(100) NOT NULL,\
             `email` VARCHAR(100) NOT NULL,\
-            PRIMARY KEY (`id`),\
-            UNIQUE INDEX `id_UNIQUE` (`id` ASC),\
+            PRIMARY KEY (`pseudo`),\
+            UNIQUE INDEX `pseudo_UNIQUE` (`pseudo` ASC),\
             UNIQUE INDEX `mail_UNIQUE` (`email` ASC),\
-            FOREIGN KEY (`id`) REFERENCES `Utilisateur` (`id`),\
-            FOREIGN KEY (`email`) REFERENCES `Utilisateurs` (`email`)\
+            FOREIGN KEY (`pseudo`) REFERENCES `Utilisateur` (`username`),\
+            FOREIGN KEY (`email`) REFERENCES `Utilisateur` (`email`)\
     )');
 
     connection.query('\
