@@ -124,7 +124,7 @@ var Site  = function(){
      * @param res
      * @param callback
      */
-    this.getNom = function (nom,res,callback) {
+    this.getNom = function (nom,callback) {
         connection.query('Select * from Website where name = ?',nom, function(err, rows, fields) {
             if (!err) {
                 var r = rows[0];
