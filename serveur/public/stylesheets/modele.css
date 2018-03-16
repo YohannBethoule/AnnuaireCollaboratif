@@ -1,4 +1,11 @@
 
+.description {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
     margin-left: 30%;

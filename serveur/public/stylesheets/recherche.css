@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
     margin: 0% 30% 0% 30%;
@@ -143,8 +144,19 @@ body {
     transition: width 0.4s ease-in-out;
 }
 
+<<<<<<< HEAD
 .barRecherche input[type=text]:focus {
     width: 100%;
+=======
+
+.barRecherche input[type=text]:focus {
+    width: 100%;
+}
+
+input[type=text]:focus {
+    width: 100%;
+    > 5ec7d023421f8017cd0318af4a98dc96bcaed8b0
+>>>>>>> 7db268e3ad4ecd69db9936f02bf18b3ebd4ba5ca
 }
 
 .barRecherche input[type=submit]{
@@ -155,8 +167,17 @@ body {
     font-size: larger;
 }
 
+<<<<<<< HEAD
 .sectionRecherche{
     flex: 1;
+=======
+#Pages input[type=submit]{
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #333;
+    color:white;
+    font-size: larger;
+>>>>>>> 7db268e3ad4ecd69db9936f02bf18b3ebd4ba5ca
 }
 
 .barRecherche input[type=submit]:hover {

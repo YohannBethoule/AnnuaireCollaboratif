@@ -1,5 +1,5 @@
 /* creer une database :*/
-var dbconfig = require('./bdd');
+var dbconfig = require('./bdd.js');
 var mysql = require('mysql');
 
 CreateDataBase = function() {
@@ -34,14 +34,6 @@ CreateDataBase = function() {
     )');
 
     connection.query('\
-    CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.descriptionTable + '`( \
-        `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT,\
-        `name` VARCHAR(500) NOT NULL,\
-        `description` VARCHAR(600),\
-        PRIMARY KEY (`id_desc`)\
-    )');
-
-    connection.query('\
         CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.commentTable + '` ( \
             `id_comment` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
             `pseudoAuteur` VARCHAR(100) NOT NULL, \
@@ -51,6 +43,28 @@ CreateDataBase = function() {
             UNIQUE INDEX `pseudoAuteur_UNIQUE` (`pseudoAuteur` ASC), \
             UNIQUE INDEX `idcomment_UNIQUE` (`id_comment` ASC), \
             FOREIGN KEY (`pseudoAuteur`) REFERENCES `Utilisateur` (`username`), \
+            FOREIGN KEY (`domain_name`) REFERENCES `Website` (`domain_name`)\
+    )');
+
+    connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.listeNoireUsers + '` ( \
+            `pseudo` VARCHAR(100) NOT NULL,\
+            `email` VARCHAR(100) NOT NULL,\
+            PRIMARY KEY (`pseudo`),\
+            UNIQUE INDEX `pseudo_UNIQUE` (`pseudo` ASC),\
+            UNIQUE INDEX `mail_UNIQUE` (`email` ASC),\
+            FOREIGN KEY (`pseudo`) REFERENCES `Utilisateur` (`username`),\
+            FOREIGN KEY (`email`) REFERENCES `Utilisateur` (`email`)\
+    )');
+
+    connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.listeNoireSites + '` ( \
+            `id` INT UNSIGNED NOT NULL,\
+            `domain_name` VARCHAR(500) NOT NULL,\
+            PRIMARY KEY (`id`),\
+            UNIQUE INDEX `id_UNIQUE` (`id` ASC),\
+            UNIQUE INDEX `domain_UNIQUE` (`domain_name` ASC),\
+            FOREIGN KEY (`id`) REFERENCES `Website` (`id_site`),\
             FOREIGN KEY (`domain_name`) REFERENCES `Website` (`domain_name`)\
     )');
 
@@ -86,6 +100,14 @@ CreateDataBase = function() {
             FOREIGN KEY (`pseudoAuteur`) REFERENCES `Commentaire` (`pseudoAuteur`), \
             FOREIGN KEY (`note_fiabilite`) REFERENCES `Page` (`fiabilite`), \
             FOREIGN KEY (`note_coherence`) REFERENCES `Page` (`coherence`)\
+    )');
+
+    connection.query('\
+        CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.descriptionTable + '` ( \
+            `id_desc` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
+            `name` VARCHAR(500) NOT NULL, \
+            `descrption` VARCHAR(600), \
+            PRIMARY KEY (`id_desc`)\
     )');
 
     connection.query('\

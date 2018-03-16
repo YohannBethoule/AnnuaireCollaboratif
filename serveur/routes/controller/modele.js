@@ -26,6 +26,14 @@ exports.modelePage = function(req, res, next){
     });
 };
 
+exports.pageJson = function(req, res, next){
+    console.log("rechercheGeneral : "+ req.params.name);
+    page = require('../Class/Page').Page;
+    page.getNom(req.params.name,res,function (value) {
+        res.send( value);
+    });
+};
+
 
 exports.modeleModifierDescriptionPage = function(req, res, next) {
     var page_nom = req.params.name;
@@ -82,6 +90,15 @@ exports.modeleSite = function(req, res, next){
     console.log("rechercheGeneral : "+ req.params.name);
     site.getNom(req.params.name,res,function (value) {
         res.render('modele', {page : value ,title: 'Modele' });
+    });
+};
+
+exports.siteJson = function(req, res, next){
+    console.log("siteJson : "+ req.params.name);
+    site = require('../Class/Site').Site;
+    console.log("siteJson : "+ req.params.name);
+    site.getNom(req.params.name,res,function (value) {
+        res.send( value  );
     });
 };
 

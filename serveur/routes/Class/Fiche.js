@@ -105,19 +105,24 @@ var Fiche  = function(){
                     })
                 })
             }else {
+
                 var f = new Fiche();
                 f.getOneUser(name, user, function (values) {
                     if (values == undefined) {
                         var f = new Fiche();
-                        f.add(name, user, description, subject, type, fiabilite, coherence);
+                        f.add(name, user, description, subject, type, fiabilite, coherence,function () {
+
+                        });
                     } else {
+                        console.log('Modification fiche');
                         var f = new Fiche();
-                        f.modify(name, description, subject, type, fiabilite, coherence);
+                        f.modify(name, description, subject, type, fiabilite, coherence,function () {
+
+                        });
                     }
                 })
             }
         })
-
     }
 
     /*
@@ -214,8 +219,8 @@ var Fiche  = function(){
     }
     this.modify = function (name,description,subject,type,fiabilite,coherence, callback) {
 
-        var sql = 'UPDATE Website SET description = ?,subject = ?,fiabilite = ?,coherence = ? , type = ? WHERE name = ?';
-        var data = [description,subject,,fiabilite,coherence,name,type];
+        var sql = 'UPDATE Fiche SET description = ?,subject = ?,note_fiabilite = ?,note_coherence = ? , type = ? WHERE name = ?';
+        var data = [description,subject,fiabilite,coherence,type,name];
         console.log("sql ",sql , data);
         connection.query(sql, data,function (err, result) {
             if (!err) {
