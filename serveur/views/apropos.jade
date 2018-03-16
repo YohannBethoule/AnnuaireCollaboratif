@@ -11,23 +11,7 @@ html(lang="fr")
     |     
     link(rel="icon", type="image/png", href="../images/icon_ext.png")
   body
-    header
-      #logo
-        a(href="")
-          img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller Ã  l'accueil")
-      |     
-      nav(class="topnav" id="myTopnav")
-          a(href="/", title="Accueil")
-            p.lien Home
-          |             
-          a(href="recherche", title="Recherche")
-            p.lien Recherche
-          |             
-          a(href="fiche", title="Fiche")
-            p.lien Fiche
-          |             
-          a(href="apropos", title="A propos")
-            p.lien A propos
+    include ../public/template/header.jade
     main
       #whoarewe
         p#team

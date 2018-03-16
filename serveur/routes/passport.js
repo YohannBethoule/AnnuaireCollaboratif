@@ -10,7 +10,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 // load up the user model
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-var dbconfig = require('./bdd');
+var dbconfig = require('./bdd.js');
 var connection = mysql.createConnection(dbconfig.connection);
 
 var session = require('session');

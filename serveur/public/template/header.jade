@@ -1,0 +1,17 @@
+header
+    #header
+        #logo
+            a(href='index.jade')
+                img(src='../../public/images/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+        include ../../public/template/inscriptionUserSpace
+        nav(class="myTopnav" id="topnav")
+            a.active(href='index') Acceuil
+            |
+            a(href='recherche') Recherche
+            |
+            a(href='fiche') Fiche
+            |
+            a(href='apropos') A propos
+            |
+a.icon(href='javascript:void(0);', style='font-size:15px;', onclick='myFunction()') &#x2630;
+script(type='text/javascript', src='../../public/scripts/menuDeroulant.js')

@@ -80,6 +80,7 @@ body {
     background-color: #333;
     border-radius: 3px;
 }
+
 #userSpace form{
     display:flex;
     flex-direction: column;
@@ -105,7 +106,14 @@ body {
 }
 
 @media screen and (max-width: 650px) {
+    .userSpaceMain{
+        position: unset;
+        align-self: center;
+        margin-bottom: 10px;
+    }   
     #header{
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -113,14 +121,14 @@ body {
     text-align: center;
     background-color: #333;
     text-transform: uppercase;
+    border: 1px solid whitesmoke;
+    transition: all 0.5s ease;
     color: white;
 }
 
 #userSpace form input[type=submit]:hover {
     color: #333;
     background-color: white;
-    border: 2px solid #333;
-    transition: all 0.5s ease;
 }
 
 
@@ -129,20 +137,14 @@ body {
 
 .barRecherche input[type=text]{
     font-size: larger;
-    width: 130px;
     border: none;
     border-bottom: 1px solid #000;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-<<<<<<< HEAD
 .barRecherche input[type=text]:focus {
-    width: 100%; 
-=======
-input[type=text]:focus {
     width: 100%;
->>>>>>> 5ec7d023421f8017cd0318af4a98dc96bcaed8b0
 }
 
 .barRecherche input[type=submit]{
@@ -151,6 +153,10 @@ input[type=text]:focus {
     background-color: #333;
     color:white;
     font-size: larger;
+}
+
+.sectionRecherche{
+    flex: 1;
 }
 
 .barRecherche input[type=submit]:hover {
@@ -168,20 +174,4 @@ input[type=text]:focus {
 
 .barRecherche{
     margin:1%;
-    text-align: center;
-    width: 100%;
-}
-
-aside{
-    margin-top: 3px;
-    width:300px;
-    border: none;
-    border-radius: 3%;
-    background-color: #333;
-}
-
-/*Slide Style*/
-
-#slider {
-    margin:3%;
 }

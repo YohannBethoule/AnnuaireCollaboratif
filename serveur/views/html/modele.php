@@ -65,7 +65,7 @@
 
     </article>
     <div id="commentaires">
-        <h2 class="" nb_com>
+        <h2 class=" nb_com">
             3 Commentaires
             <hr>
         </h2>

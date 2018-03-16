@@ -11,25 +11,8 @@ html(lang="fr")
     |     
     link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
   body
-    header
-      div(id="logo")
-        a(href="")
-          img(src="../images/Logo/logo.png", alt="Logo Wib", title="Logo - Aller à l'accueil")
-      |         
-      nav(class="topnav" id="myTopnav")
-          a(href="/", title="Accueil")
-            p.lien Home
-          |                 
-          a(href="/recherche", title="Recherche")
-            p.lien Recherche
-          |                 
-          a(href="/fiche", title="Fiche")
-            p.lien Fiche
-          |                 
-          a(href="/apropos", title="A propos")
-            p.lien A propos
 
-    |     
+    include ../public/template/header
     main
       article
         div(class='box')
@@ -38,9 +21,8 @@ html(lang="fr")
               if (typeof page === "undefined")
                 td
               else
-                h1 Nom de la page :
                 h1 #{page.name}
-                h1 Catégorie : #{page.type}
+                p Catégorie : #{page.type}
                 h1 Sujet : #{page.sujet}
                 h1 Lien :
                 a(name="domain_name",id="domain_name",href="#{page.domain_name}") #{page.domain_name}
@@ -52,18 +34,14 @@ html(lang="fr")
                 div(id='commentaires')
                   input(type='submit', value="Modifier")
 
-          div(class='boxlogo')
-            a(href="http://www.lemonde.fr/")
-              //img(src="../images/Logo/LogoLeMonde.png", alt="Logo Le Monde", title="Logo Le Monde")
-        |             
-        div
+        div(class="box2")
           div(class="boxscreenshot")
             //img#myImg(src="../images/ScreenshotLeMonde.png", alt="Screenshot Le Monde")
             // The Modal
-            div(id='#myModal.modal')
+            div(id='#myModal' class='modal')
               span.close ×
               |                         
-              img#img01.modal-content
+              img( id='img01' class='modal-content')
               |                         
               #caption
             |                     
@@ -108,13 +86,13 @@ html(lang="fr")
               //
                               
               a(href="/page/#{page.name}/coherence/1", title="Give 1 star") ★
+
       form(action="/page/#{page.name}/commentaire", method="POST")
         div(id='commentaires')
           h2()
             if (typeof page.listCommentaire !== "undefined")
               | #{page.listCommentaire.length} Commentaires
             hr
-          form(action="", method="POST")
             textarea(class='msg',name="texte", placeholder="Votre commentaire")
             input(value="Envoyer", type="submit")
 
@@ -127,7 +105,7 @@ html(lang="fr")
                 div(class='author')
                   a #{comm.pseudoAuteur} :
                   br
-                a     #{comm.text}
+                a(class='content')    #{comm.text}
             hr
           br
     br

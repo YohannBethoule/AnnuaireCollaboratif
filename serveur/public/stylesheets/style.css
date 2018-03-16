@@ -88,6 +88,7 @@ body {
     background-color: #333;
     border-radius: 3px;
 }
+
 #userSpace form{
     display:flex;
     flex-direction: column;
@@ -113,7 +114,14 @@ body {
 }
 
 @media screen and (max-width: 650px) {
+    .userSpaceMain{
+        position: unset;
+        align-self: center;
+        margin-bottom: 10px;
+    }
     #header{
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -121,16 +129,15 @@ body {
     text-align: center;
     background-color: #333;
     text-transform: uppercase;
+    border: 1px solid whitesmoke;
+    transition: all 0.5s ease;
     color: white;
 }
 
 #userSpace form input[type=submit]:hover {
     color: #333;
     background-color: white;
-    border: 2px solid #333;
-    transition: all 0.5s ease;
 }
-
 /* --------- INDEX STYLE ---------------*/
 
 .acceuil{
