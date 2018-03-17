@@ -10,46 +10,9 @@
 
 <body>
 
-<<<<<<< HEAD:serveur/views/html/index.php
 <?php include "../../public/template/header.php"; ?>
-=======
-<header>
-
-    <div id="logo">
-
-        <a href="index.php">
-
-            <img src="../public/images/logo.png" alt="Logo Wib" title="Logo - Aller à l'accueil">
-
-        </a>
-
-    </div>
-
-    <nav>
-
-        <div class="topnav" id="myTopnav">
-
-            <a href="index.php" class="active">Acceuil</a>
-
-            <a href="../views/html/recherche.php">Recherche</a>
-
-            <a href="../views/html/fiche.php">Fiche</a>
-
-            <a href="../views/html/apropos.php">A propos</a>
-
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-
-        </div>
-
-    </nav>
-
-</header>
 
 <script type="text/javascript" src="../../public/scripts/menuDeroulant.js"></script>
-
-
-
->>>>>>> 5ec7d023421f8017cd0318af4a98dc96bcaed8b0:serveur/routes/index.php
 
 <main>
 <div class="acceuil">
@@ -88,14 +51,14 @@
 	  <span class="dot" onclick="currentSlide(1)"></span>
 	  <span class="dot" onclick="currentSlide(2)"></span>
  	 <span class="dot" onclick="currentSlide(3)"></span>
-	</div> 
+	</div>
      </div>
 	<script src="../../public/scripts/slideshow.js"></script>
 
 
     <div id="corps">
         <h1>L'extension qui vérifie vos lectures.</h1>
-        
+
         <div id="paragraphes">
             <p>Vérifiez la <span class="stronger">qualité</span> de ce que vous lisez.</p>
             <p>Consultez la <span class="stronger">fiabilité</span> du site que vous consultez.</p>
@@ -107,7 +70,7 @@
                title="Telechargement de l'extension">
                 <span class="first_letter">T</span>éléchargez
             </a>
-        </div>     
+        </div>
     </div>
 </div>
 
@@ -123,10 +86,12 @@
 </div>
 </main>
 
+
 <br>
 
 <footer>
     <a href="#logo" id="haut">Haut de page</a>
 </footer>
+
 </body>
 </html>
