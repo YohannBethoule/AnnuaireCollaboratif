@@ -74,14 +74,14 @@ router.route('/fiche')
 router.route('/connexion')
     .get(connexion.connexion)
     .post(passport.authenticate('local-login', {
-            successRedirect : '/', // redirect to the secure profile section
+            successRedirect : 'back', // redirect to the secure profile section
             failureRedirect : '/connexion', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }),
         function(req, res) {
-            console.log(req.user);
+            console.log("connexion",req.user);
             if(req.user){
-                console.log('signin successful');
+                console.log('signin successful',req.originalUrl);
             } else {
                 console.log('signin error');
             }
@@ -101,7 +101,7 @@ router.use('/inscription/confirmer', inscription.inscriptionConfirmer);
 
 router.route('/inscription/confirmer')
     .post(passport.authenticate('local-signup', {
-            successRedirect : '/connexion', // redirect to the secure profile section
+            successRedirect : 'back', // redirect to the secure profile section
             failureRedirect : '/inscription', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }),
@@ -121,7 +121,7 @@ router.route('/deconnexion')
 
 //page à propos
 router.get('/apropos', function(req, res, next) {
-    res.render('apropos', { title: 'A Propos' });
+    res.render('apropos', {user: req.user, title: 'A Propos' });
 });
 
 //modele :

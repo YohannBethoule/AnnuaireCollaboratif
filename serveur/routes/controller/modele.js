@@ -22,7 +22,7 @@ exports.modelePage = function(req, res, next){
     console.log("rechercheGeneral : "+ req.params.name);
     page = require('../Class/Page').Page;
     page.get(req.params.name,res,function (value) {
-        res.render('modele', {page : value ,title: 'Modele' });
+        res.render('modele', {user: req.user,page : value ,title: 'Modele' });
     });
 };
 
@@ -89,7 +89,7 @@ exports.modeleFiabilite = function(req, res, next) {
 exports.modeleSite = function(req, res, next){
     console.log("rechercheGeneral : "+ req.params.name);
     site.getNom(req.params.name,res,function (value) {
-        res.render('modele', {page : value ,title: 'Modele' });
+        res.render('modele', {user: req.user,page : value ,title: 'Modele' });
     });
 };
 
