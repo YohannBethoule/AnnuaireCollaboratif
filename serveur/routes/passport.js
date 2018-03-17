@@ -113,7 +113,7 @@ module.exports = function(passport) {
                 });
 
 
-                console.log("CONNECTION !!!!!!!!!!!");
+                console.log("CONNECTION !!!!!!!!!!!",req.session.returnTo,req.query.origin,req.url,req.header('Referer'));
             })
     );
 };

@@ -21,7 +21,7 @@ var page  = require('../Class/Page').Page;
  * @param next
  */
 exports.fiche = function(req, res, next){
-    res.render('fiche', {type: page.listType,title: 'Fiche' });
+    res.render('fiche', {user: req.user,type: page.listType, title: 'Fiche' });
 };
 
 /**

@@ -11,13 +11,13 @@ html(lang="fr")
     |     
     link(rel="icon", type="image/png", href="images/Logo/icon_ext.png")
   body
-   include ../public/template/header
+   include header.jade
     main
-        if (typeof user === "undefined")
-          br
-        else
-          a Bienvenue #{user[0].username} !
-          br
+      if (typeof user === "undefined")
+        br
+      else
+        a Bienvenue #{user[0].username} !
+        br
       .acceuil
         #slideshow
           // Slideshow container

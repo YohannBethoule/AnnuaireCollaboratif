@@ -32,7 +32,7 @@ exports.recherche = function(req, res, next){
 
                 });
             }
-            res.render('recherche', {listPage : value,listSite : value_s ,title: 'Recherche' });
+            res.render('recherche', {user: req.user,listPage : value,listSite : value_s ,title: 'Recherche' });
         });
     });
 };
@@ -51,7 +51,7 @@ exports.rechercheNormale = function(req, res, next){
             })
         }
         search.rechercheSite(req.body.search,res,function (value_s) {
-            res.render('recherche', {listPage : value,listSite : value_s ,search : req.body.search,title: 'Recherche' });
+            res.render('recherche', {user: req.user,listPage : value,listSite : value_s ,search : req.body.search,title: 'Recherche' });
         });
     });
 };
