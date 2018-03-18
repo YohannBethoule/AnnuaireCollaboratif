@@ -1,14 +1,19 @@
+link(rel='stylesheet', href='/stylesheets/inscriptionPage.css')
 header
     div(id='header')
         div(id='logo')
-            a
-                img(src='/images/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
-                if (typeof user === "undefined" )
-                    include inscriptionUserSpace.jade
-                else
-                    div(id='userSpace')
-                        form(method='GET',action='/deconnexion/')
-                            input(type="submit",href="/deconnexion", value="Se Deconnecter")
+            table(style="border-collapse: collapse;", width="100%")
+                    tr
+                        th
+                            img(src='/images/logo.png', alt='Logo Wib', title="Logo - Aller à l'accueil")
+
+                        th
+                            if (typeof user === "undefined" )
+                                include inscriptionUserSpace.jade
+                            else
+                                div(id='userSpace')
+                                    form(method='GET',action='/deconnexion/')
+                                        input(type="submit",href="/deconnexion", value="Se Deconnecter")
 
         nav(class="topnav" id="myTopnav")
             a(class="active" ,href='/') Acceuil
