@@ -8,11 +8,23 @@ var express = require('express');
 var router = express.Router();
 var passport = require('../passport');
 
+/**
+ *
+ * @param req
+ * @param resd
+ * @param next
+ */
 exports.connexion = function(req, res, next){
     console.log("Connexion :");
     res.render('connexion', { title: 'Connexion' });
 };
 
+/**
+ *
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.connexionAction = function(req, res, next){
     console.log("Tentative connexion :");
 

@@ -11,7 +11,6 @@ var vm = require('vm');
 var passport = require('passport');
 
 //controller:
-var app = require('../app');
 var recherche = require('./controller/recherche');
 var index = require('./controller/index');
 var fiche = require('./controller/fiche');
@@ -144,7 +143,7 @@ router.route('/site/:name')
     .post(isAuthenticated,modele.modeleModifierDescriptionSite);
 
 
-/* Extension :*/
+/* partie pour l'Extension :*/
 
 router.route('/extension/page/:name')
     .get(modele.pageJson);
@@ -179,5 +178,4 @@ router.get('/:name', function(req, res) {
 
 module.exports = {
     router:router,
-    //isAuthenticated:isAuthenticated
 } ;

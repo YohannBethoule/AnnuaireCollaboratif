@@ -9,7 +9,6 @@ var vm = require('vm');
 var fs = require('fs');
 var sql = require('mysql');
 var passport   = require('passport')
-//var LocalStrategy   = require('passport-local')
 var flash = require('connect-flash');
 
 //page perso :
@@ -49,8 +48,8 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
 //initialisation pour toutes les pages :
-app.use('/', users.router);
-app.use('/', routes.router);
+app.use('/', users.router);//base de donnée
+app.use('/', routes.router);//lancement du syteme de routage
 
 //app.use('/', index);
 

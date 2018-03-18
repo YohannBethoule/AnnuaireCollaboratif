@@ -12,7 +12,7 @@ var email = require('../Class/email').Email;
 var user = require('../Class/User').User;
 
 /**
- *  view page d'inscription
+ *  voir page d'inscription
  * @param req
  * @param res
  * @param next
@@ -22,6 +22,12 @@ exports.inscription = function(req, res, next){
     res.render('inscription', { title: 'Inscription' });
 };
 
+/**
+ * voir page de confirmation d'inscription (rentrer code d'email)
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.inscriptionCode = function(req, res, next){
     console.log("confirmer_inscription :");
     res.render('confirmer_inscription', { title: 'Inscription' });
@@ -57,6 +63,12 @@ exports.inscriptionDemander = function(req, res, next){
     })
 };
 
+/**
+ * permet de confirmer son maild'inscription
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.inscriptionConfirmer = function(req, res, next){
     var mdp =  req.body.password;
     console.log("mdp = email.chaine : ",mdp ,email.chaine)

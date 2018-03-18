@@ -15,7 +15,7 @@ var page  = require('../Class/Page').Page;
 
 
 /**
- *
+ * voir fiche
  * @param req
  * @param res
  * @param next
@@ -25,7 +25,7 @@ exports.fiche = function(req, res, next){
 };
 
 /**
- *
+ * ajouter / modifier une fiche sur une page
  * @param req
  * @param res
  * @param next

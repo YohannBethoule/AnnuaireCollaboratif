@@ -14,7 +14,8 @@ var site = require('../Class/Site').Site;
 var search = require('../Class/search').Search;
 
 exports.recherche = function(req, res, next){
-    console.log("Bienvenue Recherche :");
+    //console.log("Bienvenue Recherche :");
+    //update des pages :
     page.getAll(res,function (value) {
         for (i = 0; i < value.length; i++) {
             var page = require('../Class/Page').Page;
@@ -25,7 +26,7 @@ exports.recherche = function(req, res, next){
 
             });*/
         }
-
+        //update des sites :
         site.getAll(res,function (value_s) {
             for (i = 0; i < value_s.length; i++) {
                 site.updateNote(value_s[i].domain_name,function () {
@@ -43,7 +44,7 @@ exports.rechercheNormale = function(req, res, next){
         res.redirect('/recherche');
         return;
     }
-    console.log("rechercheNormale : " +req.body.search);
+    //console.log("rechercheNormale : " +req.body.search);
     search.recherche(req.body.search,res,function (value) {
         for (i = 0; i < value.length; i++) {
             var page = require('../Class/Page').Page;

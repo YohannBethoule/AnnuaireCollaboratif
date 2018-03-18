@@ -26,6 +26,12 @@ exports.modelePage = function(req, res, next){
     });
 };
 
+/**
+ * revois les données json de la page demandée (pour l'extension)
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.pageJson = function(req, res, next){
     console.log("rechercheGeneral : "+ req.params.name);
     page = require('../Class/Page').Page;
@@ -34,7 +40,12 @@ exports.pageJson = function(req, res, next){
     });
 };
 
-
+/**
+ * pour modifier la description d'une page
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.modeleModifierDescriptionPage = function(req, res, next) {
     var page_nom = req.params.name;
     var dn = req.body.domain_name;
@@ -48,7 +59,12 @@ exports.modeleModifierDescriptionPage = function(req, res, next) {
     });
 }
 
-
+/**
+ * pour commenter une page
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.modeleCommenter = function(req, res, next) {
     var page_nom = req.params.name;
     var commentaire = req.body.texte;
@@ -58,6 +74,12 @@ exports.modeleCommenter = function(req, res, next) {
     });
 }
 
+/**
+ * pour redefinir la cohérence d'un utilisateur sur une page
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.modeleCoherence = function(req, res, next) {
     var name = req.params.name;
     var nb = req.params.nb;
@@ -69,6 +91,12 @@ exports.modeleCoherence = function(req, res, next) {
     });
 }
 
+/**
+ * pour redefinir la fiabilité d'un utilisateur sur une page
+ * @param req
+ * @param res
+ * @param next
+ */
 exports.modeleFiabilite = function(req, res, next) {
     var name = req.params.name;
     var valeur = req.url;
@@ -79,7 +107,16 @@ exports.modeleFiabilite = function(req, res, next) {
 }
 
 
-//test :
+exports.siteJson = function(req, res, next){
+    console.log("siteJson : "+ req.params.name);
+    site = require('../Class/Site').Site;
+    console.log("siteJson : "+ req.params.name);
+    site.getNom(req.params.name,res,function (value) {
+        res.send( value  );
+    });
+};
+
+//non utile :
 /**
  * Site
  * @param req
@@ -93,14 +130,7 @@ exports.modeleSite = function(req, res, next){
     });
 };
 
-exports.siteJson = function(req, res, next){
-    console.log("siteJson : "+ req.params.name);
-    site = require('../Class/Site').Site;
-    console.log("siteJson : "+ req.params.name);
-    site.getNom(req.params.name,res,function (value) {
-        res.send( value  );
-    });
-};
+
 
 exports.modeleModifierDescriptionSite = function(req, res, next) {
     var site_nom = req.params.name;

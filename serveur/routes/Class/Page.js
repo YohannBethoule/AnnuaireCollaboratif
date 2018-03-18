@@ -37,6 +37,12 @@ var Page  = function(){
 
     this.listType = ['Actualité','Politique','Société','Economie','Culture','Sport','Science','Ecologie', 'Autre','Humour'];
 
+    /**
+     * recupérer une page
+     * @param nom
+     * @param res
+     * @param callback
+     */
     this.get = function (nom,res,callback) {
         this.getNom(nom,res,function (value) {
             if(value == null){
@@ -76,6 +82,11 @@ var Page  = function(){
         this.coherence = coherence;
     }
 
+    /**
+     * update des type d'une page
+     * @param value
+     * @param nom
+     */
     this.update_type = function (value,nom) {
         var n= 0;
         var i=0,j=0,cum=0,i;
@@ -111,6 +122,11 @@ var Page  = function(){
         p.modifyType(nom,this.type);
     }
 
+    /**
+     * update de sujet d'une page
+     * @param value
+     * @param nom
+     */
     this.update_sujet = function (value,nom) {
         var n= 0;
         var i=0,j=0,cum=0,i;
@@ -146,6 +162,11 @@ var Page  = function(){
         p.modifySujet(nom,this.sujet);
     }
 
+    /**
+     * update des attributs de la page
+     * @param nom
+     * @param callback
+     */
     this.pageUpdate = function (nom,callback) {
         fiche.getFor(nom,function (value) {
             //console.log("value",value)

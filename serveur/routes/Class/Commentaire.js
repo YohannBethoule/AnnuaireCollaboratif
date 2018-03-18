@@ -29,6 +29,18 @@ var Commentaire  = function(){
         //...
     }
 
+    /**
+     *
+     * @param user
+     * @param name
+     * @param commentaire
+     * @param res
+     * @param callback
+     */
+    this.ajouterCommentaire = function (user,name,commentaire, res, callback) {
+        this.addCommentaire (user,name,commentaire, res, callback);
+    }
+
 
     /*
             Base De Donnee :
@@ -44,11 +56,16 @@ var Commentaire  = function(){
 
     }
 
-    this.ajouterCommentaire = function (user,name,commentaire, res, callback) {
-        this.addCommentaire (user,name,commentaire, res, callback);
-    }
 
 
+    /**
+     *
+     * @param user
+     * @param name
+     * @param commentaire
+     * @param res
+     * @param callback
+     */
     this.addCommentaire = function (user,name,commentaire, res, callback) {
         connection.query('INSERT INTO Commentaire( pseudoAuteur, name ,text) values (?,?,?)', [user,name,commentaire],function (err) {
             if (!err) {
@@ -60,6 +77,12 @@ var Commentaire  = function(){
         });
     }
 
+    /**
+     *
+     * @param nom
+     * @param res
+     * @param callback
+     */
     this.getAllFor = function(nom,res,callback) {
         //var tab=[];
         connection.query('Select * from Commentaire where name = ?', nom,function (err, rows, fields) {
