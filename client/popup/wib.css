@@ -62,7 +62,7 @@ button:hover{
 }
 
 
-.lesAvis{
+#lesAvis{
 	display: flex;
 	justify-content: space-around;
 }
@@ -79,7 +79,7 @@ button:hover{
 * Rating styles
 */
 
-.avis{
+#avis{
     width: 40%;
     font-weight: bolder;
     display: inline-block;

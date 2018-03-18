@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="wib.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </head>
 
 <body>
@@ -15,14 +16,10 @@
 
     <div id="currentURL"></div>
 
-    <script src="wib.js"></script>
+    <div id="dump"></div>
 
-    <a href="http://p.fod4.com/p/media/5e255a4aef/7P2FD0DvQ96BzfthRXP6_Phoebe%20Cates%20in%20the%20way.gif">
-        <button>Répertoriez ce site maintenant !</button>
-    </a>
-
-    <div class="lesAvis">
-	    <div class="avis">
+    <div id="lesAvis">
+	    <div id="avis">
 	        Qualité:
 	        <div class="rating rating2"><!--
 	            --><a href="#5" title="Give 5 stars">★</a><!--
@@ -48,6 +45,8 @@
             <textarea id="zone_commentaire" placeholder="Entrez votre commentaire ici.." maxlength="200"></textarea>
         </form>
     </div>
+
+    <script src="wib.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,8 @@
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "*://localhost:3001/*"
   ],
 
   "browser_action": {

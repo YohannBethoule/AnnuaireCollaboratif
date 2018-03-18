@@ -60,7 +60,6 @@ var Page  = function(){
                     callback(this);
                 });
              });
-
         });
     };
 
