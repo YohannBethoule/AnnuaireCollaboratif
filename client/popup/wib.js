@@ -4,7 +4,9 @@ var currentTab;
 function updateActiveTab(tabs) {
 
     function urlToDomainName(urlString){
-        return urlString.replace('http://','').replace('https://','').split(/[/?#]/)[0];
+        var url= urlString.replace('http://','').replace('https://','').split(/[/?#]/)[0]
+        url= url.slice(0,url.indexOf('.'));
+        return url;
     }
 
     function isSupportedProtocol(urlString) {
@@ -14,9 +16,10 @@ function updateActiveTab(tabs) {
         return supportedProtocols.indexOf(url.protocol) != -1;
     }
 
-    function displayFiche(url){
-        console.log("azzegge");
-
+    function displayFiche(datas){
+        document.getElementById("dump").innerHTML = "<p> DUMP </p>";
+        console.log(datas.data);
+        document.getElementById("dump").innerHTML +="<p>"+ datas.name + "</p>";
     }
 
     function getInfos(url){
@@ -29,24 +32,22 @@ function updateActiveTab(tabs) {
             }
         }
         console.log(url);
-        var requestedURL = "http://localhost:3001/extension/page/"+ encodeURIComponent(url);
+        var requestedURL = "http://localhost:3001/extension/site/"+ encodeURIComponent(url);
         console.log(requestedURL);
-        xhr.open('GET', requestedURL);
-        xhr.send();
-        xhr.addEventListener('readystatechange', function() {
-            if(xhr.readyState == XMLHttpRequest.DONE){
-                //return JSON.parse(xhr.responseText);
-                document.getElementById("dump").innerHTML = "<p> DUMP <br> "+ JSON.parse(xhr.responseText) + "</p>";
+        //xhr.setRequestHeader("Content-Type","application/json");
+        xhr.open('GET', requestedURL, true);
+        xhr.addEventListener("load", function() {
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //console.log(xhr.responseType);
+                //console.log(xhr.responseText);
+                //console.log(xhr.response);
+                //displayFiche(xhr.responseText);
             }
         });
-        /*$.ajax({
-            url: "http://localhost:3001/extension/page/"+ encodeURIComponent(url),
-            method: 'GET'
-        })
-        .done(function(data){
-            data = JSON.parse(data);
-            document.getElementById("dump").innerHTML = "<p> DUMP <br> "+ data + "</p>";
-        });*/
+        xhr.send();
+
+
+
     }
 
     function updateTab(tabs) {
@@ -55,16 +56,14 @@ function updateActiveTab(tabs) {
             if (isSupportedProtocol(currentTab.url)) {
                 var domainName=urlToDomainName(currentTab.url);
                 document.getElementById("currentURL").innerHTML="<a href=http://"+domainName+">"+domainName+"";
-                var fiche = getInfos(url);
+                var fiche = getInfos(domainName);
                 //displayFiche(currentTab.url);
             }
             else {
-                return "<p> Le format web n'est pas supporté par l'extension. </p>"
+                document.getElementById("currentURL").innerHTML = "<p> Le format web n'est pas supporté par l'extension. </p>"
             }
         }
     }
-
-
 
     var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
     gettingActiveTab.then(updateTab);

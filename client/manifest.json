@@ -12,7 +12,10 @@
 
   "permissions": [
     "activeTab",
-    "*://localhost:3001/*"
+    "webRequest",
+    "<all_urls>",
+    "*://localhost:3001/*",
+    "*://cdnjs.cloudflare.com/*"
   ],
 
   "browser_action": {
