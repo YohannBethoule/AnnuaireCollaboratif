@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Réel Collectif" company="" webLink="http://" view-date="2017-10-30" view-index="0" gantt-divider-location="771" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Réel Collectif" company="" webLink="http://" view-date="2017-10-01" view-index="0" gantt-divider-location="673" resource-divider-location="300" version="2.8.6" locale="fr">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="181" order="0"/>
-        <field id="tpd4" name="Date de début" width="94" order="1"/>
+    <view zooming-state="default:10" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="191" order="0"/>
+        <field id="tpd4" name="Date de début" width="41" order="1"/>
         <field id="tpd5" name="Date de fin" width="90" order="2"/>
-        <field id="tpc1" name="Durée (en h)" width="68" order="3"/>
-        <field id="tpc4" name="Justification" width="149" order="4"/>
-        <field id="tpc5" name="Ressources" width="170" order="5"/>
+        <field id="tpc1" name="Durée (en h)" width="76" order="3"/>
+        <field id="tpc4" name="Justification" width="123" order="4"/>
+        <field id="tpc5" name="Ressources" width="133" order="5"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -544,6 +544,191 @@
             <customproperty taskproperty-id="tpc1" value="0.5"/>
             <customproperty taskproperty-id="tpc3" value="100%"/>
             <customproperty taskproperty-id="tpc4" value="Gestion projet"/>
+            <customproperty taskproperty-id="tpc5" value="Groupe entier"/>
+        </task>
+        <task id="144" name="creation pre BDD, creation interaction utilisateur, affichage de donnée" meeting="false" start="2018-01-15" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="147" name="poursuite site web (design)" color="#8cb6ce" meeting="false" start="2018-01-15" duration="1" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="148" name="Analyse node js" meeting="false" start="2018-01-15" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web &amp; BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="149" name="poursuite création extension" meeting="false" start="2018-01-15" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension navigateur"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="150" name="création objet inetermediaire et restructuration BDD" meeting="false" start="2018-01-22" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="151" name="Analyse node js et base de donnée" meeting="false" start="2018-01-22" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="152" name="Analyse node js" meeting="false" start="2018-01-22" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="J. Point"/>
+        </task>
+        <task id="153" name="extension poursuite" meeting="false" start="2018-01-22" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="165" name="design et autre" meeting="false" start="2017-10-30" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A.Cardoso"/>
+        </task>
+        <task id="158" name="remise en forme des chemin &amp; continue construction site" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="159" name="reconception Base De Donnee" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Base de Donnee"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="160" name="design , ajout slide , script javascript et résoudre problème passage html to jade" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="161" name="extension poursuite" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="162" name="rapport" meeting="false" start="2018-01-29" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="gestion de projet"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="163" name="création d’objet intermédiaire à la base de donné et continue création  interactions utilisateurs" meeting="false" start="2018-02-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="166" name="création requete base de donnée" meeting="false" start="2018-02-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="167" name="extension poursuite" meeting="false" start="2018-02-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="168" name="poursuite construction page web et design" meeting="false" start="2018-02-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="169" name="interactions utilisateurs , écriture objet , mise en place inscription / connexion" color="#8cb6ce" meeting="false" start="2018-02-12" duration="1" complete="0" thirdDate="2018-02-05" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="170" name="poursuite extension" meeting="false" start="2018-02-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="172" name="poursuite design" meeting="false" start="2018-02-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="173" name="réparation base de donnée" meeting="false" start="2018-02-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="174" name="continuer écriture des calculs et changement des données , mise en place inscription / connexion , réparation" meeting="false" start="2018-02-26" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="175" name="poursuite création requete base de donnée" meeting="false" start="2018-02-26" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="176" name="poursuite design" meeting="false" start="2018-02-26" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="184" name="exetension requete et affichage" meeting="false" start="2018-02-26" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="185" name="réparation et  nettoyage du code + test +interactions utilisateurs" meeting="false" start="2018-03-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="186" name="réparation et construction BDD" meeting="false" start="2018-03-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="187" name="extension poursuite" meeting="false" start="2018-03-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="188" name="integration diverse et poursuite design" meeting="false" start="2018-03-05" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="192" name="nettoyage du code , réglage de problèmes  , mise en place image" meeting="false" start="2018-03-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Delain"/>
+        </task>
+        <task id="193" name="ajout et integration dans site web" meeting="false" start="2018-03-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web &amp; BDD"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Perrot"/>
+        </task>
+        <task id="194" name="finition extension" meeting="false" start="2018-03-12" duration="1" complete="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Extension"/>
+            <customproperty taskproperty-id="tpc5" value="Y. Bethoule"/>
+        </task>
+        <task id="195" name="finition design" color="#8cb6ce" meeting="false" start="2018-03-12" duration="1" complete="0" thirdDate="2018-03-12" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Site Web"/>
+            <customproperty taskproperty-id="tpc5" value="A. Cardoso"/>
+        </task>
+        <task id="206" name="diagramme de gantt" color="#8cb6ce" meeting="false" start="2018-03-12" duration="1" complete="0" thirdDate="2017-10-30" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Projet"/>
+            <customproperty taskproperty-id="tpc5" value="Groupe entier"/>
+        </task>
+        <task id="204" name="rapport" color="#8cb6ce" meeting="false" start="2018-03-12" duration="1" complete="0" thirdDate="2017-10-30" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Projet"/>
+            <customproperty taskproperty-id="tpc5" value="Groupe entier"/>
+        </task>
+        <task id="205" name="orale preparation" color="#8cb6ce" meeting="false" start="2018-03-12" duration="1" complete="0" thirdDate="2017-10-30" thirdDate-constraint="0" expand="true">
+            <customproperty taskproperty-id="tpc1" value="4"/>
+            <customproperty taskproperty-id="tpc4" value="Projet"/>
             <customproperty taskproperty-id="tpc5" value="Groupe entier"/>
         </task>
     </tasks>
