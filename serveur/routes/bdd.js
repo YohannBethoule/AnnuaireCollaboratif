@@ -2,8 +2,8 @@
 module.exports = {
     'connection' :{
         'host'     : 'localhost',
-        'user'     : 'root',
-        'password' : '',
+        'user'     : 'wib_bdd',
+        'password' : 'Annuaire2018',
     },
     'database' : 'Data',
     'websiteTable' : 'Website',
