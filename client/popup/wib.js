@@ -45,9 +45,6 @@ function updateActiveTab(tabs) {
             }
         });
         xhr.send();
-
-
-
     }
 
     function updateTab(tabs) {
