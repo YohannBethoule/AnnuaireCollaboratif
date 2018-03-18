@@ -12,6 +12,7 @@ html(lang="fr")
     link(rel="icon", type="image/png", href="../images/Logo/icon_ext.png")
   body
     include header.jade
+    br
     main
       article
         div(class='box')
@@ -47,7 +48,6 @@ html(lang="fr")
             script(type="text/javascript", src="/scripts/modal.js")
 
           div(class='avis')
-
             p Fiabilité
             a note moyenne : #{page.fiabilite} /5
             |                 
@@ -87,7 +87,7 @@ html(lang="fr")
               a(href="/page/#{page.name}/coherence/1", title="Give 1 star") ★
 
       form(action="/page/#{page.name}/commentaire", method="POST")
-        div(id='commentaires')
+      div(id='commentaires')
           h2()
             if (typeof page.listCommentaire !== "undefined")
               | #{page.listCommentaire.length} Commentaires
@@ -95,18 +95,17 @@ html(lang="fr")
             textarea(class='msg',name="texte", placeholder="Votre commentaire")
             input(value="Envoyer", type="submit")
 
-      if (typeof page.listCommentaire === "undefined")
-        td
-      else
-        each comm in page.listCommentaire
-            div(class='comment')
-              div(class='message')
-                div(class='author')
-                  a #{comm.pseudoAuteur} :
-                  br
-                a(class='content')    #{comm.text}
-            hr
-          br
-    br
+          if (typeof page.listCommentaire === "undefined")
+          else
+            each comm in page.listCommentaire
+                div(class='comment')
+                  div(class='message')
+                    div(class='author')
+                      a #{comm.pseudoAuteur} :
+                      br
+                    a(class='content')    #{comm.text}
+                hr
+              br
+        br
     footer
       a#haut(href="#logo")  Haut de page

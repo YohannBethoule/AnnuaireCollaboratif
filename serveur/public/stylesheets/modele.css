@@ -80,6 +80,7 @@ body {
     text-decoration: underline;
 }
 
+/*
 img {
     max-width: 100%;
     height: auto;
@@ -89,6 +90,7 @@ img {
 img:hover {
     opacity: 0.7;
 }
+*/
 
 
 #userSpace{
@@ -176,7 +178,7 @@ img:hover {
 }
 
 .boxlogo img{
-    width: 50%;    
+    width: 50%;
 }
 
 .boxscreenshot {
@@ -225,6 +227,7 @@ img:hover {
     border: none;
     border-bottom: 1px solid #000;
     height: 150px;
+    width: 100%;
     margin: 15% 0% 15% 2%;
 
 }
