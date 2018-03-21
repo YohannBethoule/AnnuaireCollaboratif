@@ -4,8 +4,7 @@ var currentTab;
 function updateActiveTab(tabs) {
 
     function urlToDomainName(urlString){
-        var url= urlString.replace('http://','').replace('https://','').split(/[/?#]/)[0]
-        url= url.slice(0,url.indexOf('.'));
+        var url= urlString.replace('http://','').replace('https://','').replace('www.', '').split(/[.?#]/)[0];
         return url;
     }
 
@@ -16,32 +15,39 @@ function updateActiveTab(tabs) {
         return supportedProtocols.indexOf(url.protocol) != -1;
     }
 
-    function displayFiche(datas){
-        document.getElementById("dump").innerHTML = "<p> DUMP </p>";
-        console.log(datas.data);
-        document.getElementById("dump").innerHTML +="<p>"+ datas.name + "</p>";
+    function display(datas){
+        console.log(datas);
+        if(datas==null){
+            document.getElementById("currentURL").innerHTML = "Ce site n'existe pas dans notre base de données"
+        }else{
+            document.getElementById("currentURL").innerHTML= datas.domain_name;
+            document.getElementById("dump").innerHTML +="<p>"+ datas.note + "/5 </p>";
+        }
     }
+
+
 
     function getInfos(url){
         var xhr = new XMLHttpRequest();
         if(url.startsWith("http") || url.startsWith("https")){
             if(url.startsWith("https")){
-                url = url.slice(8,-1);
+                url = url.slice(12,-1);
             }else{
-                url = url.slice(7,-1);
+                url = url.slice(11,-1);
             }
         }
-        console.log(url);
-        var requestedURL = "http://localhost:3001/extension/site/"+ encodeURIComponent(url);
+        var domain_name = urlToDomainName(url);
+        console.log(domain_name);
+        var requestedURL = "http://localhost:3001/extension/site/"+ encodeURIComponent(domain_name);
         console.log(requestedURL);
         //xhr.setRequestHeader("Content-Type","application/json");
         xhr.open('GET', requestedURL, true);
         xhr.addEventListener("load", function() {
-            if(xhr.readyState == 4 && xhr.status == 200){
+            if(xhr.readyState == 4 && xhr.status == 200) {
                 //console.log(xhr.responseType);
-                //console.log(xhr.responseText);
-                //console.log(xhr.response);
-                //displayFiche(xhr.responseText);
+                if(!xhr.response) {
+                    display(null);
+                } else display(JSON.parse(xhr.responseText));
             }
         });
         xhr.send();
@@ -52,9 +58,8 @@ function updateActiveTab(tabs) {
             currentTab = tabs[0];
             if (isSupportedProtocol(currentTab.url)) {
                 var domainName=urlToDomainName(currentTab.url);
-                document.getElementById("currentURL").innerHTML="<a href=http://"+domainName+">"+domainName+"";
-                var fiche = getInfos(domainName);
-                //displayFiche(currentTab.url);
+
+                getInfos(domainName);
             }
             else {
                 document.getElementById("currentURL").innerHTML = "<p> Le format web n'est pas supporté par l'extension. </p>"
