@@ -46,15 +46,14 @@ function isAuthenticated(req, res, next) {
     res.redirect('/connexion');
 }
 
-//initialisation du controller :
+//initialisation des controller :
+
+//home
 router.route('/')
     .get(index.index)
     .post(index.telecharger);
 
-//faire get ?
 router.post('/telecharger',index.telecharger);//telechargement de l'extension : utiliser module serve-static ?
-
-/* Autre Page. */// -->Utiliser controller
 
 //page recherche (list de page)
 router.route('/recherche')
@@ -141,6 +140,11 @@ router.route('/page/:name/fiabilite/:nb')
 router.route('/site/:name')
     .get(modele.modeleSite)
     .post(isAuthenticated,modele.modeleModifierDescriptionSite);
+
+
+
+
+
 
 
 /* partie pour l'Extension :*/

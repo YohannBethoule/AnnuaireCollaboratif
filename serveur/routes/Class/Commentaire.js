@@ -20,15 +20,6 @@ var Commentaire  = function(){
     this.sujet;
     this.texte;
 
-
-    this.update = function (nomAuteur,domain_name,type,description) {
-        this.domain_name = domain_name;
-        this.nomAuteur = nomAuteur;
-        this.texte = texte;
-        this.sujet= sujet;
-        //...
-    }
-
     /**
      *
      * @param user
@@ -41,23 +32,9 @@ var Commentaire  = function(){
         this.addCommentaire (user,name,commentaire, res, callback);
     }
 
-
     /*
             Base De Donnee :
     */
-    /**
-     * permet de remplir les arguments avec les valeur adequat
-     */
-    this.getThisCommentaire = function (domain_name,callback) {
-
-    }
-
-    this.getArguments = function (callback) {
-
-    }
-
-
-
     /**
      *
      * @param user

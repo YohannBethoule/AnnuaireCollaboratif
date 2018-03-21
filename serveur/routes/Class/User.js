@@ -31,9 +31,6 @@ var User  = function(){ //utilisation de Passport ?
     /**
      * permet de remplir les arguments avec les valeur adequat
      */
-    this.getThisUser = function (domain_name) {
-
-    }
     this.getAll = function(callback) {
         connection.query('Select * from Utilisateur', function(err, rows, fields) {
             if (!err) {

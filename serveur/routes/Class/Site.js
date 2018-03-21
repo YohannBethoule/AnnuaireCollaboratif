@@ -34,11 +34,6 @@ var Site  = function(){
         this.description = description;
         this.note = note;
     }
-
-    this.updateAll = function () {
-
-    }
-
     /**
      * update la note du site name
      * @param name nom du site
@@ -71,13 +66,6 @@ var Site  = function(){
             var s = new Site();
             s.modifyNote(domain_name,this.note,callback);
         })
-    }
-
-    /**
-     * calculer la note du site suivant les notes de ses différentes pages/articles
-     */
-    this.calcule_note= function () {
-        //
     }
 
     /**

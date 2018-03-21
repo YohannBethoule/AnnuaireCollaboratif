@@ -111,7 +111,7 @@ exports.siteJson = function(req, res, next){
     console.log("siteJson : "+ req.params.name);
     site = require('../Class/Site').Site;
     console.log("siteJson : "+ req.params.name);
-    site.getNom(req.params.name,res,function (value) {
+    site.getNom(req.params.name,function (value) {
         res.send( value  );
     });
 };
