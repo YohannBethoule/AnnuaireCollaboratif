@@ -1,73 +1,9 @@
 # AnnuaireCollaboratif
-Projet n°3
 
-Version de node.js : version 9.0.0
-BDD: MySQL
+« Wib » is an online application, made of a website and a browser add-on. Its object is to be a news websites collaborative directory, which means that any user can participate to it. The main goal is to collect our user’s opinions about news websites and article, so our application can display an objective indication of one website/article quality. 
+We chose to develop a browser add-on so people who install it will be able to get a quick summary of the informations we have about the website and article he is on, without interrupting their surfing. To develop a lasting and stable add-on, we used Mozilla WebExtension, an API  
+In order to program the back-end of our website, we chose to use Node.JS, so we had to learn a new way of developping for the web, event programming. On the website, anyone can consult the card of a website or a page, which displays its title, a short description, and ratings out of 5. Rating objects for an article are the redaction consistency and the quality of the arguments, and the displayed values are the mean of all users ratings, and a website mark is the mean of the marks of all its articles. A connected user can modify the description of a website or article, and rate it. 
+The add-on takes shape of a vignette in the browser toolbar, which opens a pop-up windown when clicked. The pop-up displays the mark of the website, and the two marks of the article, if they exist in our database. It does so by listening on changes of the current tab opened in the browser, and sending a HTTP request to our Node.JS server, which return the needed datas in JSON format. 
+Developing this project led us to learn a lot about web technologies. First, we didn’t know how to program in javascript, Node.JS, or even how to make a browser add-on. We had to learn most of it by ourselves, by finding tutorials and documentation on internet. We also got to experience the technical and human problems that can happen in a professional projet.
 
-Travail à faire semaine 1 de Janvier
-Arthur : mise en place inscription connexion 
-Yannis : recherche sur statistique
-Alex : design + passage html to jade
-Jo : 
-Yohann : extension 
-
-Travail à faire semaine 2 de Janvier
-
-Arthur : mise en place d'une pre base de donnée + interaction utilisateur + liste des pages
-Yannis : 
-Alex : design
-Jo : analyse node js
-Yohann : extension 
-
-Travail à faire semaine 3 de Janvier
-
-Arthur : création d'ojet intermediaire à la base de donnée + restructuration base de donnée
-Yannis : analyse node js
-Alex : design
-Jo : analyse node js
-Yohann : extension 
-
-Travail à faire semaine 4 de Janvier
-
-Arthur : remise en forme des chemins 
-Yannis :  refait base de donné (+ mise en place javascript)
-Alex : design + ajout slide + script
-Jo : test ajout page (fiche) + script javascript + resoudre problème passage html to jade
-Yohann : extension + rapport
-
-Travail à faire semaine 4:
-- finir cahier des charges : Arthur et Yohann
-- commencer la mise en place de la base de données MySQL : Yannis et Yohann
-- design extension de navigateur : Jonathan
-- serveur node.js : Arthur
-- continuer le site web : Alex
-
-
-Travail à faire semaine 3:
-- ajouter librairies au projet : arthur
-- démarrage du serveur node.js : arthur
-- definition droits (législatif): arthur
-- ajout de nouvelles pages html : Alex
-- recherche concernant l'affichage de statistiques par des graphiques: Yannis
-- MCD, MLD : Yohann
-- premier diagramme de classe : Arthur
-- cahier des charges : Yannis, Yohann
-- diagramme GANTT : Jonathan et Alex
-- reprendre diag CU et diag sequence-systeme : jonathan et yohann
-
-Travail à faire semaine 2:
-- passer le diag CU sur starUML : Jonhatan 
-- 1er rush de code : bulle d'extension vide, installation de l'extension depuis le site : Yohann et Arthur. Si y a le temps, essayer de display le nom de domaine sur lequel l'utilisateur se trouve dans la bulle d'extension. 
-- diagramme d'activités : Jonhatan 
-- graphisme de base du site en html/css : Yannis et Alex 
-- 1ers diagrammes de GANTT collectifs : Johnatan et Yohann 
-
-
-Travail à faire semaine 1
-- design, maquettes: Yannis, Alex
-- rediger cahier des charges: Yohann
-- poser l'arborescence nécessaire au début de projet: Arthur
-- faire diagramme de cas d'utilisation: Jonhathan 
-- tous se mettre sur le github
-- se renseigner et choisir les technos
 
